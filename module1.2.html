@@ -12,7 +12,7 @@
 	<script type="text/javascript" src="projekktor/projekktor-1.3.09.min.js"></script>
 	<link rel="stylesheet" href="projekktor/themes/maccaco/projekktor.style.css" type="text/css" media="screen" />
     <script>
-    	var thisModule = 1;
+    	var thisModule = 2;
     </script>
 	<script type="text/javascript" src="js/dino.js"></script>
 	<script type="text/javascript" src="video/functions.js"></script>
@@ -24,7 +24,7 @@
     <div id="subnav">
         <div id="subnav_content">
             <a href="exhibit" class="active">Exhibit Hall</a><span class="arrow"></span>
-            <a href="video" start="0">Exercise Title</a><span class="arrow"></span>
+            <a href="video" start="0">Video Title</a><span class="arrow"></span>
             <a href="video" start="74.5">Exercise Title</a><span class="arrow locked"></span>
             <a href="identification" class="locked">Locked Exercise</a><span class="arrow locked"></span>
             <a href="threeDmodel" class="locked">Locked Exercise</a>
@@ -32,24 +32,13 @@
     </div> 
     <div id="content">
         <div id="exhibit" class="active">
-        	<div id="saurohip"><img /></div>
-            <div id="saurohipHover">
-            	<h3></h3>
-                <p></p>
-            </div>
-            <!--<div id="lefthip"><img /></div>
-            <div id="righthip"><img /></div>
-            <div id="lefthover">
-                <h3>Part 1 - Identification By Hip Bone</h3>
+        	<div id="zone1"><img /></div>
+            <div id="zone1Hover"><h3>Part 1 - Identification By Hip Bone</h3>
                 <p>Dinosaurs are divided into two categories based on their hip structure.</p>
                 <p><span class="highlight">Click the bone</span> to launch a lesson on identifying Saurishian and Ornithischian hip bones.</p>
             </div>
-            <div id="righthover">
-                <h3>Part 2 - Classifying Dinosaurs</h3>
-                <p>Each dinsaur can be identified as Saurishian or Ornithischian depending on their hip type.</p>
-                <p><span class="highlight">Click the bone</span> to launch a lesson on identifying which dinosaurs fit into each category.</p>
-            </div>-->
         </div>
+        
         <div class="blackout">
         </div>
         
@@ -69,23 +58,23 @@
                 </div>
             </div> 
             
-            <div id="exer1">
-                <div id="tropicBg">
+            <div id="exerdraft">
+                <div id="forest">
                     <div id="dinoImages">
-                        <div id="dino1"><!-- <img id="img1" src="images/dino1.png" /> --></div> 
-                        <div id="dino2"><!-- <img id="img2" src="images/dino2.png" /> --></div>
-                        <div id="dino3"><!-- <img id="img3" src="images/dino3.png" /> --></div>
+                        <div id="dino1"></div> 
+                        <div id="dino2"></div>
+                        <div id="dino3"></div>
                     </div>
                 </div>
                 <div id="console">
                     <div id="drawer">
-                        <div id="selectHips">
-                            <span id="hips1"><img src="images/exer3hip1.png"/></span>
-                            <span id="hips2"><img src="images/exer3hip2.png"/></span>
-                        </div>
+                       <div id="words">
+						<span class="dropWord" id="word1">Sauropod</span>
+						<span class="dropWord" id="word2">Theropod</span>
+						</div>
                     </div>
                     <div id="text">
-                        <div id="exer3_close">x</div>
+                        <div id="exerdraft_close">x</div>
                         <h4>Match the Hips</h4>
                         <p>Drag the hip bones and match them to the appropriate dinosaur.</p> 
                         <div class="rewatch button">Rewatch Video</div> 
@@ -93,7 +82,7 @@
                 </div>
             </div>
             
-            <div id="unlocked">
+            <!--<div id="unlocked">
                 <div id="lock">
                 </div>
                 <div id="console">
@@ -108,7 +97,7 @@
             </div>
             <div id="identification" >
                 <div id="slider" style="width: 900px; height: 450px;"> <!-- for some reason, if these are not inline styles, the js doesn't work */
-                    <!-- Slides Container -->
+                    <!-- Slides Container
                     <div u="slides" id="slides" style="cursor: move; position: absolute; left: 0px; top: 0px; width: 900px; height: 450px; overflow: hidden;">
                         <div id="slide1"><img u="image" src="images/slides/1.png" /></div>
                         <div id="slide2"><img u="image" src="images/slides/2.png" /></div>
@@ -120,10 +109,10 @@
                         <div id="slide8"><img u="image" src="images/slides/8.png" /></div>
                         <div id="slide9"><img u="image" src="images/slides/9.png" /></div>
                         <div id="slide10"><img u="image" src="images/slides/10.png" /></div>
-                    </div><!-- Arrow Left -->
+                    </div><!-- Arrow Left
                     <span u="arrowleft" id="arrowleft" class="jssora03l" style="width: 55px; height: 55px; top: 183px; left: 8px;">
                     </span>
-                    <!-- Arrow Right -->
+                    <!-- Arrow Right
                     <span u="arrowright" id="arrowright" class="jssora03r" style="width: 55px; height: 55px; top: 183px; right: 8px">
                     </span>
                 </div>
@@ -159,7 +148,7 @@
                 </div>
             </div> 
         </div>
-    </div>
+    </div>-->
     <div id="footer">
         <div id="show">more</div> copyright &copy; 2014 <span class="highlight">Logos Project</span> | design by <a href="http://www.southern.edu/online" target="_blank">Southern Adventist University</a>
         <div id="more_info">

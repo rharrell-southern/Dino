@@ -97,22 +97,24 @@ h1, h2, h3, h4, h5, h6 {
 ################### Subnav Section ####################
 
 */
-
 #subnav {
 	background-image:url("../images/subnav.png");
 	background-position: bottom center;
 	background-repeat: no-repeat;
-	padding:25px;
-	height:120px;
-	position: relative;
+	height:170px;
 	z-index: 10 !important;
 }
 #subnav_content {
-	margin:-13px auto 0px auto;
-	width:1080px; /* Ensures margin: 0px auto works and links are centered to page */
-	position: relative;
+	margin:0px auto;
+	padding:11px;
 	z-index: 15 !important;
 	clear:none;
+}
+body.module1 #subnav_content {
+	width:57%; /* Ensures margin: 0px auto works and links are centered to page */
+}
+body.module2 #subnav_content {
+	width:53%; /* Ensures margin: 0px auto works and links are centered to page */
 }
 #subnav a {
 	color:#FFF;
@@ -178,32 +180,51 @@ h1, h2, h3, h4, h5, h6 {
 ################### Exhibit Hall Section ####################
 
 */
-#zone1,
-#zone2 {
+body.module1 #zone1,
+body.module1 #zone2 {
 	width:250px;
 	margin:0px auto;
 	opacity: 0;
 	cursor:pointer;
 }
-#zone1 {
+body.module1 #zone1 {
 	position: relative;
 	z-index: 350;
 	right:408px;
 	top:285px;
 }
-#zone2 {
+body.module1 #zone2 {
 	position: relative;
 	z-index: 350;
 	left:234px;
 	top:8px;
 }
-#saurohip {
+body.module1 #zone1Hover {
+	top:-222px;
+	right:325px;
+}
+body.module1 #zone2Hover {
+	top:-350px;
+	right:70px;
+}
+body.module2 #zone1,
+body.module2 #zone2 {
+	width:250px;
+	margin:0px auto;
+	opacity: 0;
+	cursor:pointer;
+}
+body.module2 #zone1 {
 	position: relative;
 	z-index: 350;
-	right:408px;
-	top:285px;
+	right:100px;
+	top:310px;
 }
-#zone1Hover, /* Text bubble */
+body.module2 #zone1Hover {
+	top:-222px;
+	right:325px;
+}
+#zone1Hover, /* Text bubble across all modules */
 #zone2Hover {
 	width:500px;
 	background:rgba(75,75,75,0.8);
@@ -214,14 +235,6 @@ h1, h2, h3, h4, h5, h6 {
 	position:relative;
 	border:2px solid #f1cb31;
 	display:none;
-}
-#zone1Hover {
-	top:-222px;
-	right:325px;
-}
-#zone2Hover {
-	top:-350px;
-	right:70px;
 }
 #zone1Hover h3,
 #zone2Hover h3 {
@@ -431,7 +444,6 @@ div.blackout {
 	transform:rotate(-8deg);
 	-ms-transform:rotate(-8deg); /* IE 9 */
 	-webkit-transform:rotate(-8deg); /* Opera, Chrome, and Safari */
-
 }
 #exer1 #text {
 	color:#FFF;
@@ -675,6 +687,137 @@ div.blackout {
 	text-shadow:0px 0px 6px #000;
 }
 #exer3 #text p {
+	margin-top:0px;
+}
+/*
+
+################### Interactive for Module 2, Draft ####################
+
+*/
+#exerdraft {
+	/*display:none;*/
+}
+#exerdraft #forest {
+	background-image:url("../images/forest.png");
+	background-position: top center;
+	background-repeat: no-repeat;
+	position: absolute;
+	bottom:130px;
+	left:0px;
+	right:0px;
+}
+#exerdraft #dinoImages {
+	width:1000px;
+	height:424px;
+	margin:0px auto;
+	padding-top:90px;
+	padding-left:130px;
+}
+#exerdraft #dinoImages #dino1 {
+	background-image:url("../images/ovir-small.png");
+	background-repeat:no-repeat;
+	width:217px;
+	height:162px; 
+	position:relative;
+	top:42px;
+	z-index:5;
+}
+#exerdraft #dinoImages #dino2 {
+	background-image:url("../images/ceti.png");
+	background-repeat:no-repeat;
+	width:576px;
+	height:222px;
+	position:relative;
+	top:-182px;
+	left:90px;
+	z-index:4;
+}
+#exerdraft #dinoImages #dino3 {
+	background-image:url("../images/plat.png");
+	background-repeat:no-repeat;
+	width:309px;
+	height:159px;
+	position:relative;
+	top:-342px;
+	left:590px;
+	z-index:3;
+}
+#exerdraft #dino1.success {
+	background-image:url("../images/mod1/tric-correct.png") !important;
+}
+#exerdraft #dino2.success {
+	background-image:url("../images/mod1/ovir-correct.png") !important;
+}
+#exerdraft #dino3.success {
+	background-image:url("../images/mod1/anky-correct.png") !important;
+}
+#exerdraft #console {
+	height:330px;
+	background-image:url("../images/lowerBG.png");
+	background-position: top center;
+	background-repeat: no-repeat;
+	position: absolute;
+	bottom:0px;
+	right:0px;
+	left:0px;
+}
+#exerdraft #drawer {
+	background-image:url("../images/drawer.png");
+	background-position: top center;
+	background-repeat: no-repeat;
+	position: relative;
+	height: 132px !important;
+	width:1110px;
+	margin:-16px auto 0px auto !important;
+}
+#exerdraft_close {
+	background:rgba(0,0,0,0.3);
+	color:#FFF;
+	border-radius:15px;
+	height:22px;
+	width:22px;
+	text-align: center;
+	float:right;
+	border:2px solid #FFF;
+	cursor: pointer;
+	position: relative;
+	padding:2px;
+	margin-top:-30px;
+	margin-right:-80px;
+	font-size: 16px;
+}
+#exerdraft #selectHips {
+	width:390px;
+	margin:0px auto;
+	padding:40px;
+}
+#exerdraft #selectHips #hips1 img {
+	margin-right:200px;
+}
+#exerdraft #words {
+	padding:45px 110px;
+	color: #333;
+	font-size:45px;
+	text-shadow:0px 0px 8px #000;
+}
+#exerdraft #word1 {
+	padding-left:200px;
+	padding-right:80px;
+}
+#exerdraft .dropWord {
+	cursor: move;
+}
+#exerdraft #text {
+	color:#FFF;
+	width:850px;
+	height:50px;
+	margin:0px auto;
+	padding:28px 35px;
+	font-size: 20px;
+	clear:both;
+	text-shadow:0px 0px 6px #000;
+}
+#exerdraft #text p {
 	margin-top:0px;
 }
 
