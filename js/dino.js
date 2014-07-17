@@ -8,26 +8,35 @@ var exer3Correct = [0, 0, 0, 0]; /* used to keep track of which dinos have chang
 var consoleHeight = '830px'; /* Controls video player container height; Come back and use this instead to adjust */
 var setVideoWidth;
 var setVideoHeight;
+var videoPath = new Array();
 
 // Set module variables
 var slides;
 var zones;
+
 switch(thisModule) {
 	case 1:
 		zones = 2;
 		slides = 10;
+        videoPath[1] = 'video/m1.1.mp4';
 		break;
 	case 2:
 		zones = 1;
 		slides = 10;
+        videoPath[1] = 'video/m2.1.mp4';
 		break;
 	case 3:
 		zones = 1;
 		slides = 10;
+        videoPath[1] = 'video/m3.1.mp4';
 		break;
 	case 4:
 		zones = 4;
 		slides = 10;
+        videoPath[1] = 'video/m4.2.mp4';
+        videoPath[2] = 'video/m4.3.mp4';
+        videoPath[3] = 'video/m4.4.mp4';
+        videoPath[4] = 'video/m4.1.mp4';
 		break;
 	
 	default:
@@ -72,7 +81,7 @@ $(window).resize(function() {
 
 // Control intervals of glow/fade animation
 function startHipFade() {
-	for(i=0; i<=zones; i++) {
+	for(i=1; i<=zones; i++) {
 		$('#zone' + i).animate({
 			opacity: 1
 		}, thisDuration, function() {
@@ -86,16 +95,14 @@ function startHipFade() {
     if (!hiIsRuning) {
         hiIsRuning = true;
         hipInterval = setInterval(function() {
-			for(i=0; i<=zones; i++) {
-				setTimeout(function() {
-					$('#zone' + i).animate({
-						opacity: 1
-					}, thisDuration, function() {
-						$(this).animate({
-							opacity: 0
-						}, thisDuration);
-					});
-				}, (i - 1)*500);
+			for(i=1; i<=zones; i++) {
+				$('#zone' + i).delay((i - 1)*500).animate({
+					opacity: 1
+				}, thisDuration, function() {
+					$(this).animate({
+						opacity: 0
+					}, thisDuration);
+				});
 			}
         }, (i * 500) + 4000);
     }
@@ -136,12 +143,12 @@ function toSection(goTo, videoStart) {
             $('#video_console').animate({
                 height: consoleHeight
             }, 600, function() {
+                projekktor('player_a').setActiveItem(videoStart);
                 projekktor('player_a').setPlay();
-                projekktor('player_a').setPlayhead(videoStart);
                 $('#video_content').fadeIn('fast');
             });
         }, 200);
-        $('#subnav a[start="' + videoStart + '"]').addClass("active");
+        $('#subnav a[zone="' + (videoStart+1) + '"]').addClass("active");
     } else {
         $('#subnav a[href="' + goTo + '"]').addClass("active");
     }
@@ -256,6 +263,16 @@ function checkCorrect() {
 
     // Start listeners for interactions
     $(function() {
+        var videoPlaylist = new Array();
+        for (i=1; i<=videoPath.length; i++) {
+            videoPlaylist[i] = {
+                0: {
+                    src: videoPath[i],
+                    type: 'video/mp4'
+                },
+                cuepoints: subs[thisModule][i]
+            };
+        }
 
         // Video Player initialization
         projekktor('#player_a', {
@@ -269,13 +286,7 @@ function checkCorrect() {
                 showCuePoints: true
             },
             controls: true,
-            playlist: [{
-                0: {
-                    src: 'video/m1.1.mp4',
-                    type: 'video/mp4'
-                },
-                cuepoints: v1subs
-            }]
+            playlist: videoPlaylist
         });
 
 
@@ -303,8 +314,8 @@ function checkCorrect() {
             var goTo = $(this).attr('href');
             if (!$(this).hasClass('locked')) {
                 if (goTo == 'video') {
-                    var startSec = $(this).attr('start');
-                    toSection(goTo, startSec);
+                    var startAt = $(this).attr('zone') - 1;
+                    toSection(goTo, startAt);
                 } else {
                     toSection(goTo);
                 }
@@ -320,7 +331,7 @@ function checkCorrect() {
             toSection('exer2');
         });
         $('#content').on('click', '#exer2 .next', function() {
-            toSection('video', 74.5);
+            toSection('video', 1);
         });
         $('#content').on('click', '#exer1 .rewatch', function() {
             toSection('video', 0);
@@ -329,12 +340,12 @@ function checkCorrect() {
             toSection('exer1');
         });
 		$('#content').on('click', '#exer3 .rewatch', function() {
-            toSection('video', 74.5);
+            toSection('video', 1);
         });
         $('#content').on('click', '.skip', function() {
-            if ($('#subnav a.active').attr('start') == '0') {
+            if ($('#subnav a.active').attr('zone') == '1') {
                 toSection('exer1');
-            } else if ($('#subnav a.active').attr('start') == '74.5') {
+            } else if ($('#subnav a.active').attr('zone') == '2') {
                 toSection('exer3');
             }
         });
@@ -399,56 +410,45 @@ function checkCorrect() {
 
 
 
-        // Zone One and Two interactions
-        $('#content, #subnav_content').on('mouseenter mouseleave click', '#zone1, a[start="0"]', function(event) {
-            clearHipIntervals();
-            if (event.type == 'mouseenter') {
-                $('#zone2').clearQueue().stop().animate({
-                    opacity: 0
-                }, 100);
-                $('#zone1').clearQueue().stop().animate({
-                    opacity: 1
-                }, 300);
-                $('#zone2Hover').clearQueue().stop().fadeOut('fast', function() {
-                    $('#zone1Hover').clearQueue().stop().fadeIn('fast');
-                });
-            } else {
-                $('#zone1Hover').fadeOut('fast');
-                if (event.type != 'click') {
-                    $('#zone1').animate({
-                        opacity: 0
-                    }, 300);
-                    startHipFade();
-                } else {
-                    toSection('video', 0);
-                }
-            }
-        });
+        // Zone interactions
 
-        $('#content, #subnav_content').on('mouseenter mouseleave click', '#zone2, a[start="74.5"]', function(event) {
-            clearHipIntervals();
-            if (event.type == 'mouseenter') {
-                $('#zone1').clearQueue().stop().animate({
-                    opacity: 0
-                }, 100);
-                $('#zone2').clearQueue().stop().animate({
-                    opacity: 1
-                }, 300);
-                $('#zone1Hover').clearQueue().stop().fadeOut('fast', function() {
-                    $('#zone2Hover').clearQueue().stop().fadeIn('fast');
-                });
-            } else {
-                $('#zone2Hover').fadeOut('fast');
-                if (event.type != 'click') {
-                    $('#zone2').animate({
-                        opacity: 0
-                    }, 300);
-                    startHipFade();
+        for(i=1;i<=zones;i++) {
+            $('#content, #subnav_content').on('mouseenter mouseleave click', '#zone'+i+', a.zone'+i, function(event) {
+
+                clearHipIntervals();
+                
+                var currentZone = $(this).attr('zone');
+
+                if (event.type == 'mouseenter') {
+                    console.log("Mouse ENTERED!")
+                    for(j=1;j<=zones;j++) {
+                        if(j == currentZone) {
+                            $('#zone'+j).clearQueue().stop().animate({
+                                opacity: 1
+                            }, 300);
+                            $('#zone'+j+'Hover').clearQueue().delay(210).fadeIn(0);
+                        } else {
+                            $('#zone'+j).clearQueue().stop().animate({
+                                opacity: 0
+                            }, 100);
+                            $('#zone'+j+'Hover').clearQueue().fadeOut('fast');
+                        }
+                    }
                 } else {
-                    toSection('video', 74.5);
+                    $('#zone'+currentZone+'Hover').clearQueue().fadeOut('fast');
+                    if (event.type != 'click') {
+                        $('#zone'+currentZone).animate({
+                            opacity: 0
+                        }, 300);
+                        startHipFade();
+                    } else {
+                        console.log('This video: ',currentZone - 1);
+                        toSection('video', currentZone - 1);
+                    }
                 }
-            }
-        });
+            });
+
+        }
 
         // Footer interactions
         $('#footer').on('click', '#show', function() {

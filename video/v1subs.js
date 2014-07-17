@@ -1,4 +1,6 @@
-var v1subs = [
+var subs = new Array();
+subs[1] = new Array();
+subs[1][1] = [
                 {
               on: '00:01',
                  value: 'Dinosaurs are divided into two categories based on their hip structure.',
@@ -28,45 +30,45 @@ var v1subs = [
               on: '01:03',
                  value: 'Take a moment to review the names of these bones and what category they belong to before moving on to the next section.',
                     callback: updateSubtitles
-                },
-				//SECTION 2
-                {
-              on: '01:14',
-                 value: 'Let’s take a step back and look at these hips and dinosaurs in context.',
-                    callback: updateSubtitles
-                },
-                {
-              on: '01:21',
-                 value: 'Here are three Saurischians. We have a Plateosaurus, Cetiosaurus, and the Oviraptor.',
-                    callback: updateSubtitles
-                },
-                {
-              on: '01:36',
-                 value: 'On the Ornithischians side we have the Arrhinoceratops, Dryosaurus, and the Ankylosaurus.',
-                    callback: updateSubtitles
-                },    
-                {
-              on: '01:47',
-                 value: 'Review these dinosaurs and be sure you know what hips belong to them.',
-                    callback: updateSubtitles
-                },
+                },                
                //BEGIN INTERACTIVE
                 {
               on: '01:13',
                  value: 'Interactive 1',
                     callback: function(obj) { updateSubtitles(obj); toInteractive('exer1'); }
                   
-                },
-                {
-              on: '01:14',
+                }
+             ];
+  subs[1][2] = [{
+              on: '00:00',
                  value: 'Classification',
-                    callback: function(obj) { $('#subnav a').removeClass('active'); $('#subnav a[start="74.5"]').addClass("active");}
+                    callback: function(obj) { $('#subnav a').removeClass('active'); $('#subnav a[start="1"]').addClass("active");}
                   
                 },
                 {
-              on: '01:53',
+              on: '00:00',
+                 value: 'Let’s take a step back and look at these hips and dinosaurs in context.',
+                    callback: updateSubtitles
+                },
+                {
+              on: '00:07',
+                 value: 'Here are three Saurischians. We have a Plateosaurus, Cetiosaurus, and the Oviraptor.',
+                    callback: updateSubtitles
+                },
+                {
+              on: '00:22',
+                 value: 'On the Ornithischians side we have the Arrhinoceratops, Dryosaurus, and the Ankylosaurus.',
+                    callback: updateSubtitles
+                },    
+                {
+              on: '00:33',
+                 value: 'Review these dinosaurs and be sure you know what hips belong to them.',
+                    callback: updateSubtitles
+                },
+                {
+              on: '00:39',
                  value: 'Interactive 2',
                     callback: function(obj) { updateSubtitles(obj); toInteractive('exer3'); }
                   
                 }
-             ]
+                ];
