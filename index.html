@@ -1,0 +1,250 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=1200">
+	<title>Dino One: Module 1.1</title>
+	<link href="styles/dino.css" rel="stylesheet" type="text/css" />
+	<script src="js/jquery-1.9.1.min.js"></script>
+	<script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+    <script type="text/javascript" src="js/jssor/jssor.core.js"></script>
+    <script type="text/javascript" src="js/jssor/jssor.utils.js"></script>
+    <script type="text/javascript" src="js/jssor/jssor.slider.js"></script>
+	<script type="text/javascript" src="projekktor/projekktor-1.3.09.min.js"></script>
+	<link rel="stylesheet" href="projekktor/themes/maccaco/projekktor.style.css" type="text/css" media="screen" />
+    <script>
+    	var thisModule = 1;
+    </script>
+	<script type="text/javascript" src="js/dino.js"></script>
+	<script type="text/javascript" src="video/functions.js"></script>
+	<script type="text/javascript" src="video/v1subs.js"></script>
+</head>
+<body class="module1">
+
+<div id="header"><img src="images/logos.png" /><h1>Dino One</h1><h2>Module 1.1: Saurischian and Ornithischian</h2><a href="../index.html" id="return">Back to Main Menu</a></div>
+<div id="subnav">
+	<div id="subnav_content">
+		<a href="exhibit" class="active">Exhibit Hall</a><span class="arrow"></span>
+	    <a href="video" start="0">Hip Identification</a><span class="arrow"></span>
+	    <a href="video" start="74.5">Classification</a><span class="arrow locked"></span>
+	    <a href="identification" class="locked">Dinosaur Identification</a><span class="arrow locked"></span>
+	    <a href="threeDmodel" class="locked">3D Exploration</a>
+    </div>
+</div> 
+<div id="content">
+	<div id="exhibit" class="active">
+		<div id="zone1"><img /></div>
+		<div id="zone2"><img /></div>
+		<div id="zone1Hover">
+			<h3>Part 1 - Identification By Hip Bone</h3>
+			<p>Dinosaurs are divided into two categories based on their hip structure.</p>
+			<p><span class="highlight">Click the bone</span> to launch a lesson on identifying Saurishian and Ornithischian hip bones.</p>
+		</div>
+		<div id="zone2Hover">
+			<h3>Part 2 - Classifying Dinosaurs</h3>
+			<p>Each dinsaur can be identified as Saurishian or Ornithischian depending on their hip type.</p>
+			<p><span class="highlight">Click the bone</span> to launch a lesson on identifying which dinosaurs fit into each category.</p>
+		</div>
+	</div>
+	<div class="blackout">
+	</div>
+	<div id="subpages">
+		<div id="video">
+			<div id="video_console">
+				<div id="video_content">
+					<div id="video_close">x</div>
+					<div id="video_player">
+						<video id="player_a" class="projekktor" >
+						</video>
+					</div>
+					
+					<div id="video_captions"></div>
+                    <span class="skip button">Skip to Interactive</span>
+				</div>
+			</div>
+		</div> 
+        
+		<div id="exer1">
+			<div id="options">
+				<div id="section1">
+					<p>Saur<span id="dash-saur-left"> - </span>ischi<span id="dash-saur-right"> - </span>an</p>
+					<div id="option1" class="box">
+					</div>
+					<div class="spacer"> - </div> 
+					<div id="option2" class="box">
+					</div>
+				</div>
+
+				<div id="section2">
+					<p>Ornith<span id="dash-ornith-left"> - </span>ischi<span id="dash-ornith-right"> - </span>an</p>
+					<div id="option3" class="box">
+					</div>
+					<div class="spacer"> - </div> 
+					<div id="option4" class="box">
+					</div>
+				</div>
+			</div>
+			<div id="console">
+				<div id="pond">
+					<div id="words">
+						<span class="spacer"></span>
+						<span class="dropWord" id="word1">Hip</span>
+						<span class="spacer"></span>
+						<span class="dropWord" id="word2">Lizard</span>
+						<span class="spacer"></span>
+						<span class="dropWord" id="word3">Bird</span>
+					</div>
+				</div>
+				<div id="text">
+					<div id="exer1_close">x</div>
+					<h4>Match the Words</h4>
+					<p>Match the words on the top with their counterparts on the bottom.  Drag 
+					the english word from the pool on the bottom to the space below the word
+					it matches.</p>
+					<div class="next button">Continue</div>
+                    <div class="rewatch button">Rewatch Video</div> 
+				</div>
+			</div>
+		</div>
+        
+		<div id="exer2">
+			<div id="options">
+				<div id="option1" class="box"></div>
+				<div id="option2" class="box"></div>
+				<div id="option3" class="box"></div>
+			</div>
+			<div id="console">
+				<div id="drawer">
+					<div id="words">
+						<span class="spacer"></span>
+						<span class="dropWord" id="word1">Illium</span>
+						<span class="spacer"></span>
+						<span class="dropWord" id="word2">Ishium</span>
+						<span class="spacer"></span>
+						<span class="dropWord" id="word3">Pubis</span>
+					</div>
+				</div>
+				<div id="text">
+					<div id="exer2_close">x</div>
+					<h4>Match the Bones</h4>
+					<p>Match the bones on the top with their names on the bottom.  Drag 
+					the word from the drawer on the bottom to the space next to the bone
+					it matches.</p>
+					<div class="next button">Continue</div><div class="rewatch button">Previous</div>
+				</div>
+			</div>
+		</div>
+        
+        <div id="exer3">
+        	<div id="forest">
+				<div id="dinoImages">
+					<div id="dino1"><!-- <img id="img1" src="images/dino1.png" /> --></div> 
+					<div id="dino2"><!-- <img id="img2" src="images/dino2.png" /> --></div>
+	                <div id="dino3"><!-- <img id="img3" src="images/dino3.png" /> --></div>
+				</div>
+			</div>
+			<div id="console">
+				<div id="drawer">
+					<div id="selectHips">
+						<span id="hips1"><img src="images/mod1/exer3hip1.png"/></span>
+						<span id="hips2"><img src="images/mod1/exer3hip2.png"/></span>
+					</div>
+				</div>
+				<div id="text">
+					<div id="exer3_close">x</div>
+					<h4>Match the Hips</h4>
+					<p>Drag the hip bones and match them to the appropriate dinosaur.</p> 
+					<div class="rewatch button">Rewatch Video</div> 
+				</div>
+			</div>
+		</div>
+        
+		<div id="unlocked">
+			<div id="lock">
+			</div>
+			<div id="console">
+				<div id="text">
+					<div id="unlocked_close">x</div>
+					<h4>You've Completed the Interactives!</h4>
+					You now have access to the locked areas of this module.  Explore images of 
+					different dinosaurs and look at 3d models of the bones you've been learning.  
+					Return to the exhibit hall to explore more of the exhibit.<br />
+				</div>
+			</div>
+		</div>
+		<div id="identification" >
+			<div id="slider" style="width: 900px; height: 450px;"> <!-- for some reason, if these are not inline styles, the js doesn't work */
+	        	<!-- Slides Container -->
+	        	<div u="slides" id="slides" style="cursor: move; position: absolute; left: 0px; top: 0px; width: 900px; height: 450px; overflow: hidden;">
+		            <div id="slide1"><img u="image" src="images/mod1/slides/1.png" /></div>
+		            <div id="slide2"><img u="image" src="images/mod1/slides/2.png" /></div>
+		            <div id="slide3"><img u="image" src="images/mod1/slides/3.png" /></div>
+		            <div id="slide4"><img u="image" src="images/mod1/slides/4.png" /></div>
+		            <div id="slide5"><img u="image" src="images/mod1/slides/5.png" /></div>
+                    <div id="slide6"><img u="image" src="images/mod1/slides/6.png" /></div>
+		            <div id="slide7"><img u="image" src="images/mod1/slides/7.png" /></div>
+		            <div id="slide8"><img u="image" src="images/mod1/slides/8.png" /></div>
+		            <div id="slide9"><img u="image" src="images/mod1/slides/9.png" /></div>
+		            <div id="slide10"><img u="image" src="images/mod1/slides/10.png" /></div>
+				</div><!-- Arrow Left -->
+		        <span u="arrowleft" id="arrowleft" class="jssora03l" style="width: 55px; height: 55px; top: 183px; left: 8px;">
+		        </span>
+		        <!-- Arrow Right -->
+		        <span u="arrowright" id="arrowright" class="jssora03r" style="width: 55px; height: 55px; top: 183px; right: 8px">
+		        </span>
+			</div>
+			<div id="console">
+				<div id="text">
+					<div id="identify_close">x</div>
+					<h4>Dinosaur Identification</h4>
+					Explore the dinosaurs you've learned in this module.  See if you can identify any common traits 
+					among different dinosaurs with the same classifications.<br />
+                    
+				</div>
+			</div>
+		</div>
+		<div id="threeDmodel">
+			<div id="console">
+				<div id="threeDcontent">
+					<div id="threeDclose">x</div>
+					<div id="hips">
+						<div id="hip1">
+							<iframe id="orni_hip" src="https://p3d.in/e/ieD9n/subd" width="100%" height="100%" frameborder="0" seamless allowfullscreen webkitallowfullscreen></iframe>
+						</div>
+						<div id="hip2">
+							<iframe id="sauri_hip" src="https://p3d.in/e/cUZG2/subd" width="100%" height="100%" frameborder="0" seamless allowfullscreen webkitallowfullscreen></iframe>
+						</div>
+					</div>
+				</div>
+				<div id="text">
+					<h4>3D Exploration</h4>
+					Click on the photograph of each hip above to explore it in 3D.  Drag the mouse to rotate the hip, 
+					use the scroll wheel to zoom in and out, and right click to move it around.  Compare the two hips 
+					and look closely at the differences.<br />
+				</div>
+			</div>
+		</div> 
+	</div>
+</div>
+<div id="footer">
+	<div id="show">more</div> copyright &copy; 2014 <span class="highlight">Logos Project</span> | design by <a href="http://www.southern.edu/online" target="_blank">Southern Adventist University</a>
+	<div id="more_info">
+		<div class="cols">
+			3D Models from <a href="http://www.turbosquid.com" target="_blank">TurboSquid</a><br />
+			2D Drawings used with permission from <a href="http://spinops.blogspot.com" target="_blank">N. Tamura</a><br />
+			Audio recorded and produced by <a href="http://www.wsmc.org" target="_blank">WSMC 90.5 FM</a>
+		</div>
+		<div class="cols">
+			3D Design and Rendering by Michael Aldrich<br />
+			Compositing and Video by Lucas Brown<br />
+			Interactive Design and Programming by Ryan Harrell<br />
+		</div>
+		<div class="cols">
+			Project Direction and Information copyright &copy; 2014 Logos Project<br />
+			Project Mangement and Execution by the Online Campus at Southern Adventist University
+		</div>
+	</div>
+</div>
+
+</body>
+</html>
