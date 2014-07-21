@@ -102,11 +102,13 @@ h1, h2, h3, h4, h5, h6 {
 	background-position: bottom center;
 	background-repeat: no-repeat;
 	height:170px;
+	position:relative;
 	z-index: 10 !important;
 }
 #subnav_content {
 	margin:0px auto;
 	padding:11px;
+	position:relative;
 	z-index: 15 !important;
 	clear:none;
 }
@@ -689,11 +691,148 @@ div.blackout {
 #exer3 #text p {
 	margin-top:0px;
 }
+
+/*
+
+################### Interactive for Module 2, Exercise 4 Draft ####################
+
+*/
+
+#exer4 {
+	/* display:none; */
+}
+#exer4 #forest {
+	background-image:url("../images/forest.png");
+	background-position: top center;
+	background-repeat: no-repeat;
+	position: absolute;
+	bottom:130px;
+	left:0px;
+	right:0px;
+}
+#exer4 #dinoImages {
+	width:1000px;
+	height:424px;
+	margin:0px auto;
+	padding-top:90px;
+	padding-left:130px;
+}
+#exer4 #food {
+	padding:42px 262px;
+	color: #333;
+	font-size:45px;
+	text-shadow:0px 0px 8px #000;
+}
+#exer4 #meat {
+	/*something here*/
+}
+#exer4 #leaf {
+	/*something here*/
+}
+#exer4 .dropWord {
+	cursor: move;
+}
+#exer4 #dinoImages #dino1 {
+	background-image:url("../images/ovir-small.png");
+	background-repeat:no-repeat;
+	width:217px;
+	height:162px; 
+	position:relative;
+	top:42px;
+	z-index:5;
+}
+#exer4 #dinoImages #dino2 {
+	background-image:url("../images/ceti.png");
+	background-repeat:no-repeat;
+	width:576px;
+	height:222px;
+	position:relative;
+	top:-182px;
+	left:90px;
+	z-index:4;
+}
+#exer4 #dinoImages #dino3 {
+	background-image:url("../images/plat.png");
+	background-repeat:no-repeat;
+	width:309px;
+	height:159px;
+	position:relative;
+	top:-342px;
+	left:590px;
+	z-index:3;
+}
+#exer4 #dinoImages #dino4 {
+	background-image:url("../images/ceti.png");
+	background-repeat:no-repeat;
+	width:576px;
+	height:222px;
+	position:relative;
+	top:-182px;
+	left:90px;
+	z-index:4;
+}
+#exer4 #dinoImages #dino5 {
+	background-image:url("../images/plat.png");
+	background-repeat:no-repeat;
+	width:309px;
+	height:159px;
+	position:relative;
+	top:-342px;
+	left:590px;
+	z-index:3;
+}
+#exer4 #dino2.success {
+	background-image:url("../images/mod2/ceti-correct.png") !important;
+}
+#exer4 #dino3.success {
+	background-image:url("../images/mod2/plat-correct.png") !important;
+}
+#exer4 #console {
+	height:330px;
+	background-image:url("../images/lowerBG.png");
+	background-position: top center;
+	background-repeat: no-repeat;
+	position: absolute;
+	bottom:0px;
+	right:0px;
+	left:0px;
+}
+#exer4_close {
+	background:rgba(0,0,0,0.3);
+	color:#FFF;
+	border-radius:15px;
+	height:22px;
+	width:22px;
+	text-align: center;
+	float:right;
+	border:2px solid #FFF;
+	cursor: pointer;
+	position: relative;
+	padding:2px;
+	margin-top:-30px;
+	margin-right:-80px;
+	font-size: 16px;
+}
+#exer4 #text {
+	color:#FFF;
+	width:850px;
+	height:50px;
+	margin:116px auto 0px auto;
+	padding:28px 35px;
+	font-size: 20px;
+	clear:both;
+	text-shadow:0px 0px 6px #000;
+}
+#exer4 #text p {
+	margin-top:0px;
+}
+
 /*
 
 ################### Interactive for Module 2, Exercise 5 Draft ####################
 
 */
+
 #exer5 {
 	display:none;
 }
