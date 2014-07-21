@@ -114,7 +114,7 @@ body.module1 #subnav_content {
 	width:57%; /* Ensures margin: 0px auto works and links are centered to page */
 }
 body.module2 #subnav_content {
-	width:53%; /* Ensures margin: 0px auto works and links are centered to page */
+	width:35%; /* Ensures margin: 0px auto works and links are centered to page */
 }
 #subnav a {
 	color:#FFF;
@@ -476,7 +476,7 @@ div.blackout {
 	z-index: 300;
 	width:720px;
 	margin:0px auto;
-	background-image:url("../images/exer2bones.png");
+	background-image:url("../images/mod1/exer2bones.png");
 	background-position:top center;
 	background-repeat:no-repeat;
 	height:400px;
@@ -691,13 +691,13 @@ div.blackout {
 }
 /*
 
-################### Interactive for Module 2, Draft ####################
+################### Interactive for Module 2, Exercise 5 Draft ####################
 
 */
-#exerdraft {
-	/*display:none;*/
+#exer5 {
+	display:none;
 }
-#exerdraft #forest {
+#exer5 #forest {
 	background-image:url("../images/forest.png");
 	background-position: top center;
 	background-repeat: no-repeat;
@@ -706,14 +706,29 @@ div.blackout {
 	left:0px;
 	right:0px;
 }
-#exerdraft #dinoImages {
+#exer5 #dinoImages {
 	width:1000px;
 	height:424px;
 	margin:0px auto;
 	padding-top:90px;
 	padding-left:130px;
 }
-#exerdraft #dinoImages #dino1 {
+#exer5 #food {
+	padding:42px 262px;
+	color: #333;
+	font-size:45px;
+	text-shadow:0px 0px 8px #000;
+}
+#exer5 #meat {
+	/*something here*/
+}
+#exer5 #leaf {
+	/*something here*/
+}
+#exer5 .dropWord {
+	cursor: move;
+}
+#exer5 #dinoImages #dino1 {
 	background-image:url("../images/ovir-small.png");
 	background-repeat:no-repeat;
 	width:217px;
@@ -722,7 +737,7 @@ div.blackout {
 	top:42px;
 	z-index:5;
 }
-#exerdraft #dinoImages #dino2 {
+#exer5 #dinoImages #dino2 {
 	background-image:url("../images/ceti.png");
 	background-repeat:no-repeat;
 	width:576px;
@@ -732,7 +747,7 @@ div.blackout {
 	left:90px;
 	z-index:4;
 }
-#exerdraft #dinoImages #dino3 {
+#exer5 #dinoImages #dino3 {
 	background-image:url("../images/plat.png");
 	background-repeat:no-repeat;
 	width:309px;
@@ -742,16 +757,13 @@ div.blackout {
 	left:590px;
 	z-index:3;
 }
-#exerdraft #dino1.success {
-	background-image:url("../images/mod1/tric-correct.png") !important;
+#exer5 #dino2.success {
+	background-image:url("../images/mod2/ceti-correct.png") !important;
 }
-#exerdraft #dino2.success {
-	background-image:url("../images/mod1/ovir-correct.png") !important;
+#exer5 #dino3.success {
+	background-image:url("../images/mod2/plat-correct.png") !important;
 }
-#exerdraft #dino3.success {
-	background-image:url("../images/mod1/anky-correct.png") !important;
-}
-#exerdraft #console {
+#exer5 #console {
 	height:330px;
 	background-image:url("../images/lowerBG.png");
 	background-position: top center;
@@ -761,7 +773,7 @@ div.blackout {
 	right:0px;
 	left:0px;
 }
-#exerdraft #drawer {
+#exer5 #drawer {
 	background-image:url("../images/drawer.png");
 	background-position: top center;
 	background-repeat: no-repeat;
@@ -770,7 +782,7 @@ div.blackout {
 	width:1110px;
 	margin:-16px auto 0px auto !important;
 }
-#exerdraft_close {
+#exer5_close {
 	background:rgba(0,0,0,0.3);
 	color:#FFF;
 	border-radius:15px;
@@ -786,28 +798,7 @@ div.blackout {
 	margin-right:-80px;
 	font-size: 16px;
 }
-#exerdraft #selectHips {
-	width:390px;
-	margin:0px auto;
-	padding:40px;
-}
-#exerdraft #selectHips #hips1 img {
-	margin-right:200px;
-}
-#exerdraft #words {
-	padding:45px 110px;
-	color: #333;
-	font-size:45px;
-	text-shadow:0px 0px 8px #000;
-}
-#exerdraft #word1 {
-	padding-left:200px;
-	padding-right:80px;
-}
-#exerdraft .dropWord {
-	cursor: move;
-}
-#exerdraft #text {
+#exer5 #text {
 	color:#FFF;
 	width:850px;
 	height:50px;
@@ -817,7 +808,7 @@ div.blackout {
 	clear:both;
 	text-shadow:0px 0px 6px #000;
 }
-#exerdraft #text p {
+#exer5 #text p {
 	margin-top:0px;
 }
 
@@ -1235,7 +1226,7 @@ body {
 	margin-right:-60px;
 }
 #exer2 #options {
-	background-image:url("../images/bones-small.png");
+	background-image:url("../images/mod1/exer2bones-small.png");
 	width:600px;
 	height:260px;
 }

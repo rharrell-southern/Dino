@@ -16,7 +16,7 @@
     </script>
 	<script type="text/javascript" src="js/dino.js"></script>
 	<script type="text/javascript" src="video/functions.js"></script>
-	<script type="text/javascript" src="video/v1subs.js"></script>
+	<script type="text/javascript" src="video/v2subs.js"></script>
 </head>
 
 <body class="module2">
@@ -24,15 +24,14 @@
     <div id="subnav">
         <div id="subnav_content">
             <a href="exhibit" class="active">Exhibit Hall</a><span class="arrow"></span>
-            <a href="video" start="0">Video Title</a><span class="arrow"></span>
-            <a href="video" start="74.5">Exercise Title</a><span class="arrow locked"></span>
-            <a href="identification" class="locked">Locked Exercise</a><span class="arrow locked"></span>
-            <a href="threeDmodel" class="locked">Locked Exercise</a>
+            <a href="video" class="zone1" zone="1">Video Title</a><span class="arrow"></span>
+            <a href="#exerdraft">Exercise Title</a>
+            <a href="#" class="locked">Locked Exercise</a><span class="locked"></span>
         </div>
     </div> 
     <div id="content">
         <div id="exhibit" class="active">
-        	<div id="zone1"><img /></div>
+        	<div id="zone1" zone="1"><img /></div>
             <div id="zone1Hover"><h3>Part 1 - Identification By Hip Bone</h3>
                 <p>Dinosaurs are divided into two categories based on their hip structure.</p>
                 <p><span class="highlight">Click the bone</span> to launch a lesson on identifying Saurishian and Ornithischian hip bones.</p>
@@ -58,7 +57,7 @@
                 </div>
             </div> 
             
-            <div id="exerdraft">
+            <div id="exer5">
                 <div id="forest">
                     <div id="dinoImages">
                         <div id="dino1"></div> 
@@ -68,13 +67,13 @@
                 </div>
                 <div id="console">
                     <div id="drawer">
-                       <div id="words">
-						<span class="dropWord" id="word1">Sauropod</span>
-						<span class="dropWord" id="word2">Theropod</span>
+                        <div id="food">
+						<span class="dropWord" id="meat"></span>
+						<span class="dropWord" id="leaf"></span>
 						</div>
                     </div>
                     <div id="text">
-                        <div id="exerdraft_close">x</div>
+                        <div id="exer5_close">x</div>
                         <h4>Match the Hips</h4>
                         <p>Drag the hip bones and match them to the appropriate dinosaur.</p> 
                         <div class="rewatch button">Rewatch Video</div> 
@@ -129,8 +128,8 @@
             <div id="threeDmodel">
                 <div id="console">
                     <div id="threeDcontent">
-                        <div id="threeDclose">x</div>
-                        <div id="hips">
+                       <div id="threeDclose">x</div>
+                       <div id="hips">
                             <div id="hip1">
                                 <iframe id="orni_hip" src="https://p3d.in/e/ieD9n/subd" width="100%" height="100%" frameborder="0" seamless allowfullscreen webkitallowfullscreen></iframe>
                             </div>
@@ -149,6 +148,7 @@
             </div> 
         </div>
     </div>-->
+    
     <div id="footer">
         <div id="show">more</div> copyright &copy; 2014 <span class="highlight">Logos Project</span> | design by <a href="http://www.southern.edu/online" target="_blank">Southern Adventist University</a>
         <div id="more_info">

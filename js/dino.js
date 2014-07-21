@@ -4,7 +4,7 @@ var hipInterval;
 var hiIsRuning = false;
 var exer1Correct = false;
 var exer2Correct = false;
-var exer3Correct = [0, 0, 0, 0]; /* used to keep track of which dinos have changed in exercise, last digit represents overall completion 3 */
+var exer3Correct = [0, 0, 0, 0]; /* used to keep track of which dinos have changed in exercise, last digit represents overall completion */
 var consoleHeight = '830px'; /* Controls video player container height; Come back and use this instead to adjust */
 var setVideoWidth;
 var setVideoHeight;
@@ -570,4 +570,24 @@ function checkCorrect() {
 				checkCorrect();
 			}
 		})
+		
+		/* Exercise draft for Module 2
+		$("#exerdraft #dino1").droppable({
+			accept:"#meat",
+			drop: function (event, ui) {
+				$("#dino1").addClass("success");
+				exer3Correct[0] = 1;
+				console.log(exer3Correct);
+				checkCorrect();
+			}
+		})
+		$("#exerdraft #dino2").droppable({
+			accept:"#leaf",
+			drop: function (event, ui) {
+				$("#dino2").addClass("success");
+				exer3Correct[1] = 1;
+				console.log(exer3Correct);
+				checkCorrect();
+			}
+		}) */
     });
