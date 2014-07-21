@@ -42,7 +42,7 @@ subs[1][1] = [
   subs[1][2] = [{
               on: '00:00',
                  value: 'Classification',
-                    callback: function(obj) { $('#subnav a').removeClass('active'); $('#subnav a[start="1"]').addClass("active");}
+                    callback: function(obj) { $('#subnav a').removeClass('active'); $('#subnav a[zone="2"]').addClass("active");}
                   
                 },
                 {
