@@ -19,6 +19,7 @@ switch(thisModule) {
 		zones = 2;
 		slides = 10;
         videoPath[1] = 'video/m1.1.mp4';
+        videoPath[2] = 'video/m1.2.mp4';
 		break;
 	case 2:
 		zones = 1;
@@ -31,12 +32,10 @@ switch(thisModule) {
         videoPath[1] = 'video/m3.1.mp4';
 		break;
 	case 4:
-		zones = 4;
+		zones = 2;
 		slides = 10;
-        videoPath[1] = 'video/m4.2.mp4';
-        videoPath[2] = 'video/m4.3.mp4';
-        videoPath[3] = 'video/m4.4.mp4';
-        videoPath[4] = 'video/m4.1.mp4';
+        videoPath[1] = 'video/m4.1.mp4';
+        videoPath[2] = 'video/m4.2.mp4';
 		break;
 	
 	default:
@@ -119,6 +118,7 @@ function toSection(goTo, videoStart) {
     projekktor('player_a').setStop();
     $('#video_captions').html('');
     $('#subnav a').removeClass('active');
+    console.log("Removed Active Class!");
     if (goTo == 'exhibit') {
         clearHipIntervals();
         $('div.blackout').fadeOut();
@@ -277,7 +277,7 @@ function checkCorrect() {
         // Video Player initialization
         projekktor('#player_a', {
             title: "Module 1.1",
-            debug: true,
+            //debug: true,
             poster: 'video/poster.png',
             playerFlashMP4: 'projekktor/swf/StrobeMediaPlayback/StrobeMediaPlayback.swf',
             playerFlashMP3: 'projekktor/swf/StrobeMediaPlayback/StrobeMediaPlayback.swf',
