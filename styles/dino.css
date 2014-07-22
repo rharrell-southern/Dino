@@ -699,10 +699,10 @@ div.blackout {
 */
 
 #exer4 {
-	/* display:none; */
+	/*display:none;*/
 }
 #exer4 #forest {
-	background-image:url("../images/forest.png");
+	background-image:url("../images/forest-raised.png");
 	background-position: top center;
 	background-repeat: no-repeat;
 	position: absolute;
@@ -717,74 +717,49 @@ div.blackout {
 	padding-top:90px;
 	padding-left:130px;
 }
-#exer4 #food {
-	padding:42px 262px;
-	color: #333;
-	font-size:45px;
-	text-shadow:0px 0px 8px #000;
-}
-#exer4 #meat {
-	/*something here*/
-}
-#exer4 #leaf {
-	/*something here*/
-}
-#exer4 .dropWord {
-	cursor: move;
-}
 #exer4 #dinoImages #dino1 {
-	background-image:url("../images/ovir-small.png");
+	background-image:url("../images/mod2/ovir-exer4.png");
 	background-repeat:no-repeat;
-	width:217px;
-	height:162px; 
+	width:163px;
+	height:122px; 
 	position:relative;
-	top:42px;
+	top:80px;
 	z-index:5;
 }
 #exer4 #dinoImages #dino2 {
-	background-image:url("../images/ceti.png");
+	background-image:url("../images/mod2/tric-exer4.png");
 	background-repeat:no-repeat;
-	width:576px;
-	height:222px;
+	width:252px;
+	height:124px;
 	position:relative;
-	top:-182px;
-	left:90px;
+	top:-115px;
+	left:105px;
 	z-index:4;
 }
 #exer4 #dinoImages #dino3 {
-	background-image:url("../images/plat.png");
+	background-image:url("../images/mod2/ceti-exer4.png");
 	background-repeat:no-repeat;
-	width:309px;
-	height:159px;
+	width:452px;
+	height:174px;
 	position:relative;
-	top:-342px;
-	left:590px;
+	top:-350px;
+	left:200px;
 	z-index:3;
 }
 #exer4 #dinoImages #dino4 {
-	background-image:url("../images/ceti.png");
+	background-image:url("../images/mod2/plat-exer4.png");
 	background-repeat:no-repeat;
-	width:576px;
-	height:222px;
+	width:326px;
+	height:168px;
 	position:relative;
-	top:-182px;
-	left:90px;
-	z-index:4;
-}
-#exer4 #dinoImages #dino5 {
-	background-image:url("../images/plat.png");
-	background-repeat:no-repeat;
-	width:309px;
-	height:159px;
-	position:relative;
-	top:-342px;
-	left:590px;
-	z-index:3;
-}
-#exer4 #dino2.success {
-	background-image:url("../images/mod2/ceti-correct.png") !important;
+	top:-423px;
+	left:620px;
+	z-index:2;
 }
 #exer4 #dino3.success {
+	background-image:url("../images/mod2/ceti-correct.png") !important;
+}
+#exer4 #dino4.success {
 	background-image:url("../images/mod2/plat-correct.png") !important;
 }
 #exer4 #console {
@@ -852,20 +827,14 @@ div.blackout {
 	padding-top:90px;
 	padding-left:130px;
 }
-#exer5 #food {
-	padding:42px 262px;
+#exer5 #selectFood {
+	padding:42px 340px;
 	color: #333;
 	font-size:45px;
 	text-shadow:0px 0px 8px #000;
 }
-#exer5 #meat {
-	/*something here*/
-}
-#exer5 #leaf {
-	/*something here*/
-}
-#exer5 .dropWord {
-	cursor: move;
+#exer5 #selectFood #meat img {
+	margin-right:200px;
 }
 #exer5 #dinoImages #dino1 {
 	background-image:url("../images/ovir-small.png");
