@@ -699,7 +699,7 @@ div.blackout {
 */
 
 #exer4 {
-	/*display:none;*/
+	display:none;
 }
 #exer4 #forest {
 	background-image:url("../images/forest-raised.png");

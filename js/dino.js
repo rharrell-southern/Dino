@@ -23,7 +23,7 @@ switch(thisModule) {
 		break;
 	case 2:
 		zones = 1;
-		slides = 10;
+		slides = 0;
         videoPath[1] = 'video/m2.1.mp4';
 		break;
 	case 3:
@@ -302,7 +302,10 @@ function checkCorrect() {
             }
         };
 
-        var jssor_slider1 = new $JssorSlider$("slider", options);
+        if (slides > 0)
+            {
+                var jssor_slider1 = new $JssorSlider$("slider", options);
+            }
 
         //Begin interactive fade pattern
         startHipFade();
