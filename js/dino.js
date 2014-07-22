@@ -8,11 +8,14 @@ var exer3Correct = [0, 0, 0, 0]; /* used to keep track of which dinos have chang
 var consoleHeight = '830px'; /* Controls video player container height; Come back and use this instead to adjust */
 var setVideoWidth;
 var setVideoHeight;
-var videoPath = new Array();
 
 // Set module variables
 var slides;
 var zones;
+var videoPath = new Array();
+var exer4Int;
+
+
 
 switch(thisModule) {
 	case 1:
@@ -20,11 +23,14 @@ switch(thisModule) {
 		slides = 10;
         videoPath[1] = 'video/m1.1.mp4';
         videoPath[2] = 'video/m1.2.mp4';
+        exer4Int = ['null', ['null', 'null']]; //Null for now due to this function being written for module 2. The exer within module 1 will be rewritten so null refs for now.
 		break;
 	case 2:
 		zones = 1;
 		slides = 0;
         videoPath[1] = 'video/m2.1.mp4';
+        exer4Int = ['exer4', ['dino3', 'dino4']];
+
 		break;
 	case 3:
 		zones = 1;
@@ -256,10 +262,24 @@ function checkCorrect() {
         if (exer1Correct && exer2Correct && exer3Correct[3]) {
             $('.locked').removeClass('locked');
             setTimeout(function() {
-                toSection('unlocked'); 
+                toSection('unlocked');
             }, 300); /* Stops the unlocked screen from transitioning to the exer2 again if at 4000...somehow */
 			}
 		}
+
+
+//This function takes in exer name, and an array of correct answers. When a correct option is selected, the success class is applied.
+function clickInteraction(exerData){
+        $('#' + exerData[0] + ' div:nth-child(1) div div').each(function(){
+            $(this).on('click', function(event) {
+                var id = $(this).attr('id');
+                if(exerData[1].indexOf(id) != -1){
+                    $(this).addClass("success");
+                }
+            });
+        });
+}
+
 
     // Start listeners for interactions
     $(function() {
@@ -291,6 +311,7 @@ function checkCorrect() {
 
 
         imageResize();
+        clickInteraction(exer4Int);
 
         var options = {
             $DragOrientation: 3, //[Optional] Orientation to drag slide, 0 no drag, 1 horizental, 2 vertical, 3 either, default value is 1 (Note that the $DragOrientation should be the same as $PlayOrientation when $DisplayPieces is greater than 1, or parking position is not 0)
@@ -347,7 +368,9 @@ function checkCorrect() {
         });
         $('#content').on('click', '.skip', function() {
             if ($('#subnav a.active').attr('zone') == '1') {
-                toSection('exer1');
+                if(thisModule == 1){   
+                    toSection('exer1');
+                }
             } else if ($('#subnav a.active').attr('zone') == '2') {
                 toSection('exer3');
             }
