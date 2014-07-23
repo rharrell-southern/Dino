@@ -7,11 +7,11 @@ body {
 }
 body {
 	margin:0px;
-	font-family: 'Roboto', sans-serif;
+	font-family:'Roboto', sans-serif;
 	background-position:center -46px;
-	background-repeat: no-repeat;
+	background-repeat:no-repeat;
 	background-color:#000;
-	color: #FFF;
+	color:#FFF;
 }
 
 body.module1 {background-image:url("../images/mod1/module1BG.jpg");}
@@ -27,10 +27,10 @@ a {
 	color:#f1cb31;
 }
 .button {
-	font-weight: bold;
+	font-weight:bold;
 	color:#f1cb31;
 	text-shadow:0px 0px 4px #000;
-	cursor: pointer;
+	cursor:pointer;
 	float:right;
 	padding:10px;
 	font-size:18px;
@@ -48,19 +48,20 @@ h1, h2, h3, h4, h5, h6 {
 	margin-bottom:5px;
 	color:#f1cb31;
 }
+
+
 /*
 
 ################### Header Section ####################
 
 */
-
 #header {
-	position: relative;
+	position:relative;
 	height:70px;
 	background-color:#162235;
 	padding:20px;
-	box-shadow: 0px 0px 45px #000;
-	z-index: 999;
+	box-shadow:0px 0px 45px #000;
+	z-index:999;
 }
 #header img {
 	float:left;
@@ -75,16 +76,16 @@ h1, h2, h3, h4, h5, h6 {
 	margin:0px;
 	color:#FFFFFF;
 	font-weight:normal;
-	position: relative;
+	position:relative;
 }
 #header h1 {
-	text-transform: uppercase; 
+	text-transform:uppercase; 
 	font-size:40px;
 	line-height:40px;
 }
 #header h2 {
 	font-size:18px;
-	letter-spacing: 2px;
+	letter-spacing:2px;
 	color:#f1cb31;
 }
 #header a#return {
@@ -99,24 +100,24 @@ h1, h2, h3, h4, h5, h6 {
 */
 #subnav {
 	background-image:url("../images/subnav.png");
-	background-position: bottom center;
-	background-repeat: no-repeat;
+	background-position:bottom center;
+	background-repeat:no-repeat;
 	height:170px;
 	position:relative;
-	z-index: 10 !important;
+	z-index:10 !important;
 }
 #subnav_content {
 	margin:0px auto;
 	padding:11px;
 	position:relative;
-	z-index: 15 !important;
+	z-index:15 !important;
 	clear:none;
 }
 body.module1 #subnav_content {
-	width:57%; /* Ensures margin: 0px auto works and links are centered to page */
+	width:57%; /* Ensures margin:0px auto works and links are centered to page */
 }
 body.module2 #subnav_content {
-	width:35%; /* Ensures margin: 0px auto works and links are centered to page */
+	width:38%; /* Ensures margin:0px auto works and links are centered to page */
 }
 #subnav a {
 	color:#FFF;
@@ -140,8 +141,8 @@ body.module2 #subnav_content {
 	cursor:no-drop;
 	padding-left:22px;
 	background-image:url("../images/small_lock.png");
-	background-position: center left;
-	background-repeat: no-repeat;
+	background-position:center left;
+	background-repeat:no-repeat;
 }
 #subnav span.arrow {
 	width:50px;
@@ -150,7 +151,7 @@ body.module2 #subnav_content {
 	float:left;
 	background-image:url("../images/arrow.png");
 	background-position:center;
-	background-repeat: no-repeat;
+	background-repeat:no-repeat;
 	clear:none;
 	padding:9px 0px;
 }
@@ -158,14 +159,56 @@ body.module2 #subnav_content {
 	background-image:url("../images/arrow_locked.png");
 }
 
+
 /*
 
 ################### Content Section ####################
 
 */
-
+.box {
+	border-radius:25px;
+	border:4px solid #FFF;
+	/*background:rgba(243,204,48,0.85);*/
+	width:160px;
+	height:35px;
+	float:left;
+	font-size:35px;
+	padding:9px 9px 20px 9px;
+	text-align:center;
+	-webkit-transition:box-shadow 0.5s ease-in-out;
+    -moz-transition:box-shadow 0.5s ease-in-out;
+    -o-transition:box-shadow 0.5s ease-in-out;
+    -ms-transition:box-shadow 0.5s ease-in-out;
+    transition:box-shadow 0.5s ease-in-out;
+}
+.close-exer { /* formerly exer#_close */
+	background:rgba(0,0,0,0.3);
+	color:#FFF;
+	border-radius:15px;
+	height:22px;
+	width:22px;
+	text-align:center;
+	float:right;
+	border:2px solid #FFF;
+	cursor:pointer;
+	position:relative;
+	padding:2px;
+	font-size:16px;
+	margin-top:-45px;
+	margin-right:-80px;
+}
+#console {
+	height:330px;
+	background-image:url("../images/lowerBG.png");
+	background-position:top center;
+	background-repeat:no-repeat;
+	position:absolute;
+	bottom:0px;
+	right:0px;
+	left:0px;
+}
 #content {
-	position: absolute;
+	position:absolute;
 	top:0px;
 	right:0px;
 	bottom:0px;
@@ -176,6 +219,66 @@ body.module2 #subnav_content {
 #content p {
 	margin-bottom:0px;
 }
+#dinoImages {
+	position:relative;
+	width:1000px;
+	height:424px;
+	margin:0px auto;
+	padding-top:90px;
+	padding-left:130px;
+}
+#drawer {
+	background-image:url("../images/drawer.png");
+	background-position:top center;
+	background-repeat:no-repeat;
+	position:relative;
+	height:132px !important;
+	width:1110px;
+	margin:-16px auto 0px auto !important;
+}
+#forest {
+	background-image:url("../images/forest.png");
+	background-position:top center;
+	background-repeat:no-repeat;
+	position:absolute;
+	bottom:130px;
+	left:0px;
+	right:0px;
+}
+#forest-raised {
+	background-image:url("../images/forest-raised.png");
+	background-position:top center;
+	background-repeat:no-repeat;
+	position:absolute;
+	bottom:130px;
+	left:0px;
+	right:0px;
+}
+#pond { /* style being changed dynamically for effect */
+	background-image:url("../images/pond.png");
+	background-position:top center;
+	background-repeat:no-repeat;
+	position:relative;
+	opacity:0;
+	height:0px;
+	width:1110px;
+	margin:0px auto;
+	margin-top:115px;
+}
+#text {
+	color:#FFF;
+	width:850px;
+	margin:0px auto;
+	padding:20px 35px;
+	font-size: 20px;
+	display: none;
+	clear:both;
+	text-shadow:0px 0px 6px #000;
+}
+#text p {
+	margin-top:0px;
+}
+
 
 /*
 
@@ -186,18 +289,18 @@ body.module1 #zone1,
 body.module1 #zone2 {
 	width:250px;
 	margin:0px auto;
-	opacity: 0;
+	opacity:0;
 	cursor:pointer;
 }
 body.module1 #zone1 {
-	position: relative;
-	z-index: 350;
+	position:relative;
+	z-index:350;
 	right:408px;
 	top:285px;
 }
 body.module1 #zone2 {
-	position: relative;
-	z-index: 350;
+	position:relative;
+	z-index:350;
 	left:234px;
 	top:8px;
 }
@@ -213,12 +316,12 @@ body.module2 #zone1,
 body.module2 #zone2 {
 	width:250px;
 	margin:0px auto;
-	opacity: 0;
+	opacity:0;
 	cursor:pointer;
 }
 body.module2 #zone1 {
-	position: relative;
-	z-index: 350;
+	position:relative;
+	z-index:350;
 	right:53px;
 	top:310px;
 }
@@ -244,8 +347,8 @@ body.module2 #zone1Hover {
 	color:#f1cb31;
 }
 div.blackout {
-	position: absolute;
-	z-index: -1;
+	position:absolute;
+	z-index:-1;
 	top:0px;
 	right:0px;
 	bottom:0px;
@@ -254,18 +357,18 @@ div.blackout {
 	display:none;
 }
 
+
 /*
 
 ################### Video Section ####################
 
 */
-
 #video_console {
 	background-image:url("../images/lowerBG.png");
-	background-position: top center;
-	background-repeat: no-repeat;
+	background-position:top center;
+	background-repeat:no-repeat;
 	height:0px;
-	position: absolute;
+	position:absolute;
 	bottom:0px;
 	right:0px;
 	left:0px;
@@ -274,450 +377,105 @@ div.blackout {
 	display:none;
 	width:920px;
 	margin:140px auto 0px auto;
-	position: relative;
-	z-index: 100 !important;
+	position:relative;
+	z-index:100 !important;
 }
-#video_close {
+#video_close { /* CHANGE TO CLASS */
 	background:rgba(0,0,0,0.3);
 	color:#FFF;
 	border-radius:15px;
 	height:22px;
 	width:22px;
-	text-align: center;
+	text-align:center;
 	float:right;
 	border:2px solid #FFF;
 	margin-right:-45px;
 	margin-top:-35px;
-	cursor: pointer;
-	position: relative;
+	cursor:pointer;
+	position:relative;
 	padding:2px;
 }
 #video_player {
 	width:918px;
 	height:514px;
 	margin:0px auto;
-	position: relative;
+	position:relative;
 }
 #video_captions {
 	height:70px;
 	color:#fff;
 	text-shadow:0px 0px 4px #000;
-	position: relative;
+	position:relative;
 	padding:20px;
 }
 
-/*
-
-################### Interactives Section ####################
-
-*/
-
-.dropWord {
-}
 
 /*
 
-################### Interactive One Section ####################
+###################### EXERCISE ONE ########################
 
 */
 #exer1 {
 	display:none;
 }
-#exer1 #options {
+body.module1 #exer1 #options {
 	display:none;
 	color:#fff;
-	position: relative;
-	z-index: 300;
+	position:relative;
+	z-index:300;
 	width:700px;
 	margin:0px auto;
 }
-#exer1 #options #section1,
-#exer1 #options #section2 {
+body.module1 #exer1 #option1 { margin-right: 100px; }
+body.module1 #exer1 #option3 { margin-right: 100px; }
+
+body.module1 #exer1 #options #section1,
+body.module1 #exer1 #options #section2 {
 	clear:both;
-	font-size: 55px;
+	font-size:55px;
 }
 
-/* ----- Controls space around dashes for Exercise 1 ----- */
-#exer1 #options #dash-saur-left {
-	padding:0px 30px 0px 102px;
-}
-#exer1 #options #dash-saur-right {
-	padding:0px 30px 0px 102px;
-}
-#exer1 #options #dash-ornith-left {
-	padding:0px 30px 0px 66px;
-}
-#exer1 #options #dash-ornith-right {
-	padding:0px 30px 0px 102px;
-}
-/* -------------------------------------------------------- */
+/* --- Controls space around dashes for Module 1, Exercise 1 --- */
+body.module1 #exer1 #options #dash-saur-left { padding:0px 30px 0px 102px; }
+body.module1 #exer1 #options #dash-saur-right { padding:0px 30px 0px 102px; }
+body.module1 #exer1 #options #dash-ornith-left { padding:0px 30px 0px 66px; }
+body.module1 #exer1 #options #dash-ornith-right { padding:0px 30px 0px 102px; }
+/* -------------------------------------------------------------- */
 
-#exer1 #options .box {
-	border-radius:25px;
-	border:4px solid #FFF;
+body.module1 #exer1 #options .box { 
 	background:rgba(243,204,48,0.85);
-	width:160px;
-	height:35px;
-	float:left;
-	font-size:35px;
-	padding:9px 9px 20px 9px;
-	text-align: center;
-	-webkit-transition:box-shadow 0.5s ease-in-out;
-    -moz-transition:box-shadow 0.5s ease-in-out;
-    -o-transition:box-shadow 0.5s ease-in-out;
-    -ms-transition:box-shadow 0.5s ease-in-out;
-    transition:box-shadow 0.5s ease-in-out;
 }
-#exer1 #options .spacer {
-	float:left;
-	padding:0px 45px;
-}
-#exer1 #console {
-	height:330px;
-	background-image:url("../images/lowerBG.png");
-	background-position: top center;
-	background-repeat: no-repeat;
-	position: absolute;
-	bottom:0px;
-	right:0px;
-	left:0px;
-}
-#exer1_close {
-	background:rgba(0,0,0,0.3);
-	color:#FFF;
-	border-radius:15px;
-	height:22px;
-	width:22px;
-	text-align: center;
-	float:right;
-	border:2px solid #FFF;
-	margin-top:-45px;
-	margin-right:-80px;
-	cursor: pointer;
-	position: relative;
-	font-size: 16px;
-	padding:2px;
-}
-#exer1 #pond {
-	background-image:url("../images/pond.png");
-	background-position: top center;
-	background-repeat: no-repeat;
-	position: relative;
-	opacity: 0;
-	height: 0px;
-	width:1110px;
-	margin:0px auto;
-	margin-top:115px;
-}
-#exer1 #words {
+body.module1 #exer1 .selectWords { /* make sure to change "words" to "selectWords" in JS */
+	font-size:60px;
 	padding-top:200px;
-	display:none;
-}
-#exer1 #words .spacer {
-	float:left;
-	padding:10px 95px;
-}
-#exer1 .dropWord {
 	color:#f1cb31;
-	float:left;
 	text-shadow:0px 0px 6px rgba(0,0,0,0.6);
-	cursor: move;
+	/*display:none;*/
 }
-#exer1 .dropWord:nth-child(2) {
-	font-size: 60px;
-	padding-bottom:20px;
-	transform:rotate(17deg);
-	-ms-transform:rotate(17deg); /* IE 9 */
-	-webkit-transform:rotate(17deg); /* Opera, Chrome, and Safari */
-
-}
-#exer1 .dropWord:nth-child(4) {
-	font-size: 48px;
-	padding-bottom:30px;
+body.module1 #exer1 #word1 {
+	cursor:move;
 	transform:rotate(-17deg);
 	-ms-transform:rotate(-17deg); /* IE 9 */
 	-webkit-transform:rotate(-17deg); /* Opera, Chrome, and Safari */
-
+	padding-left:200px;
+	padding-right:160px;
 }
-#exer1 .dropWord:nth-child(6) {
-	font-size: 55px;
-	padding-top:20px;
-	padding-bottom:20px;
-	transform:rotate(-8deg);
-	-ms-transform:rotate(-8deg); /* IE 9 */
-	-webkit-transform:rotate(-8deg); /* Opera, Chrome, and Safari */
+body.module1 #exer1 #word2 {
+	cursor:move;
+	transform:rotate(17deg);
+	-ms-transform:rotate(17deg); /* IE 9 */
+	-webkit-transform:rotate(17deg); /* Opera, Chrome, and Safari */
+	padding-right:160px;
 }
-#exer1 #text {
-	color:#FFF;
-	width:850px;
-	height:50px;
-	margin:0px auto;
-	padding:20px 35px;
-	font-size: 20px;
-	display: none;
-	clear:both;
-	text-shadow:0px 0px 6px #000;
-}
-#exer1 #text p {
-	margin-top:0px;
+body.module1 #exer1 #word3 {
+	cursor:move;
+	transform:rotate(-17deg);
+	-ms-transform:rotate(-17deg); /* IE 9 */
+	-webkit-transform:rotate(-17deg); /* Opera, Chrome, and Safari */
 }
 
-/*
-
-################### Interactive Two Section ####################
-
-*/
-
-#exer2 {
-	display:none;
-}
-#exer2 #options {
-	display:none;
-	color:#333;
-	position: relative;
-	z-index: 300;
-	width:720px;
-	margin:0px auto;
-	background-image:url("../images/mod1/exer2bones.png");
-	background-position:top center;
-	background-repeat:no-repeat;
-	height:400px;
-}
-#exer2 #options .box {
-	border-radius:10px;
-	border:4px solid #FFF;
-	background:rgba(253,246,229,0.85);
-	width:160px;
-	height:35px;
-	float:left;
-	font-size:35px;
-	padding:9px 9px 20px 9px;
-	text-align: center;    
-	-webkit-transition:box-shadow 0.5s ease-in-out;
-    -moz-transition:box-shadow 0.5s ease-in-out;
-    -o-transition:box-shadow 0.5s ease-in-out;
-    -ms-transition:box-shadow 0.5s ease-in-out;
-    transition:box-shadow 0.5s ease-in-out;
-
-}
-#exer2 #options .box:nth-child(2) {
-	position: relative;
-	top:180px;
-	left:360px;
-}
-#exer2 #options .box:nth-child(3) {
-	position: relative;
-	top:240px;
-	right:330px;
-}
-#exer2 #console {
-	height:330px;
-	background-image:url("../images/lowerBG.png");
-	background-position: top center;
-	background-repeat: no-repeat;
-	position: absolute;
-	bottom:0px;
-	right:0px;
-	left:0px;
-}
-#exer2 #drawer {
-	background-image:url("../images/drawer.png");
-	background-position: top center;
-	background-repeat: no-repeat;
-	position: relative;
-	height: 132px !important;
-	width:1110px;
-	margin:-16px auto 0px auto !important;
-}
-#exer2 #drawer #words {
-	display: none;
-	padding:45px 110px;
-	color: #333;
-	font-size:45px;
-	text-shadow:0px 0px 8px #000;
-}
-#exer2 #drawer #words .spacer {
-	padding:0px 65px;
-}
-#exer2 .dropWord {
-	cursor: move;
-}
-#exer2_close {
-	background:rgba(0,0,0,0.3);
-	color:#FFF;
-	border-radius:15px;
-	height:22px;
-	width:22px;
-	text-align: center;
-	float:right;
-	border:2px solid #FFF;
-	cursor: pointer;
-	position: relative;
-	padding:2px;
-	margin-top:-30px;
-	margin-right:-80px;
-	font-size: 16px;
-}
-#exer2 #text {
-	color:#FFF;
-	width:850px;
-	margin:0px auto;
-	padding:28px 35px;
-	font-size: 20px;
-	display: none;
-	clear:both;
-	text-shadow:0px 0px 6px #000;
-}
-#exer2 #text p {
-	margin-top:0px;
-}
-
-/*
-
-################### Interactive Three Section ####################
-
-*/
-
-#exer3 {
-	display:none;
-}
-#exer3 #forest {
-	background-image:url("../images/forest.png");
-	background-position: top center;
-	background-repeat: no-repeat;
-	position: absolute;
-	bottom:130px;
-	left:0px;
-	right:0px;
-}
-#exer3 #dinoImages {
-	width:1000px;
-	height:424px;
-	margin:0px auto;
-	padding-top:90px;
-	padding-left:130px;
-}
-#exer3 #dinoImages #dino1 {
-	background-image:url("../images/tric.png");
-	background-repeat:no-repeat;
-	width:267px;
-	height:131px; 
-	position:relative;
-	top:72px;
-	z-index:5;
-}
-#exer3 #dinoImages #dino2 {
-	background-image:url("../images/ovir.png");
-	background-repeat:no-repeat;
-	width:285px;
-	height:213px;
-	position:relative;
-	top:-142px;
-	left:290px;
-	z-index:4;
-}
-#exer3 #dinoImages #dino3 {
-	background-image:url("../images/anky.png");
-	background-repeat:no-repeat;
-	width:318px;
-	height:106px;
-	position:relative;
-	top:-250px;
-	left:590px;
-	z-index:3;
-}
-#exer3 #dino1.success {
-	background-image:url("../images/mod1/tric-correct.png") !important;
-}
-#exer3 #dino2.success {
-	background-image:url("../images/mod1/ovir-correct.png") !important;
-}
-#exer3 #dino3.success {
-	background-image:url("../images/mod1/anky-correct.png") !important;
-}
-#exer3 #console {
-	height:330px;
-	background-image:url("../images/lowerBG.png");
-	background-position: top center;
-	background-repeat: no-repeat;
-	position: absolute;
-	bottom:0px;
-	right:0px;
-	left:0px;
-}
-#exer3 #drawer {
-	background-image:url("../images/drawer.png");
-	background-position: top center;
-	background-repeat: no-repeat;
-	position: relative;
-	height: 132px !important;
-	width:1110px;
-	margin:-16px auto 0px auto !important;
-}
-#exer3_close {
-	background:rgba(0,0,0,0.3);
-	color:#FFF;
-	border-radius:15px;
-	height:22px;
-	width:22px;
-	text-align: center;
-	float:right;
-	border:2px solid #FFF;
-	cursor: pointer;
-	position: relative;
-	padding:2px;
-	margin-top:-30px;
-	margin-right:-80px;
-	font-size: 16px;
-}
-#exer3 #selectHips {
-	width:390px;
-	margin:0px auto;
-	padding:40px;
-}
-#exer3 #selectHips #hips1 img {
-	margin-right:200px;
-}
-#exer3 #text {
-	color:#FFF;
-	width:850px;
-	height:50px;
-	margin:0px auto;
-	padding:28px 35px;
-	font-size: 20px;
-	clear:both;
-	text-shadow:0px 0px 6px #000;
-}
-#exer3 #text p {
-	margin-top:0px;
-}
-
-/*
-
-################### Interactive for Module 2, Exercise 4 Draft ####################
-
-*/
-
-#exer4 {
-	display:none;
-}
-#exer4 #forest {
-	background-image:url("../images/forest-raised.png");
-	background-position: top center;
-	background-repeat: no-repeat;
-	position: absolute;
-	bottom:130px;
-	left:0px;
-	right:0px;
-}
-#exer4 #dinoImages {
-	width:1000px;
-	height:424px;
-	margin:0px auto;
-	padding-top:90px;
-	padding-left:130px;
-}
-#exer4 #dinoImages #dino1 {
+/* ----------------- Exercise 1 for Module 2 ------------------- */
+body.module2 #exer1 #dino1 {
 	background-image:url("../images/mod2/ovir-exer4.png");
 	background-repeat:no-repeat;
 	width:163px;
@@ -726,7 +484,7 @@ div.blackout {
 	top:80px;
 	z-index:5;
 }
-#exer4 #dinoImages #dino2 {
+body.module2 #exer1 #dino2 {
 	background-image:url("../images/mod2/tric-exer4.png");
 	background-repeat:no-repeat;
 	width:252px;
@@ -736,7 +494,7 @@ div.blackout {
 	left:105px;
 	z-index:4;
 }
-#exer4 #dinoImages #dino3 {
+body.module2 #exer1 #dino3 {
 	background-image:url("../images/mod2/ceti-exer4.png");
 	background-repeat:no-repeat;
 	width:452px;
@@ -746,7 +504,7 @@ div.blackout {
 	left:200px;
 	z-index:3;
 }
-#exer4 #dinoImages #dino4 {
+body.module2 #exer1 #dino4 {
 	background-image:url("../images/mod2/plat-exer4.png");
 	background-repeat:no-repeat;
 	width:326px;
@@ -756,87 +514,78 @@ div.blackout {
 	left:620px;
 	z-index:2;
 }
-#exer4 #dino3.success {
+body.module2 #exer1 #dino3.success {
 	background-image:url("../images/mod2/ceti-correct.png") !important;
 }
-#exer4 #dino4.success {
+body.module2 #exer1 #dino4.success {
 	background-image:url("../images/mod2/plat-correct.png") !important;
 }
-#exer4 #console {
-	height:330px;
-	background-image:url("../images/lowerBG.png");
-	background-position: top center;
-	background-repeat: no-repeat;
-	position: absolute;
-	bottom:0px;
-	right:0px;
-	left:0px;
-}
-#exer4_close {
-	background:rgba(0,0,0,0.3);
-	color:#FFF;
-	border-radius:15px;
-	height:22px;
-	width:22px;
-	text-align: center;
-	float:right;
-	border:2px solid #FFF;
-	cursor: pointer;
-	position: relative;
-	padding:2px;
-	margin-top:-30px;
-	margin-right:-80px;
-	font-size: 16px;
-}
-#exer4 #text {
-	color:#FFF;
-	width:850px;
-	height:50px;
-	margin:116px auto 0px auto;
-	padding:28px 35px;
-	font-size: 20px;
-	clear:both;
-	text-shadow:0px 0px 6px #000;
-}
-#exer4 #text p {
-	margin-top:0px;
-}
+
 
 /*
 
-################### Interactive for Module 2, Exercise 5 Draft ####################
+###################### EXERCISE TWO ########################
 
 */
-
-#exer5 {
+#exer2 {
 	display:none;
 }
-#exer5 #forest {
-	background-image:url("../images/forest.png");
-	background-position: top center;
-	background-repeat: no-repeat;
-	position: absolute;
-	bottom:130px;
-	left:0px;
-	right:0px;
-}
-#exer5 #dinoImages {
-	width:1000px;
-	height:424px;
+body.module1 #exer2 #options {
+	display:none;
+	color:#333;
+	position:relative;
+	z-index:300;
+	width:720px;
 	margin:0px auto;
-	padding-top:90px;
-	padding-left:130px;
+	background-image:url("../images/mod1/exer2bones.png");
+	background-position:top center;
+	background-repeat:no-repeat;
+	height:400px;
 }
-#exer5 #selectFood {
-	padding:42px 340px;
-	color: #333;
+body.module1 #exer2 #options .box {
+	background:rgba(253,246,229,0.85);
+}
+body.module1 #exer2 #options .box:nth-child(2) {
+	position:relative;
+	top:180px;
+	left:360px;
+}
+body.module1 #exer2 #options .box:nth-child(3) {
+	position:relative;
+	top:240px;
+	right:330px;
+}
+body.module1 #exer2 .selectWords {
+	/*display:none;*/
+	padding:45px 110px;
+	color:#333;
 	font-size:45px;
 	text-shadow:0px 0px 8px #000;
 }
-#exer5 #selectFood #meat img {
+body.module1 #exer2 #word1 {
+	cursor:move;
+	padding-left:80px;
+	padding-right:160px;
+}
+body.module1 #exer2 #word2 {
+	cursor:move;
+	padding-right:160px;
+}
+body.module1 #exer2 #word3 {
+	cursor:move;
+}
+
+/* ----------------- Exercise 2 for Module 2 ------------------- */
+body.module2 #exer2 #selectFood {
+	padding:42px 340px;
+	color:#333;
+	font-size:45px;
+	text-shadow:0px 0px 8px #000;
+}
+body.module2 #exer2 #selectFood #meat img {
 	margin-right:200px;
 }
-#exer5 #dinoImages #dino1 {
+body.module2 #exer2 #dino1 {
 	background-image:url("../images/ovir-small.png");
 	background-repeat:no-repeat;
 	width:217px;
@@ -845,7 +594,7 @@ div.blackout {
 	top:42px;
 	z-index:5;
 }
-#exer5 #dinoImages #dino2 {
+body.module2 #exer2 #dino2 {
 	background-image:url("../images/ceti.png");
 	background-repeat:no-repeat;
 	width:576px;
@@ -855,7 +604,7 @@ div.blackout {
 	left:90px;
 	z-index:4;
 }
-#exer5 #dinoImages #dino3 {
+body.module2 #exer2 #dino3 {
 	background-image:url("../images/plat.png");
 	background-repeat:no-repeat;
 	width:309px;
@@ -865,67 +614,75 @@ div.blackout {
 	left:590px;
 	z-index:3;
 }
-#exer5 #dino2.success {
+body.module2 #exer2 #dino2.success {
 	background-image:url("../images/mod2/ceti-correct.png") !important;
 }
-#exer5 #dino3.success {
+body.module2 #exer2 #dino3.success {
 	background-image:url("../images/mod2/plat-correct.png") !important;
 }
-#exer5 #console {
-	height:330px;
-	background-image:url("../images/lowerBG.png");
-	background-position: top center;
-	background-repeat: no-repeat;
-	position: absolute;
-	bottom:0px;
-	right:0px;
-	left:0px;
+
+
+/*
+
+##################### EXERCISE THREE ########################
+
+*/
+#exer3 {
+	display:none;
 }
-#exer5 #drawer {
-	background-image:url("../images/drawer.png");
-	background-position: top center;
-	background-repeat: no-repeat;
-	position: relative;
-	height: 132px !important;
-	width:1110px;
-	margin:-16px auto 0px auto !important;
+body.module1 #exer3 #dino1 {
+	background-image:url("../images/tric.png");
+	background-repeat:no-repeat;
+	width:267px;
+	height:131px; 
+	position:relative;
+	top:72px;
+	z-index:5;
 }
-#exer5_close {
-	background:rgba(0,0,0,0.3);
-	color:#FFF;
-	border-radius:15px;
-	height:22px;
-	width:22px;
-	text-align: center;
-	float:right;
-	border:2px solid #FFF;
-	cursor: pointer;
-	position: relative;
-	padding:2px;
-	margin-top:-30px;
-	margin-right:-80px;
-	font-size: 16px;
+body.module1 #exer3 #dino2 {
+	background-image:url("../images/ovir.png");
+	background-repeat:no-repeat;
+	width:285px;
+	height:213px;
+	position:relative;
+	top:-142px;
+	left:290px;
+	z-index:4;
 }
-#exer5 #text {
-	color:#FFF;
-	width:850px;
-	height:50px;
+body.module1 #exer3 #dino3 {
+	background-image:url("../images/anky.png");
+	background-repeat:no-repeat;
+	width:318px;
+	height:106px;
+	position:relative;
+	top:-250px;
+	left:590px;
+	z-index:3;
+}
+body.module1 #exer3 #dino1.success {
+	background-image:url("../images/mod1/tric-correct.png") !important;
+}
+body.module1 #exer3 #dino2.success {
+	background-image:url("../images/mod1/ovir-correct.png") !important;
+}
+body.module1 #exer3 #dino3.success {
+	background-image:url("../images/mod1/anky-correct.png") !important;
+}
+body.module1 #exer3 #selectHips {
+	width:390px;
 	margin:0px auto;
-	padding:28px 35px;
-	font-size: 20px;
-	clear:both;
-	text-shadow:0px 0px 6px #000;
+	padding:40px;
 }
-#exer5 #text p {
-	margin-top:0px;
+body.module1 #exer3 #selectHips #hips1 img {
+	margin-right:200px;
 }
+
 
 /*
 
 ################### Unlock Section ####################
 
 */
-
 #unlocked {
 	display:none;
 }
@@ -939,14 +696,14 @@ div.blackout {
     transition:background 0.5s ease-in-out;
 	background-image:url("../images/locked.png");
 	background-position:bottom center;
-	background-repeat: no-repeat;
+	background-repeat:no-repeat;
 }
 #unlocked #console {
 	height:330px;
 	background-image:url("../images/lowerBG.png");
-	background-position: top center;
-	background-repeat: no-repeat;
-	position: absolute;
+	background-position:top center;
+	background-repeat:no-repeat;
+	position:absolute;
 	bottom:0px;
 	right:0px;
 	left:0px;
@@ -957,42 +714,42 @@ div.blackout {
 	border-radius:15px;
 	height:22px;
 	width:22px;
-	text-align: center;
+	text-align:center;
 	float:right;
 	border:2px solid #FFF;
-	cursor: pointer;
-	position: relative;
+	cursor:pointer;
+	position:relative;
 	padding:2px;
 	margin-top:-40px;
 	margin-right:-80px;
-	font-size: 16px;
+	font-size:16px;
 }
 #unlocked #console #text {
 	color:#FFF;
 	width:850px;
 	margin:0px auto;
 	padding:20px 35px;
-	font-size: 22px;
-	display: none;
+	font-size:22px;
+	display:none;
 	clear:both;
 	text-shadow:0px 0px 6px #000;
 	margin-top:125px;
 }
+
 
 /*
 
 ################### Slides Section ####################
 
 */
-
 #identification {
 	display:none;
 }
 #identification #slider {
 	display:none;
-	position: relative; 
-	top: 0px; 
-	left: 0px;
+	position:relative; 
+	top:0px; 
+	left:0px;
     margin:0px auto;
 }
 #identification #slides {
@@ -1013,25 +770,25 @@ div.blackout {
 */
 .jssora03l, .jssora03r, .jssora03ldn, .jssora03rdn
 {
-	position: absolute;
-	cursor: pointer;
-	display: block;
-    background: url(../images/a03.png) no-repeat;
+	position:absolute;
+	cursor:pointer;
+	display:block;
+    background:url(../images/a03.png) no-repeat;
     overflow:hidden;
 }
-.jssora03l { background-position: -3px -33px; }
-.jssora03r { background-position: -63px -33px; }
-.jssora03l:hover { background-position: -123px -33px; }
-.jssora03r:hover { background-position: -183px -33px; }
-.jssora03ldn { background-position: -243px -33px; }
-.jssora03rdn { background-position: -303px -33px; }
+.jssora03l { background-position:-3px -33px; }
+.jssora03r { background-position:-63px -33px; }
+.jssora03l:hover { background-position:-123px -33px; }
+.jssora03r:hover { background-position:-183px -33px; }
+.jssora03ldn { background-position:-243px -33px; }
+.jssora03rdn { background-position:-303px -33px; }
 
 #identification #console {
 	height:330px;
 	background-image:url("../images/lowerBG.png");
-	background-position: top center;
-	background-repeat: no-repeat;
-	position: absolute;
+	background-position:top center;
+	background-repeat:no-repeat;
+	position:absolute;
 	bottom:0px;
 	right:0px;
 	left:0px;
@@ -1042,43 +799,43 @@ div.blackout {
 	border-radius:15px;
 	height:22px;
 	width:22px;
-	text-align: center;
+	text-align:center;
 	float:right;
 	border:2px solid #FFF;
-	cursor: pointer;
-	position: relative;
+	cursor:pointer;
+	position:relative;
 	padding:2px;
 	margin-top:-40px;
 	margin-right:-80px;
-	font-size: 16px;
+	font-size:16px;
 }
 #identification #console #text {
 	color:#FFF;
 	width:850px;
 	margin:0px auto;
 	padding:20px 35px;
-	font-size: 22px;
-	display: none;
+	font-size:22px;
+	display:none;
 	clear:both;
 	text-shadow:0px 0px 6px #000;
 	margin-top:125px;
 }
+
 
 /*
 
 ################### 3-D Section ####################
 
 */
-
 #threeDmodel {
-	display: none;
+	display:none;
 }
 #threeDmodel #console {
 	background-image:url("../images/lowerBG.png");
-	background-position: top center;
-	background-repeat: no-repeat;
+	background-position:top center;
+	background-repeat:no-repeat;
 	height:0px;
-	position: absolute;
+	position:absolute;
 	bottom:0px;
 	right:0px;
 	left:0px;
@@ -1088,8 +845,8 @@ div.blackout {
 	padding:20px;
 	margin:0px auto;
 	margin-top:115px;
-	position: relative;
-	z-index: 100 !important;
+	position:relative;
+	z-index:100 !important;
 	height:514px;
 }
 #threeDclose {
@@ -1099,13 +856,13 @@ div.blackout {
 	border-radius:15px;
 	height:22px;
 	width:22px;
-	text-align: center;
+	text-align:center;
 	float:right;
 	border:2px solid #FFF;
 	margin-top:-35px;
 	margin-right:-35px;
-	cursor: pointer;
-	position: relative;
+	cursor:pointer;
+	position:relative;
 	padding:2px;
 }
 #hips {
@@ -1116,23 +873,24 @@ div.blackout {
 	float:left;
 	width:50%;
 	height:514px;
-	cursor: pointer;
+	cursor:pointer;
 }
 #threeDmodel #console #text {
 	color:#FFF;
 	width:850px;
 	margin:0px auto;
 	padding:0px 35px;
-	display: none;
+	display:none;
 	clear:both;
 	text-shadow:0px 0px 6px #000;
 }
+
+
 /*
 
 ################### Footer Section ####################
 
 */
-
 #footer {
 	position:absolute;
 	background-color:#162235;
@@ -1141,23 +899,23 @@ div.blackout {
 	left:0px;
 	padding:15px;
 	color:#FFF;
-	font-size: 12px;
-	box-shadow: 0px 0px 45px #000;
-	z-index: 1000;
-	min-width: 1200px;
+	font-size:12px;
+	box-shadow:0px 0px 45px #000;
+	z-index:1000;
+	min-width:1200px;
 }
 #show {
 	float:right;
 	cursor:pointer;
 	padding-right:25px;
-	background-image: url("../images/up.png");
-	background-position: center right;
-	background-repeat: no-repeat;
-	font-weight: bold;
+	background-image:url("../images/up.png");
+	background-position:center right;
+	background-repeat:no-repeat;
+	font-weight:bold;
 	color:#f1cb31;
 }
 #show.up {
-	background-image: url("../images/down.png");
+	background-image:url("../images/down.png");
 }
 #footer #more_info {
 	display:none;
@@ -1168,27 +926,20 @@ div.blackout {
 	width:33.3%;
 }
 
+
 /*
 
 ################### Adaptablitiy Section ######################
 
 */
 @media screen and (max-width:1200px), all and (max-height:850px) {
-/* Photoshop re-size number: 65.32% */
-body {
+/* Photoshop re-size number:65.32% */
+body.module1 {
 	background-image:url("../images/mod1/module1BG-small.jpg");
 	background-position:center 50px;
 }
-#subnav {
-	height:115px;
-}
-#subnav_content {
-	width:815px; /* Ensures margin: 0px auto works and links are centered to page */
-}
-#subnav a {
-	font-size:72%;
-	margin:0px 9px;
-}
+
+/*--------------------- Header Section ----------------------*/
 #header {
 	height:62px;
 }
@@ -1200,11 +951,65 @@ body {
 	position:relative;
 	top:-20px;
 }
-#zone1 {
+
+/*--------------------- Subnav Section ---------------------*/
+body.module1 #subnav_content {
+	width:815px; /* Ensures margin:0px auto works and links are centered to page */
+}
+#subnav {
+	height:165px;
+}
+#subnav a {
+	font-size:72%;
+	margin:0px 9px;
+}
+
+/*-------------------- Content Section ---------------------*/
+.box {
+	width:130px;
+	height:25px;
+	padding:9px 9px 18px 9px;
+	font-size:28px;
+}
+#close-exer {
+	margin-top:-50px;
+	margin-right:-60px;
+}
+#console {
+	height:310px;
+	background-image:url("../images/lowerBG-small.png");
+}
+#dinoImages {
+	width:772px;
+	height:228px;
+	top:-13px;
+}
+#drawer {
+	background-image:url("../images/drawer-small.png");
+	height: 132px !important;
+	width:772px;
+	margin:-20px auto 0px auto !important;
+}
+#forest {
+	background-image:url("../images/forest-small.png");
+	bottom:230px;
+}
+#pond {
+	background-image:url("../images/pond-small.png");
+	margin-top:-125px !important;
+	height:220px !important;
+}
+#text {
+	font-size:18px;
+	width:650px;
+}
+
+/*------------------ Exhibit Hall Section ------------------*/
+body.module1 #zone1 {
 	right:222px;
 	top:198px;
 }
-#zone2 {
+body.module1 #zone2 {
 	left:197px;
 	top:15px;
 }
@@ -1218,20 +1023,22 @@ body {
 #zone2Hover p {
 	font-size:85%;
 }
-#zone1Hover {
+body.module1 #zone1Hover {
 	top:-20px;
 	left:-60px;
 }
-#zone2Hover {
+body.module1 #zone2Hover {
 	top:-250px;
 	right:100px;
 }
+
+/*-------------------- Video Section --------------------*/
 #video_console {
 	background-image:url("../images/lowerBG-small.png");
-	background-position: top center;
-	background-repeat: no-repeat;
+	background-position:top center;
+	background-repeat:no-repeat;
 	height:0px;
-	position: absolute;
+	position:absolute;
 	right:0px;
 	left:0px;
 	/*top:20px; Remove, makes console show up from the top, not the bottom */
@@ -1240,8 +1047,8 @@ body {
 	display:none;
 	width:680px; /* Won't adjust video, since it's height is determined in projekktor, dino.js */
 	margin:110px auto 0px auto;
-	position: relative;
-	z-index: 100 !important;
+	position:relative;
+	z-index:100 !important;
 }
 #video_close {
 	background:rgba(0,0,0,0.3);
@@ -1249,213 +1056,127 @@ body {
 	border-radius:15px;
 	height:22px;
 	width:22px;
-	text-align: center;
+	text-align:center;
 	float:right;
 	border:2px solid #FFF;
 	margin-right:-35px;
-	cursor: pointer;
-	position: relative;
+	cursor:pointer;
+	position:relative;
 	padding:2px;
 }
 #video_player {
 	width:680px;
 	height:390px;
 	margin:0px auto;
-	position: relative;
+	position:relative;
 }
 #video_captions {
 	height:70px;
 	color:#fff;
 	text-shadow:0px 0px 4px #000;
-	position: relative;
+	position:relative;
 	padding:20px;
 }
-#exer1 #console {
-	height:310px;
-	background-image:url("../images/lowerBG-small.png");
+
+/*---------------- Exercise 1, Module 1 Section ---------------*/
+body.module1 #exer1 .selectWords {
+	font-size:40px;
+	padding-top:140px;
+	padding-left:80px;
 }
-#exer1 #text {
-	font-size:18px;
-	width:650px;
+body.module1 #exer1 #word1 {
+	padding-right:140px;
 }
-#exer1 #pond {
-	background-image:url("../images/pond-small.png");
-	margin-top:-125px !important;
-	height:220px !important;
+body.module1 #exer1 #word2 {
+	padding-right:140px;
 }
-#exer1 #words {
-	padding-top:115px;
-	padding-left:110px;
-}
-#exer1 #words .spacer {
-	padding:20px 70px;
-}
-#exer1 .dropWord:nth-child(2),
-#exer1 .dropWord:nth-child(4),
-#exer1 .dropWord:nth-child(6) {
-	position:relative;
-	font-size:42px;
-	top:16px;
-	left:25px;
-}
-#exer1 #options {
+body.module1 #exer1 #options {
 	width:643px;
 	left:50px;
 	top:-50px;
 }
-#exer1 #options #section1,
-#exer1 #options #section2 {
+body.module1 #exer1 #options #section1,
+body.module1 #exer1 #options #section2 {
 	font-size:40px;
 }
-#exer1 #options .box {
-	width:130px;
-	height:25px;
-	padding:9px 9px 18px 9px;
-	font-size:28px;
-}
 
-/* ----- Controls space around dashes for Exercise 1 ----- */
-#exer1 #options #dash-saur-left {
-	padding:0px 35px 0px 107px;
-}
-#exer1 #options #dash-saur-right {
-	padding:0px 40px 0px 102px;
-}
-#exer1 #options #dash-ornith-left {
-	padding:0px 35px 0px 80px;
-}
-#exer1 #options #dash-ornith-right {
-	padding:0px 40px 0px 102px;
-}
-/* -------------------------------------------------------- */
+#dash-saur-left { padding:0px 35px 0px 107px; }
+#dash-saur-right { padding:0px 40px 0px 102px; }
+#dash-ornith-left { padding:0px 35px 0px 80px; }
+#dash-ornith-right { padding:0px 40px 0px 102px; }
 
-#exer1_close {
-	margin-top:-50px;
-	margin-right:-60px;
-}
-#exer2 #options {
+/*---------------- Exercise 2 Module 1 Section ---------------*/
+body.module1 #exer2 #options {
 	background-image:url("../images/mod1/exer2bones-small.png");
 	width:600px;
 	height:260px;
 }
-#exer2 #options .box {
-	width:130px;
-	height:25px;
-	padding:9px 9px 18px 9px;
-	font-size:28px;
-}
-#exer2 #options .box:nth-child(1) {
+body.module1 #exer2 #options .box:nth-child(1) {
 	position:relative;
 	top:-20px;
 	left:30px;
 }
-#exer2 #options .box:nth-child(2) {
-	position: relative;
+body.module1 #exer2 #options .box:nth-child(2) {
+	position:relative;
 	top:110px;
 	left:270px;
 }
-#exer2 #options .box:nth-child(3) {
-	position: relative;
+body.module1 #exer2 #options .box:nth-child(3) {
+	position:relative;
 	top:170px;
 	right:240px;
 }
-#exer2 #console {
-	height:310px;
-	background-image:url("../images/lowerBG-small.png");
-}
-#exer2 #text {
-	font-size:18px;
-	width:650px;
-}
-#exer2 #drawer {
-	height:120px !important;
-	margin-top:-19px !important;
-	background-image:url("../images/drawer-small.png");
-}
-#exer2 #drawer #words {
+body.module1 #exer2 .selectWords {
 	font-size:34px;
-	padding:35px 150px;
+	padding:35px 128px;
 }
-#exer2_close {
-	margin-top:-50px;
-	margin-right:-60px;
+body.module1 #exer2 #word1 { 
+	padding-left:0px;
+	padding-right:110px; 
 }
-#exer3 #forest {
-	background-image:url("../images/forest-small.png");
-	bottom:230px;
+body.module1 #exer2 #word2 {
+	padding-right:110px;
 }
-#exer3 #dinoImages {
-	width:772px;
-	height:228px;
-	margin:0px auto;
-	padding-top:90px;
-	padding-left:110px;
-	position:relative;
-	top:5px;
-}
-#exer3 #dinoImages #dino1 {
+
+/*---------------- Exercise 3 Module 1 Section ---------------*/
+body.module1 #exer3 #dino1 {
 	background-image:url("../images/tric-small.png");
 	width:203px;
 	height:100px;
 	top:40px;
 }
-#exer3 #dinoImages #dino2 {
+body.module1 #exer3 #dino2 {
 	background-image:url("../images/ovir-small.png");
 	width:217px;
 	height:162px;
 	top:-120px;
 	left:220px;
 }
-#exer3 #dinoImages #dino3 {
+body.module1 #exer3 #dino3 {
 	background-image:url("../images/anky-small.png");
 	width:242px;
 	height:81px;
 	top:-205px;
 	left:450px;
 }
-#exer3 #dino1.success {
-	background-image:url("../images/tric-correct-small.png") !important;
+body.module1 #exer3 #dino1.success {
+	background-image:url("../images/mod1/tric-correct-small.png") !important;
 }
-#exer3 #dino2.success {
-	background-image:url("../images/ovir-correct-small.png") !important;
+body.module1 #exer3 #dino2.success {
+	background-image:url("../images/mod1/ovir-correct-small.png") !important;
 }
-#exer3 #dino3.success {
-	background-image:url("../images/anky-correct-small.png") !important;
+body.module1 #exer3 #dino3.success {
+	background-image:url("../images/mod1/anky-correct-small.png") !important;
 }
-#exer3 #console {
-	height:280px;
-	background-image:url("../images/lowerBG-small.png");
-	position: absolute;
-}
-#exer3 #drawer {
-	background-image:url("../images/drawer-small.png");
-	height: 132px !important;
-	width:772px;
-	margin:-20px auto 0px auto !important;
-}
-#exer3_close {
-	margin-top:-50px;
-	margin-right:-60px;
-}
-#exer3 #selectHips {
+body.module1 #exer3 #selectHips {
 	width:390px;
 	padding:25px;
 }
-#exer3 #selectHips #hips1 img {
+body.module1 #exer3 #selectHips #hips1 img {
 	margin-right:200px;
 }
-#exer3 #text {
-	width:650px;
-	height:50px;
-	padding:8px 35px;
-	font-size: 18px;
-}
 
-/*
-
-################### Unlock Section ####################
-
-*/
+/*------------------ Unlocked Section -----------------*/
 #unlocked #console {
 	height:310px;
 	background-image:url("../images/lowerBG-small.png");
@@ -1469,12 +1190,8 @@ body {
 	width:650px;
 	padding:0px;
 }
-/*
 
-################### Slides Section ####################
-
-*/
-
+/*------------------ Slides Section -----------------*/
 #identification {
 	display:none;
 }
@@ -1502,14 +1219,9 @@ span#arrowright{
 	right:128px !important;
 }
 
-/*
-
-################### 3-D Section ####################
-
-*/
-
+/*------------------ 3-D Section -----------------*/
 #threeDmodel {
-	display: none;
+	display:none;
 }
 #threeDmodel #console {
 	height:670px !important;
