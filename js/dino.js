@@ -166,7 +166,7 @@ function toSection(goTo, videoStart) {
             opacity: 1
         }, 300, function() {
             $('#exer1 #options').fadeIn('fast');
-            $('#exer1 #words').fadeIn('fast');
+            $('#exer1 #selectWords').fadeIn('fast');
         });
     }
     if (goTo == 'exer2') {
@@ -176,7 +176,7 @@ function toSection(goTo, videoStart) {
             marginTop: '-34px'
         }, 400, function() {
             $('#exer2 #options').fadeIn('fast');
-            $('#exer2 #words').fadeIn('fast');
+            $('#exer2 #selectWords').fadeIn('fast');
         });
     }
 	if (goTo == 'exer3') {
@@ -377,10 +377,10 @@ function clickInteraction(exerData){
         });
 
         // Exercise interactions
-        $('#content').on('click', '#exer1_close', function() {
+        $('#content').on('click', '.close-exer', function() {
             $('#exer1 #text').fadeOut('fast');
             $('#exer1 #options').fadeOut('fast');
-            $('#exer1 #words').fadeOut('fast', function() {
+            $('#exer1 #selectWords').fadeOut('fast', function() {
                 $('#exer1 #pond').animate({
                     height: '0px',
                     marginTop: '0px',
@@ -391,10 +391,10 @@ function clickInteraction(exerData){
             });
         });
 
-        $('#content').on('click', '#exer2_close', function() {
+        $('#content').on('click', '.close-exer', function() {
             $('#exer2 #options').fadeOut('fast');
             $('#exer2 #text').fadeOut('fast');
-            $('#exer2 #words').fadeOut('fast', function() {
+            $('#exer2 #selectWords').fadeOut('fast', function() {
                 $('#drawer').animate({
                     height: '0px',
                     marginTop: '115px'
@@ -404,7 +404,7 @@ function clickInteraction(exerData){
             });
         });
 		
-		$('#content').on('click', '#exer3_close', function() {
+		$('#content').on('click', '.close-exer', function() {
             $('#exer3 #dinoImages').fadeOut('fast');
 			$('#exer3 #selectHips').fadeOut('fast');
             $('#exer3 #text').fadeOut('fast', function() {
