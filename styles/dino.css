@@ -639,6 +639,21 @@ body.module2 #exer2 #dino2.success {
 body.module2 #exer2 #dino3.success {
 	background-image:url("../images/mod2/plat-correct.png") !important;
 }
+#exer2 #mouthSpace1 {
+	position:relative;
+	height:80px;
+	width:80px;
+	top:-20px;
+	left:330px;
+}
+#exer2 #mouthSpace2 {
+	position:relative;
+	height:80px;
+	width:80px;
+	top:-20px;
+	left:-18px;
+
+}
 body.module2 #exer2 #text {
 	margin:60px auto;
 }
