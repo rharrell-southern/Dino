@@ -369,9 +369,15 @@ function clickInteraction(exerData){
         $('#content').on('click', '.skip', function() {
             if ($('#subnav a.active').attr('zone') == '1') {
                     toSection('exer1');
+<<<<<<< HEAD
 			} else if ($('#subnav a.active').attr('zone') == '2') {
 				toSection('exer3');
 			}
+=======
+            } else if ($('#subnav a.active').attr('zone') == '2') {
+                toSection('exer3');
+            }
+>>>>>>> FETCH_HEAD
         });
 
         // Exercise interactions
