@@ -13,7 +13,7 @@ var setVideoHeight;
 var slides;
 var zones;
 var videoPath = new Array();
-var exer4Int;
+var exerInt;
 
 
 
@@ -23,13 +23,13 @@ switch(thisModule) {
 		slides = 10;
         videoPath[1] = 'video/m1.1.mp4';
         videoPath[2] = 'video/m1.2.mp4';
-        exer4Int = ['null', ['null', 'null']]; //Null for now due to this function being written for module 2. The exer within module 1 will be rewritten so null refs for now.
+        exerInt = ['null', ['null', 'null']]; //Null for now due to this function being written for module 2. The exer within module 1 will be rewritten so null refs for now.
 		break;
 	case 2:
 		zones = 1;
 		slides = 0;
         videoPath[1] = 'video/m2.1.mp4';
-        exer4Int = ['exer4', ['dino3', 'dino4']];
+        exerInt = ['exer1', ['dino3', 'dino4']];
 
 		break;
 	case 3:
@@ -159,15 +159,25 @@ function toSection(goTo, videoStart) {
         $('#subnav a[href="' + goTo + '"]').addClass("active");
     }
     if (goTo == 'exer1') {
-        $('#exer1 #text').fadeIn('fast');
-        $('#exer1 #pond').animate({
-            height: '320px',
-            marginTop: '-195px',
-            opacity: 1
-        }, 300, function() {
-            $('#exer1 #options').fadeIn('fast');
-            $('#exer1 #selectWords').fadeIn('fast');
-        });
+        if(thisModule == 1){
+            $('#exer1 #text').fadeIn('fast');
+            $('#exer1 #pond').animate({
+                height: '320px',
+                marginTop: '-195px',
+                opacity: 1
+            }, 300, function() {
+                $('#exer1 #options').fadeIn('fast');
+                $('#exer1 #selectWords').fadeIn('fast');
+            });
+        }else if(thisModule == 2){
+            $('#exer1 #console').animate({
+                height: '350px',
+                marginTop: '-34px'
+            }, 400, function(){
+                $('#exer1 #text').fadeIn('fast');
+                $('#exer1 #dinoImages').fadeIn('fast');
+            });
+        }
     }
     if (goTo == 'exer2') {
         $('#exer2 #text').fadeIn('fast');
@@ -176,7 +186,7 @@ function toSection(goTo, videoStart) {
             marginTop: '-34px'
         }, 400, function() {
             $('#exer2 #options').fadeIn('fast');
-            $('#exer2 #selectWords').fadeIn('fast');
+            $('#exer2 .selectWords').fadeIn('fast');
         });
     }
 	if (goTo == 'exer3') {
@@ -244,28 +254,35 @@ function dropCorrect(thisItem, answer) {
 }
 
 function checkCorrect() {
-		if ($('#exer1 .drop-correct').length == 4) {
-			exer1Correct = true;
-			$("#exer1 #text h4").html('Good job!');
-			$("#exer1 #text p").html('Have you thought about being a paleontologist?');
-		}
+    if(thisModule == 1){
+        if ($('#exer1 .drop-correct').length == 4) {
+            exer1Correct = true;
+            $("#exer1 #text h4").html('Good job!');
+            $("#exer1 #text p").html('Have you thought about being a paleontologist?');
+        }
 
         if ($('#exer2 .drop-correct').length == 3) {
             exer2Correct = true;
-			$("#exer2 #text h4").html('Good job!');
-			$("#exer2 #text p").html('Have you thought about being a paleontologist?');
+            $("#exer2 #text h4").html('Good job!');
+            $("#exer2 #text p").html('Have you thought about being a paleontologist?');
         }
-		if (exer3Correct[0] && exer3Correct[1] && exer3Correct[2]) {
-			exer3Correct[3] = 1;
-			console.log(exer3Correct);
-		}
+        if (exer3Correct[0] && exer3Correct[1] && exer3Correct[2]) {
+            exer3Correct[3] = 1;
+            console.log(exer3Correct);
+        }
         if (exer1Correct && exer2Correct && exer3Correct[3]) {
             $('.locked').removeClass('locked');
             setTimeout(function() {
                 toSection('unlocked');
             }, 300); /* Stops the unlocked screen from transitioning to the exer2 again if at 4000...somehow */
-			}
-		}
+        }
+    }else if(thisModule == 2){
+        if ($('#exer1 .success').length == 2) {
+            $("#exer1 #text h4").html('Good job!');
+            $("#exer1 #text p").html('Have you thought about being a paleontologist?');
+        }
+    }
+}
 
 
 //This function takes in exer name, and an array of correct answers. When a correct option is selected, the success class is applied.
@@ -275,6 +292,7 @@ function clickInteraction(exerData){
                 var id = $(this).attr('id');
                 if(exerData[1].indexOf(id) != -1){
                     $(this).addClass("success");
+                    checkCorrect();
                 }
             });
         });
@@ -311,7 +329,7 @@ function clickInteraction(exerData){
 
 
         imageResize();
-        clickInteraction(exer4Int);
+        clickInteraction(exerInt);
 
         var options = {
             $DragOrientation: 3, //[Optional] Orientation to drag slide, 0 no drag, 1 horizental, 2 vertical, 3 either, default value is 1 (Note that the $DragOrientation should be the same as $PlayOrientation when $DisplayPieces is greater than 1, or parking position is not 0)
@@ -369,56 +387,64 @@ function clickInteraction(exerData){
         $('#content').on('click', '.skip', function() {
             if ($('#subnav a.active').attr('zone') == '1') {
                     toSection('exer1');
-<<<<<<< HEAD
-			} else if ($('#subnav a.active').attr('zone') == '2') {
-				toSection('exer3');
-			}
-=======
             } else if ($('#subnav a.active').attr('zone') == '2') {
                 toSection('exer3');
             }
->>>>>>> FETCH_HEAD
         });
 
-        // Exercise interactions
+       // Exercise interactions
         $('#content').on('click', '.close-exer', function() {
-            $('#exer1 #text').fadeOut('fast');
-            $('#exer1 #options').fadeOut('fast');
-            $('#exer1 #selectWords').fadeOut('fast', function() {
-                $('#exer1 #pond').animate({
-                    height: '0px',
-                    marginTop: '0px',
-                    opacity: 0
-                }, 300, function() {
-                    toSection('exhibit');
-                });
-            });
-        });
+            var thisExer = $(this).parent().parent().parent().attr('id').charAt('4');
 
-        $('#content').on('click', '.close-exer', function() {
-            $('#exer2 #options').fadeOut('fast');
-            $('#exer2 #text').fadeOut('fast');
-            $('#exer2 #selectWords').fadeOut('fast', function() {
-                $('#drawer').animate({
-                    height: '0px',
-                    marginTop: '115px'
-                }, 300, function() {
-                    toSection('exhibit');
-                });
-            });
-        });
-		
-		$('#content').on('click', '.close-exer', function() {
-            $('#exer3 #dinoImages').fadeOut('fast');
-			$('#exer3 #selectHips').fadeOut('fast');
-            $('#exer3 #text').fadeOut('fast', function() {
-                $('#drawer').animate({
-                    height: '0px',
-                    marginTop: '115px'
-                }, 300, function() {
-                    toSection('exhibit');
-                });
-            });
+            if(thisModule == 1){
+                if(thisExer == 1){
+                    $('#exer1 #text').fadeOut('fast');
+                    $('#exer1 #options').fadeOut('fast');
+                    $('#exer1 .selectWords').fadeOut('fast', function() {
+                        $('#exer1 #pond').animate({
+                            height: '0px',
+                            marginTop: '0px',
+                            opacity: 0
+                        }, 300, function() {
+                            toSection('exhibit');
+                        });
+                    });
+                }else if(thisExer == 2){
+                    $('#exer2 #options').fadeOut('fast');
+                    $('#exer2 #text').fadeOut('fast');
+                    $('#exer2 .selectWords').fadeOut('fast', function() {
+                        $('#drawer').animate({
+                            height: '0px',
+                            marginTop: '115px'
+                        }, 300, function() {
+                            toSection('exhibit');
+                        });
+                    });
+                }else if(thisExer == 3){
+                    $('#exer3 #dinoImages').fadeOut('fast');
+                    $('#exer3 #selectHips').fadeOut('fast');
+                    $('#exer3 #text').fadeOut('fast', function() {
+                        $('#drawer').animate({
+                            height: '0px',
+                            marginTop: '115px'
+                        }, 300, function() {
+                            toSection('exhibit');
+                        });
+                    });
+                }
+            }else if(thisModule == 2){
+                if(thisExer == 1){
+                    $('#exer1 #text').fadeOut('fast');
+                    $('#exer1 #dinoImages').fadeOut(500, function() {
+                        $('#console').animate({
+                            height: '0px',
+                            marginTop: '115px'
+                        }, 400, function() {
+                            toSection('exhibit');
+                        });
+                    });
+                }
+            }
         });
 
         // Unlock interactions
