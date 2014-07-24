@@ -368,12 +368,10 @@ function clickInteraction(exerData){
         });
         $('#content').on('click', '.skip', function() {
             if ($('#subnav a.active').attr('zone') == '1') {
-                if(thisModule == 1){   
                     toSection('exer1');
-                }
-            } else if ($('#subnav a.active').attr('zone') == '2') {
-                toSection('exer3');
-            }
+			} else if ($('#subnav a.active').attr('zone') == '2') {
+				toSection('exer3');
+			}
         });
 
         // Exercise interactions

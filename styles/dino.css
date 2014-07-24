@@ -265,6 +265,15 @@ body.module2 #subnav_content {
 	margin:0px auto;
 	margin-top:115px;
 }
+#table {
+	background-image:url("../images/mod2/dino-table.png");
+	background-position:top center;
+	background-repeat:no-repeat;
+	position:absolute;
+	bottom:30px;
+	left:0px;
+	right:0px;
+}
 #text {
 	color:#FFF;
 	width:850px;
@@ -520,6 +529,9 @@ body.module2 #exer1 #dino3.success {
 body.module2 #exer1 #dino4.success {
 	background-image:url("../images/mod2/plat-correct.png") !important;
 }
+body.module2 #text {
+	margin:140px auto;
+}
 
 
 /*
@@ -577,42 +589,49 @@ body.module1 #exer2 #word3 {
 
 /* ----------------- Exercise 2 for Module 2 ------------------- */
 body.module2 #exer2 #selectFood {
-	padding:42px 340px;
-	color:#333;
-	font-size:45px;
-	text-shadow:0px 0px 8px #000;
+	width:600px;
+	margin:0px auto;
 }
-body.module2 #exer2 #selectFood #meat img {
-	margin-right:200px;
+body.module2 #exer2 #selectFood #meat-left img {
+	position:relative;
+	top:-105px;
+}
+body.module2 #exer2 #selectFood #leaf-left img {
+	position:relative;
+	top:-95px;
+	left:35px;
+	margin-right:223px;
+}
+body.module2 #exer2 #selectFood #meat-right img {
+	position:relative;
+	top:-130px;
+}
+body.module2 #exer2 #selectFood #leaf-right img {
+	position:relative;
+	top:-130px;
+	left:30px;
 }
 body.module2 #exer2 #dino1 {
-	background-image:url("../images/ovir-small.png");
+	background-image:url("../images/mod2/plat-eating.png");
 	background-repeat:no-repeat;
-	width:217px;
-	height:162px; 
 	position:relative;
-	top:42px;
-	z-index:5;
+	width:398px;
+	height:199px;
+	margin:0px auto;
+	top:-132px;
+	left:-230px;
+	z-index:-10;
 }
 body.module2 #exer2 #dino2 {
-	background-image:url("../images/ceti.png");
+	background-image:url("../images/mod2/ceti-eating.png");
 	background-repeat:no-repeat;
-	width:576px;
-	height:222px;
 	position:relative;
-	top:-182px;
-	left:90px;
-	z-index:4;
-}
-body.module2 #exer2 #dino3 {
-	background-image:url("../images/plat.png");
-	background-repeat:no-repeat;
-	width:309px;
-	height:159px;
-	position:relative;
-	top:-342px;
-	left:590px;
-	z-index:3;
+	width:515px;
+	height:201px;
+	margin:0px auto; 
+	top:-330px;
+	left:300px;
+	z-index:-10;
 }
 body.module2 #exer2 #dino2.success {
 	background-image:url("../images/mod2/ceti-correct.png") !important;
