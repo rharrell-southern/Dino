@@ -266,13 +266,11 @@ body.module2 #subnav_content {
 	margin-top:115px;
 }
 #table {
-	background-image:url("../images/mod2/dino-table.png");
-	background-position:top center;
-	background-repeat:no-repeat;
-	position:absolute;
-	bottom:30px;
-	left:0px;
-	right:0px;
+	position:relative;
+	width:572px;
+	margin:0px auto;
+	bottom:-180px;
+	z-index:1;
 }
 #text {
 	color:#FFF;
@@ -459,6 +457,7 @@ body.module1 #exer1 .selectWords { /* make sure to change "words" to "selectWord
 	padding-top:200px;
 	color:#f1cb31;
 	text-shadow:0px 0px 6px rgba(0,0,0,0.6);
+	z-index:2;
 	/*display:none;*/
 }
 body.module1 #exer1 #word1 {
@@ -587,7 +586,13 @@ body.module1 #exer2 #word3 {
 	cursor:move;
 }
 
+
 /* ----------------- Exercise 2 for Module 2 ------------------- */
+#exer2Container {
+	width:100%;
+	position:absolute;
+	bottom:0px;
+}
 body.module2 #exer2 #selectFood {
 	width:600px;
 	margin:0px auto;
@@ -618,9 +623,8 @@ body.module2 #exer2 #dino1 {
 	width:398px;
 	height:199px;
 	margin:0px auto;
-	top:-132px;
+	top:-205px;
 	left:-230px;
-	z-index:-1;
 }
 body.module2 #exer2 #dino2 {
 	background-image:url("../images/mod2/ceti-eating.png");
@@ -629,33 +633,21 @@ body.module2 #exer2 #dino2 {
 	width:515px;
 	height:201px;
 	margin:0px auto; 
-	top:-330px;
-	left:300px;
-	z-index:-1;
+	top:-403px;
+	left:290px;
+}
+body.module2 #exer2 #dino1.success {
+	background-image:url("../images/mod2/plat-eating-correct.png") !important;
 }
 body.module2 #exer2 #dino2.success {
-	background-image:url("../images/mod2/ceti-correct.png") !important;
-}
-body.module2 #exer2 #dino3.success {
-	background-image:url("../images/mod2/plat-correct.png") !important;
-}
-#exer2 #mouthSpace1 {
-	position:relative;
-	height:80px;
-	width:80px;
-	top:-20px;
-	left:330px;
-}
-#exer2 #mouthSpace2 {
-	position:relative;
-	height:80px;
-	width:80px;
-	top:-20px;
-	left:-18px;
-
+	background-image:url("../images/mod2/ceti-eating-correct.png") !important;
 }
 body.module2 #exer2 #text {
 	margin:60px auto;
+}
+body.module2 #exer2 #console {
+	height:350px;
+	z-index:3;
 }
 
 /*
@@ -734,16 +726,6 @@ body.module1 #exer3 #selectHips #hips1 img {
 	background-position:bottom center;
 	background-repeat:no-repeat;
 }
-#unlocked #console {
-	height:330px;
-	background-image:url("../images/lowerBG.png");
-	background-position:top center;
-	background-repeat:no-repeat;
-	position:absolute;
-	bottom:0px;
-	right:0px;
-	left:0px;
-}
 #unlocked #console #unlocked_close {
 	background:rgba(0,0,0,0.3);
 	color:#FFF;
@@ -761,14 +743,6 @@ body.module1 #exer3 #selectHips #hips1 img {
 	font-size:16px;
 }
 #unlocked #console #text {
-	color:#FFF;
-	width:850px;
-	margin:0px auto;
-	padding:20px 35px;
-	font-size:22px;
-	display:none;
-	clear:both;
-	text-shadow:0px 0px 6px #000;
 	margin-top:125px;
 }
 
@@ -819,41 +793,9 @@ body.module1 #exer3 #selectHips #hips1 img {
 .jssora03ldn { background-position:-243px -33px; }
 .jssora03rdn { background-position:-303px -33px; }
 
-#identification #console {
-	height:330px;
-	background-image:url("../images/lowerBG.png");
-	background-position:top center;
-	background-repeat:no-repeat;
-	position:absolute;
-	bottom:0px;
-	right:0px;
-	left:0px;
-}
-#identification #console #identify_close {
-	background:rgba(0,0,0,0.3);
-	color:#FFF;
-	border-radius:15px;
-	height:22px;
-	width:22px;
-	text-align:center;
-	float:right;
-	border:2px solid #FFF;
-	cursor:pointer;
-	position:relative;
-	padding:2px;
-	margin-top:-40px;
-	margin-right:-80px;
-	font-size:16px;
-}
+
 #identification #console #text {
-	color:#FFF;
-	width:850px;
-	margin:0px auto;
-	padding:20px 35px;
 	font-size:22px;
-	display:none;
-	clear:both;
-	text-shadow:0px 0px 6px #000;
 	margin-top:125px;
 }
 
@@ -865,16 +807,6 @@ body.module1 #exer3 #selectHips #hips1 img {
 */
 #threeDmodel {
 	display:none;
-}
-#threeDmodel #console {
-	background-image:url("../images/lowerBG.png");
-	background-position:top center;
-	background-repeat:no-repeat;
-	height:0px;
-	position:absolute;
-	bottom:0px;
-	right:0px;
-	left:0px;
 }
 #threeDmodel #threeDcontent {
 	width:940px;
@@ -911,16 +843,6 @@ body.module1 #exer3 #selectHips #hips1 img {
 	height:514px;
 	cursor:pointer;
 }
-#threeDmodel #console #text {
-	color:#FFF;
-	width:850px;
-	margin:0px auto;
-	padding:0px 35px;
-	display:none;
-	clear:both;
-	text-shadow:0px 0px 6px #000;
-}
-
 
 /*
 
@@ -1213,10 +1135,6 @@ body.module1 #exer3 #selectHips #hips1 img {
 }
 
 /*------------------ Unlocked Section -----------------*/
-#unlocked #console {
-	height:310px;
-	background-image:url("../images/lowerBG-small.png");
-}
 #unlocked #console #unlocked_close {
 	margin-top:-50px;
 	margin-right:-60px;
@@ -1234,10 +1152,6 @@ body.module1 #exer3 #selectHips #hips1 img {
 #identification #slider,
 #identification #slides {
 	width:680px !important;
-}
-#identification #console {
-	height:310px;
-	background-image:url("../images/lowerBG-small.png");
 }
 #identification #console #identify_close {
 	margin-top:-50px;
@@ -1261,7 +1175,6 @@ span#arrowright{
 }
 #threeDmodel #console {
 	height:670px !important;
-	background-image:url("../images/lowerBG-small.png");
 }
 #threeDmodel #threeDcontent {
 	width:738px;

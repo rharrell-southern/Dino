@@ -638,20 +638,20 @@ function clickInteraction(exerData){
                 zIndex:450
             });
 
-            $("#mouthSpace1").droppable({
+            $("body.module2 #exer2 #dino1").droppable({
                 accept:"#meat-left",
                 drop: function (event, ui) {
-                    $("#exer2 #dino1").addClass("success");
+                    $("body.module2 #exer2 #dino1").addClass("success");
                     m1exer1Correct[0] = 1;
                     console.log(m1exer1Correct);
                     checkCorrect();
                 }
             });
 
-            $("#mouthSpace2").droppable({
+            $("body.module2 #exer2 #dino2").droppable({
                 accept:"#leaf-right",
                 drop: function (event, ui) {
-                    $("#exer2 #dino2").addClass("success");
+                    $("body.module2 #exer2 #dino2").addClass("success");
                     m1exer1Correct[1] = 1;
                     console.log(m1exer1Correct);
                     checkCorrect();
