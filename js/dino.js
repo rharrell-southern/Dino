@@ -5,6 +5,7 @@ var hiIsRuning = false;
 var exer1Correct = false;
 var exer2Correct = false;
 var exer3Correct = [0, 0, 0, 0]; /* used to keep track of which dinos have changed in exercise, last digit represents overall completion */
+var m1exer1Correct = [0, 0]; /* used to keep track of which dinos have gotten the right type of food */
 var consoleHeight = '830px'; /* Controls video player container height; Come back and use this instead to adjust */
 var setVideoWidth;
 var setVideoHeight;
@@ -531,119 +532,132 @@ function clickInteraction(exerData){
 
         //Drag and drop listeners
 
-        $("#word1, #word2, #word3").draggable({
-            revert: true,
-            helper: "original",
-            cursor: "move",
-            zIndex: 450
-        });
-		
-		$("#hips1, #hips2").draggable({
-			revert: true,
-			helper: "original",
-			cursor: "move",
-			zIndex:450
-		});
+        if(thisModule == 1){
+            $("#word1, #word2, #word3").draggable({
+                revert: true,
+                helper: "original",
+                cursor: "move",
+                zIndex: 450
+            });
+    		
+    		$("#hips1, #hips2").draggable({
+    			revert: true,
+    			helper: "original",
+    			cursor: "move",
+    			zIndex:450
+    		});
 
-        //Interactive One Options
-        $("#exer1 #option1").droppable({
-            accept: "#word2",
-            hoverClass: "drop-hover",
-            drop: function(event, ui) {
-                dropCorrect($(this), 'Lizard');
-            }
-        });
-        $("#exer1 #option2").droppable({
-            accept: "#word1",
-            hoverClass: "drop-hover",
-            drop: function(event, ui) {
-                dropCorrect($(this), 'Hip');
-            }
-        });
-        $("#exer1 #option3").droppable({
-            accept: "#word3",
-            hoverClass: "drop-hover",
-            drop: function(event, ui) {
-                dropCorrect($(this), 'Bird');
-            }
-        });
-        $("#exer1 #option4").droppable({
-            accept: "#word1",
-            hoverClass: "drop-hover",
-            drop: function(event, ui) {
-                dropCorrect($(this), 'Hip');
-            }
-        });
+            //Interactive One Options
+            $("#exer1 #option1").droppable({
+                accept: "#word2",
+                hoverClass: "drop-hover",
+                drop: function(event, ui) {
+                    dropCorrect($(this), 'Lizard');
+                }
+            });
+            $("#exer1 #option2").droppable({
+                accept: "#word1",
+                hoverClass: "drop-hover",
+                drop: function(event, ui) {
+                    dropCorrect($(this), 'Hip');
+                }
+            });
+            $("#exer1 #option3").droppable({
+                accept: "#word3",
+                hoverClass: "drop-hover",
+                drop: function(event, ui) {
+                    dropCorrect($(this), 'Bird');
+                }
+            });
+            $("#exer1 #option4").droppable({
+                accept: "#word1",
+                hoverClass: "drop-hover",
+                drop: function(event, ui) {
+                    dropCorrect($(this), 'Hip');
+                }
+            });
 
-        // Interactive 2 Options
-        $("#exer2 #option1").droppable({
-            accept: "#word1",
-            hoverClass: "drop-hover",
-            drop: function(event, ui) {
-                dropCorrect($(this), 'Illium');
-            }
-        });
-        $("#exer2 #option2").droppable({
-            accept: "#word2",
-            hoverClass: "drop-hover",
-            drop: function(event, ui) {
-                dropCorrect($(this), 'Ishium');
-            }
-        });
-        $("#exer2 #option3").droppable({
-            accept: "#word3",
-            hoverClass: "drop-hover",
-            drop: function(event, ui) {
-                dropCorrect($(this), 'Pubis');
-            }
-        });
+            // Interactive 2 Options
+            $("#exer2 #option1").droppable({
+                accept: "#word1",
+                hoverClass: "drop-hover",
+                drop: function(event, ui) {
+                    dropCorrect($(this), 'Illium');
+                }
+            });
+            $("#exer2 #option2").droppable({
+                accept: "#word2",
+                hoverClass: "drop-hover",
+                drop: function(event, ui) {
+                    dropCorrect($(this), 'Ishium');
+                }
+            });
+            $("#exer2 #option3").droppable({
+                accept: "#word3",
+                hoverClass: "drop-hover",
+                drop: function(event, ui) {
+                    dropCorrect($(this), 'Pubis');
+                }
+            });
+    		
+    		// Interactive 3 Options
+    		$("#exer3 #dino1").droppable({
+    			accept:"#hips1",
+    			drop: function (event, ui) {
+    				$("#dino1").addClass("success");
+    				exer3Correct[0] = 1;
+    				console.log(exer3Correct);
+    				checkCorrect();
+    			}
+    		});
+    		$("#exer3 #dino2").droppable({
+    			accept:"#hips2",
+    			drop: function (event, ui) {
+    				$("#dino2").addClass("success");
+    				exer3Correct[1] = 1;
+    				console.log(exer3Correct);
+    				checkCorrect();
+    			}
+    		});
+    		$("#exer3 #dino3").droppable({
+    			accept:"#hips1",
+    			drop: function (event, ui) {
+    				$("#dino3").addClass("success");
+    				exer3Correct[2] = 1;
+    				console.log(exer3Correct);
+    				checkCorrect();
+    			}
+    		});
+        }else if(thisModule == 2){
+            //Exercise draft for Module 2
+
+            $("#meat-left, #meat-right, #leaf-left, #leaf-right").draggable({
+                revert: true,
+                helper: "original",
+                cursor: "move",
+                zIndex:450
+            });
+
+            $("#mouthSpace1").droppable({
+                accept:"#meat-left",
+                drop: function (event, ui) {
+                    $("#exer2 #dino1").addClass("success");
+                    m1exer1Correct[0] = 1;
+                    console.log(m1exer1Correct);
+                    checkCorrect();
+                }
+            });
+
+            $("#mouthSpace2").droppable({
+                accept:"#leaf-right",
+                drop: function (event, ui) {
+                    $("#exer2 #dino2").addClass("success");
+                    m1exer1Correct[1] = 1;
+                    console.log(m1exer1Correct);
+                    checkCorrect();
+                }
+            });
+        }
 		
-		// Interactive 3 Options
-		$("#exer3 #dino1").droppable({
-			accept:"#hips1",
-			drop: function (event, ui) {
-				$("#dino1").addClass("success");
-				exer3Correct[0] = 1;
-				console.log(exer3Correct);
-				checkCorrect();
-			}
-		})
-		$("#exer3 #dino2").droppable({
-			accept:"#hips2",
-			drop: function (event, ui) {
-				$("#dino2").addClass("success");
-				exer3Correct[1] = 1;
-				console.log(exer3Correct);
-				checkCorrect();
-			}
-		})
-		$("#exer3 #dino3").droppable({
-			accept:"#hips1",
-			drop: function (event, ui) {
-				$("#dino3").addClass("success");
-				exer3Correct[2] = 1;
-				console.log(exer3Correct);
-				checkCorrect();
-			}
-		})
 		
-		/* Exercise draft for Module 2
-		$("#exerdraft #dino1").droppable({
-			accept:"#meat",
-			drop: function (event, ui) {
-				$("#dino1").addClass("success");
-				exer3Correct[0] = 1;
-				console.log(exer3Correct);
-				checkCorrect();
-			}
-		})
-		$("#exerdraft #dino2").droppable({
-			accept:"#leaf",
-			drop: function (event, ui) {
-				$("#dino2").addClass("success");
-				exer3Correct[1] = 1;
-				console.log(exer3Correct);
-				checkCorrect();
-			}
-		}) */
     });
