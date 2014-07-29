@@ -117,7 +117,7 @@ body.module1 #subnav_content {
 	width:57%; /* Ensures margin:0px auto works and links are centered to page */
 }
 body.module2 #subnav_content {
-	width:28%; /* Ensures margin:0px auto works and links are centered to page */
+	width:30%; /* Ensures margin:0px auto works and links are centered to page */
 }
 #subnav a {
 	color:#FFF;
@@ -311,30 +311,15 @@ body.module1 #zone2 {
 	left:234px;
 	top:8px;
 }
-body.module1 #zone1Hover {
-	top:-222px;
-	right:325px;
-}
-body.module1 #zone2Hover {
-	top:-350px;
-	right:70px;
-}
-body.module2 #zone1,
-body.module2 #zone2 {
-	width:250px;
-	margin:0px auto;
-	opacity:0;
-	cursor:pointer;
-}
 body.module2 #zone1 {
 	position:relative;
 	z-index:350;
 	right:53px;
 	top:310px;
-}
-body.module2 #zone1Hover {
-	top:0px;
-	left:-200px;
+	cursor:pointer;
+	width:250px;
+	margin:0px auto;
+	opacity:0;
 }
 #zone1Hover, /* Text bubble across all modules */
 #zone2Hover {
@@ -352,6 +337,18 @@ body.module2 #zone1Hover {
 #zone2Hover h3 {
 	margin:0px;
 	color:#f1cb31;
+}
+body.module1 #zone1Hover {
+	top:-222px;
+	right:325px;
+}
+body.module1 #zone2Hover {
+	top:-350px;
+	right:70px;
+}
+body.module2 #zone1Hover {
+	top:-28px;
+	left:-200px;
 }
 div.blackout {
 	position:absolute;

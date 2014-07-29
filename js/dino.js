@@ -78,6 +78,9 @@ function imageResize() {
         width: setVideoWidth,
         height: setVideoHeight
     });
+	if($('#video_console').height() > 0) {
+		$('#video_console').height(consoleHeight); 
+	}
 }
 
 
