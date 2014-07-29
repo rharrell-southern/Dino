@@ -491,6 +491,7 @@ body.module2 #exer1 #dino1 {
 	position:relative;
 	top:80px;
 	z-index:5;
+	cursor:pointer;
 }
 body.module2 #exer1 #dino2 {
 	background-image:url("../images/mod2/tric-exer4.png");
@@ -501,6 +502,7 @@ body.module2 #exer1 #dino2 {
 	top:-115px;
 	left:105px;
 	z-index:4;
+	cursor:pointer;
 }
 body.module2 #exer1 #dino3 {
 	background-image:url("../images/mod2/ceti-exer4.png");
@@ -511,6 +513,7 @@ body.module2 #exer1 #dino3 {
 	top:-350px;
 	left:200px;
 	z-index:3;
+	cursor:pointer;
 }
 body.module2 #exer1 #dino4 {
 	background-image:url("../images/mod2/plat-exer4.png");
@@ -521,6 +524,7 @@ body.module2 #exer1 #dino4 {
 	top:-423px;
 	left:620px;
 	z-index:2;
+	cursor:pointer;
 }
 body.module2 #exer1 #dino3.success {
 	background-image:url("../images/mod2/ceti-correct.png") !important;

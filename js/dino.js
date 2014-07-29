@@ -386,6 +386,7 @@ function clickInteraction(exerData){
             toSection('video', 1);
         });
         $('#content').on('click', '.skip', function() {
+			console.log($('#subnav a.active').attr('zone'));
             if ($('#subnav a.active').attr('zone') == '1') {
                     toSection('exer1');
             } else if ($('#subnav a.active').attr('zone') == '2') {
