@@ -110,14 +110,16 @@ h1, h2, h3, h4, h5, h6 {
 	margin:0px auto;
 	padding:11px;
 	position:relative;
+	left:-75px;
 	z-index:15 !important;
+	overflow:auto;
 	clear:none;
 }
 body.module1 #subnav_content {
-	width:57%; /* Ensures margin:0px auto works and links are centered to page */
+	width:970px; /* Ensures margin:0px auto works and links are centered to page */
 }
 body.module2 #subnav_content {
-	width:30%; /* Ensures margin:0px auto works and links are centered to page */
+	width:500px; /* Ensures margin:0px auto works and links are centered to page */
 }
 #subnav a {
 	color:#FFF;
@@ -145,7 +147,7 @@ body.module2 #subnav_content {
 	background-repeat:no-repeat;
 }
 #subnav span.arrow {
-	width:50px;
+	width:40px;
 	height:15px;
 	display:block;
 	float:left;
@@ -266,8 +268,12 @@ body.module2 #subnav_content {
 	margin-top:115px;
 }
 #table {
+	background-image:url("../images/mod2/dino-table.png");
+	background-position:top center;
+	background-repeat:no-repeat;
 	position:relative;
 	width:572px;
+	height:223px;
 	margin:0px auto;
 	bottom:-180px;
 	z-index:1;
@@ -347,7 +353,7 @@ body.module1 #zone2Hover {
 	right:70px;
 }
 body.module2 #zone1Hover {
-	top:-28px;
+	top:-58px;
 	left:-200px;
 }
 div.blackout {
@@ -915,12 +921,6 @@ body.module2 {
 }
 
 /*--------------------- Subnav Section ---------------------*/
-body.module1 #subnav_content {
-	width:47%; /* Ensures margin:0px auto works and links are centered to page */
-}
-body.module2 #subnav_content {
-	width:24%; /* Ensures margin:0px auto works and links are centered to page */
-}
 #subnav {
 	height:165px;
 }
@@ -928,6 +928,17 @@ body.module2 #subnav_content {
 	font-size:72%;
 	margin:0px 9px;
 }
+#subnav_content {
+	left:0px;
+}
+body.module1 #subnav_content {
+	width:726px; /* Ensures margin:0px auto works and links are centered to page */
+}
+body.module2 #subnav_content {
+	width:375px; /* Ensures margin:0px auto works and links are centered to page */
+	left:15px !important; /* Just my preference, it doesn't seem centered otherwise, though mathematically it is */
+}
+
 
 /*-------------------- Content Section ---------------------*/
 .box {
@@ -941,7 +952,7 @@ body.module2 #subnav_content {
 	margin-right:-60px;
 }
 #console {
-	height:310px;
+	height:310px !important;
 	background-image:url("../images/lowerBG-small.png");
 }
 #dinoImages {
@@ -964,10 +975,21 @@ body.module2 #subnav_content {
 	margin-top:-125px !important;
 	height:220px !important;
 }
+#table {
+	background-image:url("../images/mod2/dino-table-small.png");
+	width:400px;
+	height:156px;
+	bottom:-60px;
+}
+#forest-raised {
+	background-image:url("../images/forest-raised-small.png");
+	bottom:200px;
+}
 #text {
 	font-size:18px;
 	width:650px;
 }
+
 
 /*------------------ Exhibit Hall Section ------------------*/
 body.module1 #zone1 {
@@ -1074,6 +1096,44 @@ body.module1 #exer1 #options #section2 {
 #dash-ornith-left { padding:0px 35px 0px 80px; }
 #dash-ornith-right { padding:0px 40px 0px 102px; }
 
+/*---------------- Exercise 1, Module 2 Section ---------------*/
+body.module2 #exer1 #dino1 {
+	background-image:url("../images/mod2/ovir-exer4-small.png");
+	width:114px;
+	height:85px; 
+	top:42px;
+}
+body.module2 #exer1 #dino2 {
+	background-image:url("../images/mod2/tric-exer4-small.png");
+	width:176px;
+	height:87px;
+	top:-95px;
+	left:105px;
+}
+body.module2 #exer1 #dino3 {
+	background-image:url("../images/mod2/ceti-exer4-small.png");
+	width:316px;
+	height:122px;
+	top:-260px;
+	left:170px;
+}
+body.module2 #exer1 #dino4 {
+	background-image:url("../images/mod2/plat-exer4-small.png");
+	width:228px;
+	height:118px;
+	top:-312px;
+	left:450px;
+}
+body.module2 #exer1 #dino3.success {
+	background-image:url("../images/mod2/ceti-correct-small.png") !important;
+}
+body.module2 #exer1 #dino4.success {
+	background-image:url("../images/mod2/plat-correct-small.png") !important;
+}
+body.module2 #exer1 #text {
+	margin:110px auto;
+}
+
 /*---------------- Exercise 2 Module 1 Section ---------------*/
 body.module1 #exer2 #options {
 	background-image:url("../images/mod1/exer2bones-small.png");
@@ -1105,6 +1165,53 @@ body.module1 #exer2 #word1 {
 }
 body.module1 #exer2 #word2 {
 	padding-right:110px;
+}
+
+/*---------------- Exercise 2 Module 2 Section ---------------*/
+body.module2 #exer2 #selectFood {
+	width:437px;
+}
+body.module2 #exer2 #selectFood #meat-left img {
+	top:-75px;
+	left:10px;
+}
+body.module2 #exer2 #selectFood #leaf-left img {
+	top:-70px;
+	left:30px;
+	margin-right:165px;
+}
+body.module2 #exer2 #selectFood #meat-right img {
+	top:-95px;
+}
+body.module2 #exer2 #selectFood #leaf-right img {
+	top:-92px;
+	left:15px;
+}
+body.module2 #exer2 #dino1 {
+	background-image:url("../images/mod2/plat-eating-small.png");
+	width:279px;
+	height:139px;
+	top:-215px;
+	left:-150px;
+}
+body.module2 #exer2 #dino2 {
+	background-image:url("../images/mod2/ceti-eating-small.png");
+	width:361px;
+	height:141px;
+	top:-352px;
+	left:220px;
+}
+body.module2 #exer2 #dino1.success {
+	background-image:url("../images/mod2/plat-eating-correct-small.png") !important;
+}
+body.module2 #exer2 #dino2.success {
+	background-image:url("../images/mod2/ceti-eating-correct-small.png") !important;
+}
+body.module2 #exer2 #text {
+	margin:60px auto;
+}
+body.module2 #exer2 #console {
+	height:350px;
 }
 
 /*---------------- Exercise 3 Module 1 Section ---------------*/

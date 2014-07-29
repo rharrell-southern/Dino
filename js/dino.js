@@ -60,6 +60,10 @@ function imageResize() {
 		for (i=0; i<=slides; i++) {
 			$('slide' + i).html("<img src='images/mod" + thisModule + "/slides/" + i + "-small.png'>");
 		}
+		$('#meat-left').html("<img src='images/meat-small.png'>");
+		$('#meat-right').html("<img src='images/meat-small.png'>");
+		$('#leaf-left').html("<img src='images/vegetation-small.png'>");
+		$('#leaf-right').html("<img src='images/vegetation-small.png'>");
         setVideoWidth = 678;
         setVideoHeight = 379;
         consoleHeight = '650px';
@@ -70,6 +74,10 @@ function imageResize() {
 		for (i=0; i<=slides; i++) {
 			$('slide' + i).html("<img src='images/mod" + thisModule + "/slides/" + i + ".png'>");
 		}
+		$('#meat-left').html("<img src='images/meat.png'>");
+		$('#meat-right').html("<img src='images/meat.png'>");
+		$('#leaf-left').html("<img src='images/vegetation.png'>");
+		$('#leaf-right').html("<img src='images/vegetation.png'>");
         setVideoWidth = 918;
         setVideoHeight = 513;
         consoleHeight = '830px';
