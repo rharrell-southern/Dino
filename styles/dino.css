@@ -117,7 +117,7 @@ body.module1 #subnav_content {
 	width:57%; /* Ensures margin:0px auto works and links are centered to page */
 }
 body.module2 #subnav_content {
-	width:38%; /* Ensures margin:0px auto works and links are centered to page */
+	width:28%; /* Ensures margin:0px auto works and links are centered to page */
 }
 #subnav a {
 	color:#FFF;
@@ -900,7 +900,10 @@ body.module1 {
 	background-image:url("../images/mod1/module1BG-small.jpg");
 	background-position:center 50px;
 }
-
+body.module2 {
+	background-image:url("../images/mod2/module2BG-small.jpg");
+	background-position:center 50px;
+}
 /*--------------------- Header Section ----------------------*/
 #header {
 	height:62px;
@@ -916,7 +919,10 @@ body.module1 {
 
 /*--------------------- Subnav Section ---------------------*/
 body.module1 #subnav_content {
-	width:815px; /* Ensures margin:0px auto works and links are centered to page */
+	width:47%; /* Ensures margin:0px auto works and links are centered to page */
+}
+body.module2 #subnav_content {
+	width:24%; /* Ensures margin:0px auto works and links are centered to page */
 }
 #subnav {
 	height:165px;
@@ -974,6 +980,10 @@ body.module1 #zone1 {
 body.module1 #zone2 {
 	left:197px;
 	top:15px;
+}
+body.module2 #zone1 {
+	right:-8px;
+	top:214px;
 }
 #zone1Hover,
 #zone2Hover {
