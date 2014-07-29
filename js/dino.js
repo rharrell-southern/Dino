@@ -5,7 +5,8 @@ var hiIsRuning = false;
 var exer1Correct = false;
 var exer2Correct = false;
 var exer3Correct = [0, 0, 0, 0]; /* used to keep track of which dinos have changed in exercise, last digit represents overall completion */
-var m1exer1Correct = [0, 0]; /* used to keep track of which dinos have gotten the right type of food */
+var m2exer1Correct = false;
+var m2exer2Correct = [0, 0]; /* used to keep track of which dinos have gotten the right type of food */
 var consoleHeight = '830px'; /* Controls video player container height; Come back and use this instead to adjust */
 var setVideoWidth;
 var setVideoHeight;
@@ -181,6 +182,7 @@ function toSection(goTo, videoStart) {
         }
     }
     if (goTo == 'exer2') {
+        //Modules 1-2 fit the same structure, so no need to specify module (yet...)
         $('#exer2 #text').fadeIn('fast');
         $('#exer2 #drawer').animate({
             height: '150px',
@@ -279,8 +281,16 @@ function checkCorrect() {
         }
     }else if(thisModule == 2){
         if ($('#exer1 .success').length == 2) {
+            m2exer1Correct = true;
             $("#exer1 #text h4").html('Good job!');
             $("#exer1 #text p").html('Have you thought about being a paleontologist?');
+        }
+
+        if (m2exer1Correct && m2exer2Correct[0], m2exer2Correct[1]) {
+            $('.locked').removeClass('locked');
+            setTimeout(function() {
+                toSection('unlocked');
+            }, 300); /* Stops the unlocked screen from transitioning to the exer2 again if at 4000...somehow */
         }
     }
 }
@@ -643,8 +653,8 @@ function clickInteraction(exerData){
                 accept:"#meat-left",
                 drop: function (event, ui) {
                     $("body.module2 #exer2 #dino1").addClass("success");
-                    m1exer1Correct[0] = 1;
-                    console.log(m1exer1Correct);
+                    m2exer2Correct[0] = 1;
+                    console.log(m2exer2Correct);
                     checkCorrect();
                 }
             });
@@ -653,8 +663,8 @@ function clickInteraction(exerData){
                 accept:"#leaf-right",
                 drop: function (event, ui) {
                     $("body.module2 #exer2 #dino2").addClass("success");
-                    m1exer1Correct[1] = 1;
-                    console.log(m1exer1Correct);
+                    m2exer2Correct[1] = 1;
+                    console.log(m2exer2Correct);
                     checkCorrect();
                 }
             });
