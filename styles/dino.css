@@ -1131,7 +1131,7 @@ body.module2 #exer1 #dino4.success {
 	background-image:url("../images/mod2/plat-correct-small.png") !important;
 }
 body.module2 #exer1 #text {
-	margin:110px auto;
+	margin:105px auto;
 }
 
 /*---------------- Exercise 2 Module 1 Section ---------------*/
@@ -1208,7 +1208,7 @@ body.module2 #exer2 #dino2.success {
 	background-image:url("../images/mod2/ceti-eating-correct-small.png") !important;
 }
 body.module2 #exer2 #text {
-	margin:60px auto;
+	margin:52px auto;
 }
 body.module2 #exer2 #console {
 	height:350px;

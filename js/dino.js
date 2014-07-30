@@ -661,7 +661,7 @@ function clickInteraction(exerData){
             });
 
             $("body.module2 #exer2 #dino1").droppable({
-                accept:"#meat-left",
+                accept:"#leaf-left",
                 drop: function (event, ui) {
                     $("body.module2 #exer2 #dino1").addClass("success");
                     m2exer2Correct[0] = 1;
