@@ -121,6 +121,9 @@ body.module1 #subnav_content {
 body.module2 #subnav_content {
 	width:500px; /* Ensures margin:0px auto works and links are centered to page */
 }
+body.module3 #subnav_content {
+	width:500px;
+}
 #subnav a {
 	color:#FFF;
 	display:block;
@@ -327,6 +330,17 @@ body.module2 #zone1 {
 	margin:0px auto;
 	opacity:0;
 }
+/* COME BACK TO THIS
+body.module3 #zone1 {
+	position:relative;
+	z-index:350;
+	right:53px;
+	top:310px;
+	cursor:pointer;
+	width:250px;
+	margin:0px auto;
+	opacity:0;
+}*/
 #zone1Hover, /* Text bubble across all modules */
 #zone2Hover {
 	width:500px;
@@ -356,6 +370,11 @@ body.module2 #zone1Hover {
 	top:-58px;
 	left:-200px;
 }
+/* COME BACK TO THIS
+body.module3 #zone1Hover {
+	top:-58px;
+	left:-200px;
+}*/
 div.blackout {
 	position:absolute;
 	z-index:-1;
@@ -604,24 +623,19 @@ body.module2 #exer2 #selectFood {
 	width:600px;
 	margin:0px auto;
 }
-body.module2 #exer2 #selectFood #meat-left img {
-	position:relative;
-	top:-105px;
-}
 body.module2 #exer2 #selectFood #leaf-left img {
 	position:relative;
-	top:-95px;
-	left:35px;
+	left:20px;
 	margin-right:223px;
 }
 body.module2 #exer2 #selectFood #meat-right img {
 	position:relative;
-	top:-130px;
+	top:-28px;
 }
 body.module2 #exer2 #selectFood #leaf-right img {
 	position:relative;
-	top:-130px;
-	left:30px;
+	top:-33px;
+	left:15px;
 }
 body.module2 #exer2 #dino1 {
 	background-image:url("../images/mod2/plat-eating.png");
@@ -650,7 +664,7 @@ body.module2 #exer2 #dino2.success {
 	background-image:url("../images/mod2/ceti-eating-correct.png") !important;
 }
 body.module2 #exer2 #text {
-	margin:60px auto;
+	margin:134px auto;
 }
 body.module2 #exer2 #console {
 	height:350px;
@@ -1171,21 +1185,16 @@ body.module1 #exer2 #word2 {
 body.module2 #exer2 #selectFood {
 	width:437px;
 }
-body.module2 #exer2 #selectFood #meat-left img {
-	top:-75px;
-	left:10px;
-}
 body.module2 #exer2 #selectFood #leaf-left img {
-	top:-70px;
-	left:30px;
-	margin-right:165px;
+	left:12px;
 }
 body.module2 #exer2 #selectFood #meat-right img {
-	top:-95px;
+	top:-23px;
+	left:-14px;
 }
 body.module2 #exer2 #selectFood #leaf-right img {
-	top:-92px;
-	left:15px;
+	top:-22px;
+	left:-2px;
 }
 body.module2 #exer2 #dino1 {
 	background-image:url("../images/mod2/plat-eating-small.png");
@@ -1208,7 +1217,7 @@ body.module2 #exer2 #dino2.success {
 	background-image:url("../images/mod2/ceti-eating-correct-small.png") !important;
 }
 body.module2 #exer2 #text {
-	margin:52px auto;
+	margin:105px auto;
 }
 body.module2 #exer2 #console {
 	height:350px;
@@ -1253,6 +1262,9 @@ body.module1 #exer3 #selectHips #hips1 img {
 }
 
 /*------------------ Unlocked Section -----------------*/
+#unlocked #lock {
+	background-image:url("../images/locked-small.png");
+}
 #unlocked #console #unlocked_close {
 	margin-top:-50px;
 	margin-right:-60px;
