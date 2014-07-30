@@ -10,6 +10,7 @@ var m2exer2Correct = [0, 0]; /* used to keep track of which dinos have gotten th
 var consoleHeight = '830px'; /* Controls video player container height; Come back and use this instead to adjust */
 var setVideoWidth;
 var setVideoHeight;
+var lockImgPath;
 
 // Set module variables
 var slides;
@@ -25,7 +26,6 @@ switch(thisModule) {
 		slides = 10;
         videoPath[1] = 'video/m1.1.mp4';
         videoPath[2] = 'video/m1.2.mp4';
-        exerInt = ['null', ['null', 'null']]; //Null for now due to this function being written for module 2. The exer within module 1 will be rewritten so null refs for now.
 		break;
 	case 2:
 		zones = 1;
@@ -64,6 +64,7 @@ function imageResize() {
 		$('#meat-right').html("<img src='images/meat-small.png'>");
 		$('#leaf-left').html("<img src='images/vegetation-small.png'>");
 		$('#leaf-right').html("<img src='images/vegetation-small.png'>");
+        lockImgPath = 'url("images/unlocked-small.png")';
         setVideoWidth = 678;
         setVideoHeight = 379;
         consoleHeight = '650px';
@@ -78,6 +79,7 @@ function imageResize() {
 		$('#meat-right').html("<img src='images/meat.png'>");
 		$('#leaf-left').html("<img src='images/vegetation.png'>");
 		$('#leaf-right').html("<img src='images/vegetation.png'>");
+        lockImgPath = 'url("images/unlocked.png")';
         setVideoWidth = 918;
         setVideoHeight = 513;
         consoleHeight = '830px';
@@ -89,6 +91,11 @@ function imageResize() {
 	if($('#video_console').height() > 0) {
 		$('#video_console').height(consoleHeight); 
 	}
+    if($('#unlocked').is(':visible')){
+        $('#unlocked #lock').css({
+            backgroundImage: lockImgPath
+        });
+    }
 }
 
 
@@ -218,7 +225,7 @@ function toSection(goTo, videoStart) {
             $('#unlocked #lock').fadeIn('fast', function() {
                 setTimeout(function() {
                     $('#unlocked #lock').css({
-                        backgroundImage: 'url("images/unlocked.png")'
+                        backgroundImage: lockImgPath
                     });
                 }, 300);
             });
@@ -297,7 +304,7 @@ function checkCorrect() {
             $("#exer1 #text p").html('Have you thought about being a paleontologist?');
         }
 
-        if (m2exer1Correct && m2exer2Correct[0], m2exer2Correct[1]) {
+        if (m2exer1Correct == true && m2exer2Correct[1] && m2exer2Correct[1]) {
             $('.locked').removeClass('locked');
             setTimeout(function() {
                 toSection('unlocked');
@@ -307,8 +314,9 @@ function checkCorrect() {
 }
 
 
-//This function takes in exer name, and an array of correct answers. When a correct option is selected, the success class is applied.
+//If passed non-null data, this function takes in exer name, and an array of correct answers. When a correct option is selected, the success class is applied.
 function clickInteraction(exerData){
+    if(exerData){
         $('#' + exerData[0] + ' div:nth-child(1) div div').each(function(){
             $(this).on('click', function(event) {
                 var id = $(this).attr('id');
@@ -318,6 +326,7 @@ function clickInteraction(exerData){
                 }
             });
         });
+    }
 }
 
 
