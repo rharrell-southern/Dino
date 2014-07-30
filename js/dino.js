@@ -36,12 +36,12 @@ switch(thisModule) {
 		break;
 	case 3:
 		zones = 1;
-		slides = 10;
+		slides = 0;
         videoPath[1] = 'video/m3.1.mp4';
 		break;
 	case 4:
 		zones = 2;
-		slides = 10;
+		slides = 0;
         videoPath[1] = 'video/m4.1.mp4';
         videoPath[2] = 'video/m4.2.mp4';
 		break;
@@ -304,7 +304,7 @@ function checkCorrect() {
             $("#exer1 #text p").html('Have you thought about being a paleontologist?');
         }
 
-        if (m2exer1Correct == true && m2exer2Correct[1] && m2exer2Correct[1]) {
+        if (m2exer1Correct == true && m2exer2Correct[0] && m2exer2Correct[1]) {
             $('.locked').removeClass('locked');
             setTimeout(function() {
                 toSection('unlocked');

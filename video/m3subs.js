@@ -1,8 +1,8 @@
 // JavaScript Document
 
 var subs = new Array();
-subs[2] = new Array();
-subs[2][1] = [
+subs[3] = new Array();
+subs[3][1] = [
                 {
               on: '00:01',
                  value: 'Dinosaurs are divided into two categories based on their hip structure.',
