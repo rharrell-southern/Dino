@@ -7,6 +7,7 @@ var exer2Correct = false;
 var exer3Correct = [0, 0, 0, 0]; /* used to keep track of which dinos have changed in exercise, last digit represents overall completion */
 var m2exer1Correct = false;
 var m2exer2Correct = [0, 0]; /* used to keep track of which dinos have gotten the right type of food */
+var m3exer2Correct = [0, 0];
 var consoleHeight = '830px'; /* Controls video player container height; Come back and use this instead to adjust */
 var setVideoWidth;
 var setVideoHeight;
@@ -38,6 +39,7 @@ switch(thisModule) {
 		zones = 1;
 		slides = 0;
         videoPath[1] = 'video/m3.1.mp4';
+        exerInt = ['exer1', ['dino1', 'dino3']];
 		break;
 	case 4:
 		zones = 2;
@@ -692,12 +694,19 @@ function clickInteraction(exerData){
                 }
             });
         } else if(thisModule == 3) {
+            $("#meat-left, #meat-right, #leaf-left, #leaf-right").draggable({
+                revert: true,
+                helper: "original",
+                cursor: "move",
+                zIndex:450
+            });
+
 			$("body.module3 #exer2 #dino1").droppable({
                 accept:"#meat-left",
                 drop: function (event, ui) {
                     $("body.module3 #exer2 #dino1").addClass("success");
-                    m3exer3Correct[0] = 1;
-                    console.log(m3exer3Correct);
+                    m2exer2Correct[0] = 1;
+                    console.log(m2exer2Correct);
                     checkCorrect();
                 }
             });
@@ -706,8 +715,8 @@ function clickInteraction(exerData){
                 accept:"#meat-right",
                 drop: function (event, ui) {
                     $("body.module3 #exer2 #dino2").addClass("success");
-                    m3exer3Correct[1] = 1;
-                    console.log(m3exer3Correct);
+                    m2exer2Correct[1] = 1;
+                    console.log(m2exer2Correct);
                     checkCorrect();
                 }
 			});
