@@ -187,39 +187,28 @@ function toSection(goTo, videoStart) {
                 opacity: 1
             }, 300, function() {
                 $('#exer1 #options').fadeIn('fast');
-                $('#exer1 #selectWords').fadeIn('fast');
+                $('#exer1 .selectWords').fadeIn('fast');
             });
-        }else if(thisModule == 2){
-            $('#exer1 #console').animate({
-                height: '350px',
-                marginTop: '-34px'
-            }, 400, function(){
+        }else if(thisModule == 2 || thisModule == 3){
                 $('#exer1 #text').fadeIn('fast');
                 $('#exer1 #dinoImages').fadeIn('fast');
-            });
         }
     }
     if (goTo == 'exer2') {
         if(thisModule == 1){
             $('#exer2 #text').fadeIn('fast');
             $('#exer2 #drawer').animate({
-                height: '150px',
-                marginTop: '-34px'
+                height: '250px'
             }, 400, function() {
                 $('#exer2 #options').fadeIn('fast');
                 $('#exer2 .selectWords').fadeIn('fast');
             });
-        }else if(thisModule == 2){
-                    $('#exer2 #text').fadeIn('fast');
-                    $('#exer2 #dino1').fadeIn('fast');
-                    $('#exer2 #dino2').fadeIn('fast', function() {
-                        $('#exer2 #table').fadeIn(500, function() {
-                        $('#console').animate({
-                            height: '150px',
-                            marginTop: '-10px'
-                        }, 400);
-                        });
-                    });
+        }else if(thisModule == 2 || thisModule == 3){
+			$('#exer2 #text').fadeIn('fast');
+			$('#exer2 #table').fadeIn(500, function() {
+				$('#exer2 #dino1').fadeIn('fast');
+				$('#exer2 #dino2').fadeIn('fast');
+			});
         }
         
     }
@@ -310,7 +299,7 @@ function checkCorrect() {
                 toSection('unlocked');
             }, 300); /* Stops the unlocked screen from transitioning to the exer2 again if at 4000...somehow */
         }
-    }else if(thisModule == 2){
+    }else if(thisModule == 2 || thisModule == 3){
         if ($('#exer1 .success').length == 2) {
             m2exer1Correct = true;
             $("#exer1 #text h4").html('Good job!');
@@ -481,24 +470,14 @@ function clickInteraction(exerData){
                 if(thisExer == 1){
                     $('#exer1 #text').fadeOut('fast');
                     $('#exer1 #dinoImages').fadeOut(500, function() {
-                        $('#console').animate({
-                            height: '0px',
-                            marginTop: '115px'
-                        }, 400, function() {
-                            toSection('exhibit');
-                        });
+                        toSection('exhibit');
                     });
                 }else if(thisExer == 2){
                     $('#exer2 #text').fadeOut('fast');
                     $('#exer2 #dino1').fadeOut(500);
                     $('#exer2 #dino2').fadeOut(500, function() {
                         $('#exer2 #table').fadeOut(200, function() {
-                        $('#console').animate({
-                            height: '0px',
-                            marginTop: '115px'
-                        }, 200, function() {
-                                toSection('exhibit');
-                            });
+                            toSection('exhibit');
                         });
                     });
                 }
@@ -684,8 +663,7 @@ function clickInteraction(exerData){
     				checkCorrect();
     			}
     		});
-        }else if(thisModule == 2){
-            //Exercise draft for Module 2
+        } else if(thisModule == 2){
 
             $("#meat-left, #meat-right, #leaf-left, #leaf-right").draggable({
                 revert: true,
@@ -713,7 +691,27 @@ function clickInteraction(exerData){
                     checkCorrect();
                 }
             });
-        }
+        } else if(thisModule == 3) {
+			$("body.module3 #exer2 #dino1").droppable({
+                accept:"#meat-left",
+                drop: function (event, ui) {
+                    $("body.module3 #exer2 #dino1").addClass("success");
+                    m3exer3Correct[0] = 1;
+                    console.log(m3exer3Correct);
+                    checkCorrect();
+                }
+            });
+
+            $("body.module3 #exer2 #dino2").droppable({
+                accept:"#meat-right",
+                drop: function (event, ui) {
+                    $("body.module3 #exer2 #dino2").addClass("success");
+                    m3exer3Correct[1] = 1;
+                    console.log(m3exer3Correct);
+                    checkCorrect();
+                }
+			});
+		}
 		
 		
     });
