@@ -1187,6 +1187,7 @@ body.module2 #exer2 #selectFood {
 }
 body.module2 #exer2 #selectFood #leaf-left img {
 	left:12px;
+	margin-right:165px;
 }
 body.module2 #exer2 #selectFood #meat-right img {
 	top:-23px;
