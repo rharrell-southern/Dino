@@ -200,15 +200,28 @@ function toSection(goTo, videoStart) {
         }
     }
     if (goTo == 'exer2') {
-        //Modules 1-2 fit the same structure, so no need to specify module (yet...)
-        $('#exer2 #text').fadeIn('fast');
-        $('#exer2 #drawer').animate({
-            height: '150px',
-            marginTop: '-34px'
-        }, 400, function() {
-            $('#exer2 #options').fadeIn('fast');
-            $('#exer2 .selectWords').fadeIn('fast');
-        });
+        if(thisModule == 1){
+            $('#exer2 #text').fadeIn('fast');
+            $('#exer2 #drawer').animate({
+                height: '150px',
+                marginTop: '-34px'
+            }, 400, function() {
+                $('#exer2 #options').fadeIn('fast');
+                $('#exer2 .selectWords').fadeIn('fast');
+            });
+        }else if(thisModule == 2){
+                    $('#exer2 #text').fadeIn('fast');
+                    $('#exer2 #dino1').fadeIn('fast');
+                    $('#exer2 #dino2').fadeIn('fast', function() {
+                        $('#exer2 #table').fadeIn(500, function() {
+                        $('#console').animate({
+                            height: '150px',
+                            marginTop: '-10px'
+                        }, 400);
+                        });
+                    });
+        }
+        
     }
 	if (goTo == 'exer3') {
         $('#exer3 #text').fadeIn('fast');
@@ -475,6 +488,19 @@ function clickInteraction(exerData){
                             toSection('exhibit');
                         });
                     });
+                }else if(thisExer == 2){
+                    $('#exer2 #text').fadeOut('fast');
+                    $('#exer2 #dino1').fadeOut(500);
+                    $('#exer2 #dino2').fadeOut(500, function() {
+                        $('#exer2 #table').fadeOut(200, function() {
+                        $('#console').animate({
+                            height: '0px',
+                            marginTop: '115px'
+                        }, 200, function() {
+                                toSection('exhibit');
+                            });
+                        });
+                    });
                 }
             }
         });
@@ -508,7 +534,6 @@ function clickInteraction(exerData){
                 var currentZone = $(this).attr('zone');
 
                 if (event.type == 'mouseenter') {
-                    console.log("Mouse ENTERED!")
                     for(j=1;j<=zones;j++) {
                         if(j == currentZone) {
                             $('#zone'+j).clearQueue().stop().animate({
