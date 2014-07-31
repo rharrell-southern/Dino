@@ -118,11 +118,10 @@ h1, h2, h3, h4, h5, h6 {
 body.module1 #subnav_content {
 	width:970px; /* Ensures margin:0px auto works and links are centered to page */
 }
-body.module2 #subnav_content {
+body.module2 #subnav_content, 
+body.module3 #subnav_content,
+body.module4 #subnav_content {
 	width:500px; /* Ensures margin:0px auto works and links are centered to page */
-}
-body.module3 #subnav_content {
-	width:500px;
 }
 #subnav a {
 	color:#FFF;
@@ -340,6 +339,16 @@ body.module3 #zone1 {
 	margin:0px auto;
 	opacity:0;
 }
+body.module4 #zone1 {
+	position:relative;
+	z-index:350;
+	right:180px;
+	top:133px;
+	cursor:pointer;
+	width:250px;
+	margin:0px auto;
+	opacity:0;
+}
 #zone1Hover, /* Text bubble across all modules */
 #zone2Hover {
 	width:500px;
@@ -372,6 +381,11 @@ body.module2 #zone1Hover {
 body.module3 #zone1Hover {
 	top:-230px;
 	left:-150px;
+}
+body.module4 #zone1Hover {
+	width:480px;
+	top:-290px;
+	right:200px;
 }
 div.blackout {
 	position:absolute;
