@@ -975,8 +975,9 @@ body.module1 #exer3 #text {
 	height:514px;
 	cursor:pointer;
 }
-#threeDcontent #text {
+#threeDmodel #text {
 	font-size:18px !important;
+	margin:-20px auto 0px auto;
 }
 
 /*
