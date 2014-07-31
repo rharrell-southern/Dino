@@ -333,8 +333,8 @@ body.module2 #zone1 {
 body.module3 #zone1 {
 	position:relative;
 	z-index:350;
-	right:-86px;
-	top:199px;
+	right:-79px;
+	top:183px;
 	cursor:pointer;
 	width:250px;
 	margin:0px auto;
@@ -370,8 +370,8 @@ body.module2 #zone1Hover {
 	left:-200px;
 }
 body.module3 #zone1Hover {
-	top:-220px;
-	left:230px;
+	top:-230px;
+	left:-150px;
 }
 div.blackout {
 	position:absolute;
@@ -768,10 +768,10 @@ body.module3 #exer2 #dino2 {
 	left:230px;
 }
 body.module3 #exer2 #dino1.success {
-	background-image:url("../images/mod2/plat-eating-correct.png") !important;
+	background-image:url("../images/mod3/herr-eating-correct.png") !important;
 }
 body.module3 #exer2 #dino2.success {
-	background-image:url("../images/mod2/ceti-eating-correct.png") !important;
+	background-image:url("../images/mod3/trex-eating-correct.png") !important;
 }
 body.module3 #exer2 #text {
 	margin:130px auto 0px auto;
@@ -1036,6 +1036,10 @@ body.module2 {
 	background-image:url("../images/mod2/module2BG-small.jpg");
 	background-position:center 50px;
 }
+body.module3 {
+	background-image:url("../images/mod3/module3BG-small.jpg");
+	background-position:center 50px;
+}
 /*--------------------- Header Section ----------------------*/
 #header {
 	height:62px;
@@ -1133,6 +1137,10 @@ body.module2 #zone1 {
 	right:-8px;
 	top:214px;
 }
+body.module3 #zone1 {
+	right:-83px;
+	top:130px;
+}
 #zone1Hover,
 #zone2Hover {
 	width:400px;
@@ -1150,6 +1158,9 @@ body.module1 #zone1Hover {
 body.module1 #zone2Hover {
 	top:-250px;
 	right:100px;
+}
+body.module3 #zone1Hover {
+	top:-190px;
 }
 
 /*-------------------- Video Section --------------------*/
@@ -1263,6 +1274,44 @@ body.module2 #exer1 #text {
 	margin:105px auto;
 }
 
+/*---------------- Exercise 1, Module 3 Section ---------------*/
+body.module3 #exer1 #dino1 {
+	background-image:url("../images/mod2/ovir-exer4-small.png");
+	width:114px;
+	height:85px; 
+	top:42px;
+}
+body.module3 #exer1 #dino2 {
+	background-image:url("../images/mod3/anky-small.png");
+	width:213px;
+	height:74px;
+	top:-82px;
+	left:49px;
+}
+body.module3 #exer1 #dino3 {
+	background-image:url("../images/mod3/trex-small.png");
+	width:199px;
+	height:124px;
+	top:-230px;
+	left:260px;
+}
+body.module3 #exer1 #dino4 {
+	background-image:url("../images/mod2/plat-exer4-small.png");
+	width:228px;
+	height:118px;
+	top:-300px;
+	left:450px;
+}
+body.module3 #exer1 #dino1.success {
+	background-image:url("../images/mod3/ovir-correct-small.png") !important;
+}
+body.module3 #exer1 #dino3.success {
+	background-image:url("../images/mod3/trex-correct-small.png") !important;
+}
+body.module3 #exer1 #text {
+	margin:105px auto;
+}
+
 /*---------------- Exercise 2 Module 1 Section ---------------*/
 body.module1 #exer2 #options {
 	background-image:url("../images/mod1/exer2bones-small.png");
@@ -1336,6 +1385,53 @@ body.module2 #exer2 #text {
 	margin:105px auto;
 }
 body.module2 #exer2 #console {
+	height:350px;
+}
+
+
+/*---------------- Exercise 2 Module 3 Section ---------------*/
+body.module3 #table {
+	bottom:-111px;
+}
+body.module3 #exer2 #selectFood {
+	width:437px;
+}
+body.module3 #exer2 #selectFood #leaf-left img {
+	left:12px;
+	margin-right:165px;
+}
+body.module3 #exer2 #selectFood #meat-right img {
+	top:-23px;
+	left:-14px;
+}
+body.module3 #exer2 #selectFood #leaf-right img {
+	top:-22px;
+	left:-2px;
+}
+body.module3 #exer2 #dino1 {
+	background-image:url("../images/mod3/herr-eating-small.png");
+	width:274px;
+	height:166px;
+	top:-150px;
+	left:-140px;
+}
+body.module3 #exer2 #dino2 {
+	background-image:url("../images/mod3/trex-eating-small.png");
+	width:272px;
+	height:165px;
+	top:-320px;
+	left:190px;
+}
+body.module3 #exer2 #dino1.success {
+	background-image:url("../images/mod3/herr-eating-correct-small.png") !important;
+}
+body.module3 #exer2 #dino2.success {
+	background-image:url("../images/mod3/trex-eating-correct-small.png") !important;
+}
+body.module3 #exer2 #text {
+	margin:105px auto;
+}
+body.module3 #exer2 #console {
 	height:350px;
 }
 

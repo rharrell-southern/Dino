@@ -468,7 +468,7 @@ function clickInteraction(exerData){
                         });
                     });
                 }
-            }else if(thisModule == 2){
+            }else if(thisModule == 2 || thisModule == 3){
                 if(thisExer == 1){
                     $('#exer1 #text').fadeOut('fast');
                     $('#exer1 #dinoImages').fadeOut(500, function() {
