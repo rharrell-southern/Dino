@@ -625,6 +625,69 @@ body.module3 #exer1 #text {
 	margin:130px auto 0px auto;
 }
 
+/* ----------------- Exercise 1 for Module 4 ------------------- */
+body.module4 #exer1 #dino1 {
+	background-image:url("../images/mod4/dryo.png");
+	background-repeat:no-repeat;
+	width:286px;
+	height:131px; 
+	position:relative;
+	top:55px;
+	z-index:5;
+}
+body.module4 #exer1 #dino2 {
+	background-image:url("../images/mod4/drac.png");
+	background-repeat:no-repeat;
+	width:285px;
+	height:213px;
+	position:relative;
+	top:-151px;
+	left:300px;
+	z-index:4;
+}
+body.module4 #exer1 #dino3 {
+	background-image:url("../images/mod4/tric.png");
+	background-repeat:no-repeat;
+	width:278px;
+	height:119px;
+	position:relative;
+	top:-280px;
+	left:600px;
+	z-index:3;
+}
+body.module4 #exer1 #dino1.success {
+	background-image:url("../images/mod4/dryo-correct.png") !important;
+}
+body.module4 #exer1 #dino2.success {
+	background-image:url("../images/mod4/drac-correct.png") !important;
+}
+body.module4 #exer1 #dino3.success {
+	background-image:url("../images/mod4/tric-correct.png") !important;
+}
+body.module4 #exer1 .selectWords {
+	/*display:none;*/
+	padding:53px 100px;
+	color:#333;
+	font-size:30px;
+	text-shadow:0px 0px 8px #000;
+}
+body.module4 #exer1 #word1 {
+	cursor:move;
+	padding-left:80px;
+	padding-right:100px;
+}
+body.module4 #exer1 #word2 {
+	cursor:move;
+	padding-right:100px;
+}
+body.module4 #exer1 #word3 {
+	cursor:move;
+}
+body.module4 #exer1 #text {
+	margin:10px auto 0px auto;
+}
+
+
 /*
 
 ###################### EXERCISE TWO ########################
@@ -680,7 +743,6 @@ body.module1 #exer2 #word3 {
 body.module1 #exer2 #text {
 	margin:10px auto 0px auto;
 }
-
 
 /* ----------------- Exercise 2 for Module 2 ------------------- */
 #exer2Container {
@@ -792,6 +854,52 @@ body.module3 #exer2 #text {
 }
 body.module3 #exer2 #console {
 	z-index:3;
+}
+
+/* ----------------- Exercise 2 for Module 4 ------------------- */
+body.module4 #exer2 #dino1 {
+	background-image:url("../images/mod4/steg.png");
+	background-repeat:no-repeat;
+	width:281px;
+	height:144px; 
+	position:relative;
+	top:40px;
+	left:80px;
+	z-index:5;
+}
+body.module4 #exer2 #dino2 {
+	background-image:url("../images/anky.png");
+	background-repeat:no-repeat;
+	width:318px;
+	height:106px;
+	position:relative;
+	top:-70px;
+	left:500px;
+	z-index:4;
+}
+body.module4 #exer2 #dino1.success {
+	background-image:url("../images/mod4/steg-correct.png") !important;
+}
+body.module4 #exer2 #dino2.success {
+	background-image:url("../images/mod4/anky-correct.png") !important;
+}
+body.module4 #exer2 .selectWords {
+	/*display:none;*/
+	padding:53px 100px;
+	color:#333;
+	font-size:30px;
+	text-shadow:0px 0px 8px #000;
+}
+body.module4 #exer2 #word1 {
+	cursor:move;
+	padding-left:210px;
+	padding-right:180px;
+}
+body.module4 #exer2 #word2 {
+	cursor:move;
+}
+body.module4 #exer2 #text {
+	margin:10px auto 0px auto;
 }
 
 /*
@@ -1054,6 +1162,10 @@ body.module3 {
 	background-image:url("../images/mod3/module3BG-small.jpg");
 	background-position:center 50px;
 }
+body.module4 {
+	background-image:url("../images/mod4/module4BG-small.jpg");
+	background-position:center 50px;
+}
 /*--------------------- Header Section ----------------------*/
 #header {
 	height:62px;
@@ -1081,7 +1193,9 @@ body.module3 {
 body.module1 #subnav_content {
 	width:726px; /* Ensures margin:0px auto works and links are centered to page */
 }
-body.module2 #subnav_content {
+body.module2 #subnav_content,
+body.module3 #subnav_content,
+body.module4 #subnav_content {
 	width:375px; /* Ensures margin:0px auto works and links are centered to page */
 	left:15px !important; /* Just my preference, it doesn't seem centered otherwise, though mathematically it is */
 }
@@ -1155,6 +1269,10 @@ body.module3 #zone1 {
 	right:-83px;
 	top:130px;
 }
+body.module4 #zone1 {
+	right:77px;
+	top:98px;
+}
 #zone1Hover,
 #zone2Hover {
 	width:400px;
@@ -1175,6 +1293,10 @@ body.module1 #zone2Hover {
 }
 body.module3 #zone1Hover {
 	top:-190px;
+}
+body.module4 #zone1Hover {
+	top:-190px;
+	right:220px;
 }
 
 /*-------------------- Video Section --------------------*/
@@ -1326,6 +1448,51 @@ body.module3 #exer1 #text {
 	margin:105px auto;
 }
 
+/*---------------- Exercise 1 Module 4 Section ---------------*/
+body.module4 #exer1 #dino1 {
+	background-image:url("../images/mod4/dryo-small.png");
+	width:200px;
+	height:92px;
+	top:35px;
+}
+body.module4 #exer1 #dino2 {
+	background-image:url("../images/mod4/drac-small.png");
+	width:194px;
+	height:137px;
+	top:-110px;
+	left:225px;
+}
+body.module4 #exer1 #dino3 {
+	background-image:url("../images/mod4/tric-small.png");
+	width:195px;
+	height:83px;
+	top:-190px;
+	left:450px;
+}
+body.module4 #exer1 #dino1.success {
+	background-image:url("../images/mod4/dryo-correct-small.png") !important;
+}
+body.module4 #exer1 #dino2.success {
+	background-image:url("../images/mod4/drac-correct-small.png") !important;
+}
+body.module4 #exer1 #dino3.success {
+	background-image:url("../images/mod4/tric-correct-small.png") !important;
+}
+body.module4 #exer1 .selectWords {
+	font-size:25px;
+	padding:42px 105px;
+}
+body.module4 #exer1 #word1 { 
+	padding-left:0px;
+	padding-right:40px; 
+}
+body.module4 #exer1 #word2 {
+	padding-right:40px;
+}
+body.module4 #exer1 #text {
+	margin:-8px auto;
+}
+
 /*---------------- Exercise 2 Module 1 Section ---------------*/
 body.module1 #exer2 #options {
 	background-image:url("../images/mod1/exer2bones-small.png");
@@ -1449,6 +1616,39 @@ body.module3 #exer2 #console {
 	height:350px;
 }
 
+/*---------------- Exercise 2 Module 4 Section ---------------*/
+body.module4 #exer2 #dino1 {
+	background-image:url("../images/mod4/steg-small.png");
+	width:197px;
+	height:101px;
+	top:35px;
+	left:60px;
+}
+body.module4 #exer2 #dino2 {
+	background-image:url("../images/anky-small.png");
+	width:242px;
+	height:81px;
+	top:-60px;
+	left:370px;
+}
+body.module4 #exer2 #dino1.success {
+	background-image:url("../images/mod4/steg-correct-small.png") !important;
+}
+body.module4 #exer2 #dino2.success {
+	background-image:url("../images/mod4/anky-correct-small.png") !important;
+}
+body.module4 #exer2 .selectWords {
+	font-size:25px;
+	padding:42px 200px;
+}
+body.module4 #exer2 #word1 { 
+	padding-left:0px;
+	padding-right:120px; 
+}
+body.module4 #exer2 #text {
+	margin:-8px auto;
+}
+
 /*---------------- Exercise 3 Module 1 Section ---------------*/
 body.module1 #exer3 #dino1 {
 	background-image:url("../images/tric-small.png");
@@ -1490,6 +1690,7 @@ body.module1 #exer3 #selectHips #hips1 img {
 /*------------------ Unlocked Section -----------------*/
 #unlocked #lock {
 	background-image:url("../images/locked-small.png");
+	height:380px;
 }
 #unlocked #console #unlocked_close {
 	margin-top:-50px;

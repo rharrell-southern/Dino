@@ -191,10 +191,19 @@ function toSection(goTo, videoStart) {
                 $('#exer1 #options').fadeIn('fast');
                 $('#exer1 .selectWords').fadeIn('fast');
             });
-        }else if(thisModule == 2 || thisModule == 3){
+		}else if(thisModule == 2 || thisModule == 3){
                 $('#exer1 #text').fadeIn('fast');
                 $('#exer1 #dinoImages').fadeIn('fast');
-        }
+        }else if(thisModule == 4){
+			$('#exer1 #text').fadeIn('fast');
+			$('#exer1 #drawer').animate({
+				height: '150px',
+				marginTop: '-34px'
+			}, 400, function() {
+				$('#exer1 #dinoImages').fadeIn('fast');
+				$('#exer1 #selectWords').fadeIn('fast');
+			});
+		}
     }
     if (goTo == 'exer2') {
         if(thisModule == 1){
@@ -211,7 +220,16 @@ function toSection(goTo, videoStart) {
 				$('#exer2 #dino1').fadeIn('fast');
 				$('#exer2 #dino2').fadeIn('fast');
 			});
-        }
+        }else if(thisModule == 4) {
+			 $('#exer2 #text').fadeIn('fast');
+			 $('#exer2 #drawer').animate({
+				height: '150px',
+				marginTop: '-34px'
+			 }, 400, function() {
+				$('#exer2 #dinoImages').fadeIn('fast');
+				$('#exer2 #selectHips').fadeIn('fast');
+			 });
+		}
         
     }
 	if (goTo == 'exer3') {
@@ -468,7 +486,8 @@ function clickInteraction(exerData){
                         });
                     });
                 }
-            }else if(thisModule == 2 || thisModule == 3){
+            }
+			if(thisModule == 2 || thisModule == 3){
                 if(thisExer == 1){
                     $('#exer1 #text').fadeOut('fast');
                     $('#exer1 #dinoImages').fadeOut(500, function() {
@@ -483,8 +502,33 @@ function clickInteraction(exerData){
                         });
                     });
                 }
-            }
-        });
+            } 
+			if(thisModule == 4){
+                if(thisExer == 1){
+                    $('#exer1 #dinoImages').fadeOut('fast');
+                    $('#exer1 #selectWords').fadeOut('fast');
+                    $('#exer1 #text').fadeOut('fast', function() {
+                        $('#drawer').animate({
+                            height: '0px',
+                            marginTop: '115px'
+                        }, 300, function() {
+                            toSection('exhibit'); 
+						});
+					});
+				}else if(thisExer == 2) {
+					$('#exer2 #dinoImages').fadeOut('fast');
+                    $('#exer2 #selectHips').fadeOut('fast');
+                    $('#exer2 #text').fadeOut('fast', function() {
+                        $('#drawer').animate({
+                            height: '0px',
+                            marginTop: '115px'
+                        }, 300, function() {
+                            toSection('exhibit');
+                        });
+					});
+				}
+			}
+		});
 
         // Unlock interactions
         $('#content').on('click', '#unlocked_close', function() {
