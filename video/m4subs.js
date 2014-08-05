@@ -5,37 +5,72 @@ subs[4] = new Array();
 subs[4][1] = [
                 {
               on: '00:01',
-                 value: 'Dinosaurs are divided into two categories based on their hip structure.',
+                 value: 'Remember that dinosaurs are divided into two groups by their hip structure. Saurichians had hips like lizards, and Ornithichians had hips like birds.',
                     callback: updateSubtitles
                 },
                 {
-              on: '00:06',
-                 value: 'As you can see these hips have very different bone structures. With some dinosaurs the pubis bone points forward like a lizard’s hip, and on others the pubis points backward like a bird’s hip.',
+              on: '00:10',
+                 value: 'Unlike Saurichian dinosaurs, whose pubis bones point forward, Ornithichian dinosaurs have pubis bones that point backward.',
                     callback: updateSubtitles
                 },
                 {
-              on: '00:19',
-                 value: 'Each of these hip types share the same bones: the Ilim, Ischium, and Pubis. But keep in mind the direction the pubis points is what makes them stand apart.',
+              on: '00:18',
+                 value: 'Ornithichians are divided into at least five different groups: Ornithopods,  Pachycephalosaurus, Ceratopsians, Stegosaurs, and Ankylosaurs.',
                     callback: updateSubtitles
                 },
                 {
-              on: '00:30',
-                 value: 'A dinosaur like this Plateosaurus has pubis that points forward which means he belongs to the “Saurichian” category. The word Saurichian means lizard hip. “Saur” means lizard and “ischi” means hip.',
+              on: '00:33',
+                 value: 'All of the Ornithichians were herbivores. Herbivore is another word for vegetarian. Of the five kinds of Ornithichians, four kinds were armored and one wasn\'t.',
                     callback: updateSubtitles
                 },
                 {
-              on: '00:46',
-                 value: 'On the other hand, a dinosaur like this Arrhinoceratops has a pubis that points backward, which means he belongs to the “Ornithischian” category. The word Ornithichian means bird hip. “Ornith” means bird and “ischi”, you guessed it, means hip.',
+              on: '00:45',
+                 value: 'Of the five, two were bipedal which means they walked on two feet, and three were quadripedal which means they walked on four feet.',
                     callback: updateSubtitles
                 },
                 {
-              on: '01:03',
-                 value: 'Take a moment to review the names of these bones and what category they belong to before moving on to the next section.',
+              on: '00:53',
+                 value: 'Ornithopod means birdfoot. "Ornith" means bird and "pod" means foot. Ornithopods did not have armor and were mostly bipedal.',
                     callback: updateSubtitles
-                },                
+                },  
+                {
+              on: '01:04',
+                 value: 'Scientists think that some of them walked on two legs all the time. Others may have used four legs when they walked but when they ran, it was always on two legs.',
+                    callback: updateSubtitles
+                },            
+                {
+              on: '01:15',
+                 value: 'Two examples of Ornithopods dinosaurs are the dryosaurus and hadrosaurus. Pachycephalosaurus were armored dinosaurs. Their armor was on their sculls, some of which were shaped like domes. Some had horns that pointed backwards.',
+                    callback: updateSubtitles
+                },
+                {
+              on: '01:34',
+                 value: 'Pachycephalosaurus had short arms and were the only armored dinosaurs that were bipedal. They also had stout and strong tails.',
+                    callback: updateSubtitles
+                }, 
+                {
+              on: '01:44',
+                 value: 'Most Ceratopsians were quadripedal with short tails. Some had large, parrot like beaks. The rear portion of their skulls were often large; frills and horns were their most notable characteristics. The most famous Ceratopsian dinosaur is Triceratops.',
+                    callback: updateSubtitles
+                },  
+                {
+              on: '02:04',
+                 value: 'Stegosaurs were also armored quadripedal dinosaurs. They had two rows of upright plates and/or spines from their necks to the end of their tails.',
+                    callback: updateSubtitles
+                },
+                {
+              on: '02:13',
+                 value: 'Their front limbs were shorter than their hind limbs, and they had relatively small heads with narrow snouts.',
+                    callback: updateSubtitles
+                },
+                {
+              on: '02:21',
+                 value: 'Ankylosaurs were the most heavily armored dinosaurs of all. They were quadripedal with short legs and a wide ribcage. They had plates and spines in many places all over their bodies. Some even had a club made of bone at the end of their tails.',
+                    callback: updateSubtitles
+                },
                //BEGIN INTERACTIVE
                 {
-              on: '01:13',
+              on: '02:38',
                  value: 'Interactive 1',
                     callback: function(obj) { updateSubtitles(obj); toInteractive('exer1'); }
                   
