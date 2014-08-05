@@ -17,8 +17,15 @@ var lockImgPath;
 var slides;
 var zones;
 var videoPath = new Array();
-var exerInt;
+var exerInt = new Array();
 
+var draggableOptions = {
+                revert: true,
+                helper: "original",
+                cursor: "move",
+                zIndex:450
+};
+var droppableOptions= new Array();
 
 
 switch(thisModule) {
@@ -27,12 +34,96 @@ switch(thisModule) {
 		slides = 10;
         videoPath[1] = 'video/m1.1.mp4';
         videoPath[2] = 'video/m1.2.mp4';
+        droppableOptions = [["#exer1 #option1", {
+            accept: "#word2",
+            hoverClass: "drop-hover",
+            drop: function (event, ui) {
+                dropCorrect($(this), 'Lizard');
+            }
+        }], ["#exer1 #option2", {
+            accept: "#word1",
+            hoverClass: "drop-hover",
+            drop: function (event, ui) {
+                dropCorrect($(this), 'Hip');
+            }
+        }], ["#exer1 #option3", {
+            accept: "#word3",
+            hoverClass: "drop-hover",
+            drop: function (event, ui) {
+                dropCorrect($(this), 'Bird');
+            }
+        }], ["#exer1 #option4", {
+            accept: "#word1",
+            hoverClass: "drop-hover",
+            drop: function (event, ui) {
+                dropCorrect($(this), 'Hip');
+            }
+        }], ["#exer2 #option1", {
+            accept: "#word1",
+            hoverClass: "drop-hover",
+            drop: function (event, ui) {
+                dropCorrect($(this), 'Illium');
+            }
+        }], ["#exer2 #option2", {
+            accept: "#word2",
+            hoverClass: "drop-hover",
+            drop: function (event, ui) {
+                dropCorrect($(this), 'Ishium');
+            }
+        }], ["#exer2 #option3", {
+            accept: "#word3",
+            hoverClass: "drop-hover",
+            drop: function (event, ui) {
+                dropCorrect($(this), 'Pubis');
+            }
+        }], ["#exer3 #dino1", {
+            accept: "#hips1",
+            drop: function (event, ui) {
+                $("#dino1").addClass("success");
+                exer3Correct[0] = 1;
+                console.log(exer3Correct);
+                checkCorrect();
+            }
+        }], ["#exer3 #dino2", {
+            accept: "#hips2",
+            drop: function (event, ui) {
+                $("#dino2").addClass("success");
+                exer3Correct[1] = 1;
+                console.log(exer3Correct);
+                checkCorrect();
+            }
+        }], ["#exer3 #dino3", {
+            accept: "#hips1",
+            drop: function (event, ui) {
+                $("#dino3").addClass("success");
+                exer3Correct[2] = 1;
+                console.log(exer3Correct);
+                checkCorrect();
+            }
+        }]];
 		break;
 	case 2:
 		zones = 1;
 		slides = 0;
         videoPath[1] = 'video/m2.1.mp4';
         exerInt = ['exer1', ['dino3', 'dino4']];
+        droppableOptions = [["body.module2 #exer2 #dino1", {
+            accept: "#leaf-left, #leaf-right",
+            drop: function (event, ui) {
+                $("body.module2 #exer2 #dino1").addClass("success");
+                m2exer2Correct[0] = 1;
+                console.log(m2exer2Correct);
+                checkCorrect();
+            }
+        }], ["body.module2 #exer2 #dino2", {
+            accept: "#leaf-left, #leaf-right",
+            drop: function (event, ui) {
+                $("body.module2 #exer2 #dino2").addClass("success");
+                m2exer2Correct[1] = 1;
+                console.log(m2exer2Correct);
+                checkCorrect();
+            }
+        }]];
 
 		break;
 	case 3:
@@ -40,6 +131,24 @@ switch(thisModule) {
 		slides = 0;
         videoPath[1] = 'video/m3.1.mp4';
         exerInt = ['exer1', ['dino1', 'dino3']];
+        droppableOptions = [["body.module3 #exer2 #dino1", {
+            accept: "#meat-left, #meat-right",
+            drop: function (event, ui) {
+                $("body.module3 #exer2 #dino1").addClass("success");
+                m2exer2Correct[0] = 1;
+                console.log(m2exer2Correct);
+                checkCorrect();
+            }
+        }], ["body.module3 #exer2 #dino2", {
+            accept: "#meat-left, #meat-right",
+            drop: function (event, ui) {
+                $("body.module3 #exer2 #dino2").addClass("success");
+                m2exer2Correct[1] = 1;
+                console.log(m2exer2Correct);
+                checkCorrect();
+            }
+        }]];
+
 		break;
 	case 4:
 		zones = 2;
@@ -597,161 +706,22 @@ function clickInteraction(exerData){
             }
         });
 
+        
 
-        //Drag and drop listeners
 
+        //Register draggable listeners.
         if(thisModule == 1){
-            $("#word1, #word2, #word3").draggable({
-                revert: true,
-                helper: "original",
-                cursor: "move",
-                zIndex: 450
-            });
-    		
-    		$("#hips1, #hips2").draggable({
-    			revert: true,
-    			helper: "original",
-    			cursor: "move",
-    			zIndex:450
-    		});
-
-            //Interactive One Options
-            $("#exer1 #option1").droppable({
-                accept: "#word2",
-                hoverClass: "drop-hover",
-                drop: function(event, ui) {
-                    dropCorrect($(this), 'Lizard');
-                }
-            });
-            $("#exer1 #option2").droppable({
-                accept: "#word1",
-                hoverClass: "drop-hover",
-                drop: function(event, ui) {
-                    dropCorrect($(this), 'Hip');
-                }
-            });
-            $("#exer1 #option3").droppable({
-                accept: "#word3",
-                hoverClass: "drop-hover",
-                drop: function(event, ui) {
-                    dropCorrect($(this), 'Bird');
-                }
-            });
-            $("#exer1 #option4").droppable({
-                accept: "#word1",
-                hoverClass: "drop-hover",
-                drop: function(event, ui) {
-                    dropCorrect($(this), 'Hip');
-                }
-            });
-
-            // Interactive 2 Options
-            $("#exer2 #option1").droppable({
-                accept: "#word1",
-                hoverClass: "drop-hover",
-                drop: function(event, ui) {
-                    dropCorrect($(this), 'Illium');
-                }
-            });
-            $("#exer2 #option2").droppable({
-                accept: "#word2",
-                hoverClass: "drop-hover",
-                drop: function(event, ui) {
-                    dropCorrect($(this), 'Ishium');
-                }
-            });
-            $("#exer2 #option3").droppable({
-                accept: "#word3",
-                hoverClass: "drop-hover",
-                drop: function(event, ui) {
-                    dropCorrect($(this), 'Pubis');
-                }
-            });
-    		
-    		// Interactive 3 Options
-    		$("#exer3 #dino1").droppable({
-    			accept:"#hips1",
-    			drop: function (event, ui) {
-    				$("#dino1").addClass("success");
-    				exer3Correct[0] = 1;
-    				console.log(exer3Correct);
-    				checkCorrect();
-    			}
-    		});
-    		$("#exer3 #dino2").droppable({
-    			accept:"#hips2",
-    			drop: function (event, ui) {
-    				$("#dino2").addClass("success");
-    				exer3Correct[1] = 1;
-    				console.log(exer3Correct);
-    				checkCorrect();
-    			}
-    		});
-    		$("#exer3 #dino3").droppable({
-    			accept:"#hips1",
-    			drop: function (event, ui) {
-    				$("#dino3").addClass("success");
-    				exer3Correct[2] = 1;
-    				console.log(exer3Correct);
-    				checkCorrect();
-    			}
-    		});
+            $("#word1, #word2, #word3, #hips1, #hips2").draggable(draggableOptions);
         } else if(thisModule == 2){
-
-            $("#meat-left, #meat-right, #leaf-left, #leaf-right").draggable({
-                revert: true,
-                helper: "original",
-                cursor: "move",
-                zIndex:450
-            });
-
-            $("body.module2 #exer2 #dino1").droppable({
-                accept:"#leaf-left",
-                drop: function (event, ui) {
-                    $("body.module2 #exer2 #dino1").addClass("success");
-                    m2exer2Correct[0] = 1;
-                    console.log(m2exer2Correct);
-                    checkCorrect();
-                }
-            });
-
-            $("body.module2 #exer2 #dino2").droppable({
-                accept:"#leaf-right",
-                drop: function (event, ui) {
-                    $("body.module2 #exer2 #dino2").addClass("success");
-                    m2exer2Correct[1] = 1;
-                    console.log(m2exer2Correct);
-                    checkCorrect();
-                }
-            });
+            $("#meat-left, #meat-right, #leaf-left, #leaf-right").draggable(draggableOptions);
         } else if(thisModule == 3) {
-            $("#meat-left, #meat-right, #leaf-left, #leaf-right").draggable({
-                revert: true,
-                helper: "original",
-                cursor: "move",
-                zIndex:450
-            });
-
-			$("body.module3 #exer2 #dino1").droppable({
-                accept:"#meat-left",
-                drop: function (event, ui) {
-                    $("body.module3 #exer2 #dino1").addClass("success");
-                    m2exer2Correct[0] = 1;
-                    console.log(m2exer2Correct);
-                    checkCorrect();
-                }
-            });
-
-            $("body.module3 #exer2 #dino2").droppable({
-                accept:"#meat-right",
-                drop: function (event, ui) {
-                    $("body.module3 #exer2 #dino2").addClass("success");
-                    m2exer2Correct[1] = 1;
-                    console.log(m2exer2Correct);
-                    checkCorrect();
-                }
-			});
+            $("#meat-left, #meat-right, #leaf-left, #leaf-right").draggable(draggableOptions);
 		}
+
+        //Create and register droppable listeners.
+        for (var i = 0; i < droppableOptions.length ; i++) {
+            $(droppableOptions[i][0]).droppable(droppableOptions[i][1]);
+        }
 		
 		
     });
