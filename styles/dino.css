@@ -258,17 +258,12 @@ body.module4 #subnav_content {
 	left:0px;
 	right:0px;
 }
-#pond { /* style being changed dynamically for effect */
-	background-image:url("../images/pond.png");
-	background-position:top center;
-	background-repeat:no-repeat;
-	position:relative;
-	opacity:0;
-	height:0px;
-	width:1110px;
-	margin:0px auto;
-	margin-top:115px;
-}
+/* 
+
+	#pond has been deleted,
+	needs to be deleted in Javascript as well!
+	
+*/
 #table {
 	background-image:url("../images/mod2/dino-table.png");
 	background-position:top center;
@@ -460,12 +455,12 @@ div.blackout {
 	display:none;
 }
 body.module1 #exer1 #options {
-	display:none;
+	display:none; 
 	color:#fff;
 	position:relative;
 	z-index:300;
 	width:700px;
-	margin:0px auto;
+	margin:-30px auto 0px auto;
 }
 body.module1 #exer1 #option1 { margin-right: 100px; }
 body.module1 #exer1 #option3 { margin-right: 100px; }
@@ -486,34 +481,26 @@ body.module1 #exer1 #options #dash-ornith-right { padding:0px 30px 0px 102px; }
 body.module1 #exer1 #options .box { 
 	background:rgba(243,204,48,0.85);
 }
-body.module1 #exer1 .selectWords { /* make sure to change "words" to "selectWords" in JS */
-	font-size:60px;
-	padding-top:200px;
-	color:#f1cb31;
-	text-shadow:0px 0px 6px rgba(0,0,0,0.6);
-	z-index:2;
+body.module1 #exer1 .selectWords {
 	/*display:none;*/
+	padding:45px 245px;
+	color:#333;
+	font-size:45px;
+	text-shadow:0px 0px 8px #000;
 }
 body.module1 #exer1 #word1 {
 	cursor:move;
-	transform:rotate(-17deg);
-	-ms-transform:rotate(-17deg); /* IE 9 */
-	-webkit-transform:rotate(-17deg); /* Opera, Chrome, and Safari */
-	padding-left:200px;
 	padding-right:160px;
 }
 body.module1 #exer1 #word2 {
 	cursor:move;
-	transform:rotate(17deg);
-	-ms-transform:rotate(17deg); /* IE 9 */
-	-webkit-transform:rotate(17deg); /* Opera, Chrome, and Safari */
 	padding-right:160px;
 }
 body.module1 #exer1 #word3 {
 	cursor:move;
-	transform:rotate(-17deg);
-	-ms-transform:rotate(-17deg); /* IE 9 */
-	-webkit-transform:rotate(-17deg); /* Opera, Chrome, and Safari */
+}
+body.module1 #exer1 #text {
+	margin:10px auto 0px auto;
 }
 
 /* ----------------- Exercise 1 for Module 2 ------------------- */
@@ -569,7 +556,6 @@ body.module2 #exer1 #dino4.success {
 body.module2 #exer1 #text {
 	margin:130px auto 0px auto;
 }
-
 
 /* ----------------- Exercise 1 for Module 3 ------------------- */
 body.module3 #exer1 #dino1 {
@@ -959,6 +945,7 @@ body.module1 #exer3 #selectHips #hips1 img {
 body.module1 #exer3 #text {
 	margin:10px auto 0px auto;
 }
+
 
 /*
 

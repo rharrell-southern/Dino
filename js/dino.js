@@ -183,11 +183,10 @@ function toSection(goTo, videoStart) {
     if (goTo == 'exer1') {
         if(thisModule == 1){
             $('#exer1 #text').fadeIn('fast');
-            $('#exer1 #pond').animate({
-                height: '320px',
-                marginTop: '-195px',
-                opacity: 1
-            }, 300, function() {
+            $('#exer1 #drawer').animate({
+                height: '150px',
+                marginTop: '-34px'
+            }, 400, function() {
                 $('#exer1 #options').fadeIn('fast');
                 $('#exer1 .selectWords').fadeIn('fast');
             });
@@ -451,19 +450,7 @@ function clickInteraction(exerData){
             var thisExer = $(this).parent().parent().parent().attr('id').charAt('4');
 
             if(thisModule == 1){
-                if(thisExer == 1){
-                    $('#exer1 #text').fadeOut('fast');
-                    $('#exer1 #options').fadeOut('fast');
-                    $('#exer1 .selectWords').fadeOut('fast', function() {
-                        $('#exer1 #pond').animate({
-                            height: '0px',
-                            marginTop: '0px',
-                            opacity: 0
-                        }, 300, function() {
-                            toSection('exhibit');
-                        });
-                    });
-                }else if(thisExer == 2){
+                if(thisExer == 1 || thisExer == 2){
                     $('#exer2 #options').fadeOut('fast');
                     $('#exer2 #text').fadeOut('fast');
                     $('#exer2 .selectWords').fadeOut('fast', function() {
