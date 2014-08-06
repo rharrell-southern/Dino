@@ -35,70 +35,117 @@ switch(thisModule) {
         videoPath[1] = 'video/m1.1.mp4';
         videoPath[2] = 'video/m1.2.mp4';
         droppableOptions = [["#exer1 #option1", {
-            accept: "#word2",
+            //accept: "#word2",
             hoverClass: "drop-hover",
             drop: function (event, ui) {
-                dropCorrect($(this), 'Lizard');
+                //Instead of using accept method, we evaluate within the drop function in order to provide the user with error reporting.
+                var drop = ui.draggable[0].innerHTML;
+                if (drop == 'Lizard') {
+                    dropCorrect($(this), 'Lizard');
+                } else {
+                    //alert user as to why answer is incorrect, then revert back to original content
+                    displayAlert($("#exer1"), "'" + drop + "' is incorrect, because reasons.");
+                }
             }
-        }], ["#exer1 #option2", {
-            accept: "#word1",
+        }], ["#exer1 #option2", { 
             hoverClass: "drop-hover",
-            drop: function (event, ui) {
-                dropCorrect($(this), 'Hip');
+            drop: function (event, ui) { 
+                var drop = ui.draggable[0].innerHTML;
+                if (drop == 'Hip') {
+                    dropCorrect($(this), 'Hip');
+                } else {
+                    displayAlert($("#exer1"), "'" + drop + "' is incorrect, because reasons.");
+                }
             }
         }], ["#exer1 #option3", {
-            accept: "#word3",
             hoverClass: "drop-hover",
             drop: function (event, ui) {
-                dropCorrect($(this), 'Bird');
+                var drop = ui.draggable[0].innerHTML;
+                if (drop == 'Bird') {
+                    dropCorrect($(this), 'Bird');
+                } else {
+                    displayAlert($("#exer1"), "'" + drop + "' is incorrect, because reasons.");
+                }
             }
         }], ["#exer1 #option4", {
-            accept: "#word1",
             hoverClass: "drop-hover",
             drop: function (event, ui) {
-                dropCorrect($(this), 'Hip');
+                var drop = ui.draggable[0].innerHTML;
+                if (drop == 'Hip') {
+                    dropCorrect($(this), 'Hip');
+                } else {
+                    displayAlert($("#exer1"), "'" + drop + "' is incorrect, because reasons.");
+                }
             }
         }], ["#exer2 #option1", {
-            accept: "#word1",
             hoverClass: "drop-hover",
             drop: function (event, ui) {
-                dropCorrect($(this), 'Illium');
+                var drop = ui.draggable[0].innerHTML;
+                if (drop == 'Illium') {
+                    dropCorrect($(this), 'Illium');
+                } else {
+                    displayAlert($("#exer2"), "'" + drop + "' is incorrect, because reasons.");
+                }
             }
         }], ["#exer2 #option2", {
-            accept: "#word2",
             hoverClass: "drop-hover",
             drop: function (event, ui) {
-                dropCorrect($(this), 'Ishium');
+                var drop = ui.draggable[0].innerHTML;
+                if (drop == 'Ishium') {
+                    dropCorrect($(this), 'Ishium');
+                } else {
+                    displayAlert($("#exer2"), "'" + drop + "' is incorrect, because reasons.");
+                }
             }
         }], ["#exer2 #option3", {
-            accept: "#word3",
             hoverClass: "drop-hover",
             drop: function (event, ui) {
-                dropCorrect($(this), 'Pubis');
+                var drop = ui.draggable[0].innerHTML;
+                if (drop == 'Pubis') {
+                    dropCorrect($(this), 'Pubis');
+                } else {
+                    displayAlert($("#exer2"), "'" + drop + "' is incorrect, because reasons.");
+                }
             }
         }], ["#exer3 #dino1", {
-            accept: "#hips1",
             drop: function (event, ui) {
-                $("#dino1").addClass("success");
-                exer3Correct[0] = 1;
-                console.log(exer3Correct);
-                checkCorrect();
+                var drop = $(ui.draggable[0]).attr('id');
+                console.log(drop);
+                if (drop == 'hips1') {
+                    $("#dino1").addClass("success");
+                    exer3Correct[0] = 1;
+                    checkCorrect();
+                } else {
+                    displayAlert($("#exer3"), "'" + drop + "' is incorrect, because reasons.");
+                    $("#dino1").removeClass("success");
+                    exer3Correct[0] = 0;
+                }
             }
         }], ["#exer3 #dino2", {
-            accept: "#hips2",
             drop: function (event, ui) {
-                $("#dino2").addClass("success");
-                exer3Correct[1] = 1;
-                console.log(exer3Correct);
-                checkCorrect();
+                var drop = $(ui.draggable[0]).attr('id');
+                if (drop == 'hips2') {
+                    $("#dino2").addClass("success");
+                    exer3Correct[1] = 1;
+                    checkCorrect();
+                } else {
+                    displayAlert($("#exer3"), "'" + drop + "' is incorrect, because reasons.");
+                    $("#dino2").removeClass("success");
+                    exer3Correct[1] = 0;
+                }
             }
         }], ["#exer3 #dino3", {
-            accept: "#hips1",
             drop: function (event, ui) {
-                $("#dino3").addClass("success");
-                exer3Correct[2] = 1;
-                console.log(exer3Correct);
-                checkCorrect();
+                var drop = $(ui.draggable[0]).attr('id');
+                if (drop == 'hips1') {
+                    $("#dino3").addClass("success");
+                    exer3Correct[2] = 1;
+                    checkCorrect();
+                } else {
+                    displayAlert($("#exer3"), "'" + drop + "' is incorrect, because reasons.");
+                    $("#dino3").removeClass("success");
+                    exer3Correct[2] = 0;
+                }
             }
         }]];
 		break;
@@ -459,6 +506,40 @@ function clickInteraction(exerData){
     }
 }
 
+
+//Displays a div to alert the user about whatever. Accepts a jquery object (pref div), and message to be displayed.
+function displayAlert(container, message) {
+    var backup = container.html();
+    var content = "<div class='customAlert' style='color:#000000 !important;\
+                                                width: 500px;\
+                                                display: none;\
+                                                position: relative;\
+                                                margin: 10% auto;\
+                                                padding: 5px 20px 13px 20px;\
+                                                border-radius: 10px;\
+                                                opacity:0.9;\
+                                                background: -moz-linear-gradient(#CC0000, #4C0000);\
+                                                background: -webkit-linear-gradient(#CC0000, #4C0000);\
+                                                background: -o-linear-gradient(#CC0000, #4C0000);'><span id='alertmsg' style='font-weight:bold; color: #191919;'>" + message + "</b></div>";
+
+    //Append only if it doesn't exist, else simply update message.
+    if (!$('#' + container.attr('id') + ' .customAlert').length) {
+        container.append(content);
+        alert("append");
+    } else {
+        alert("elsing");
+        $("#alertmsg").html(message);
+    }
+    
+    //display
+    $(".customAlert").show();
+    
+    //For every 20 characters, add 500ms
+    var msgTime = 3000 + ((message.length / 20) * 500);
+    setTimeout(function () {
+        $(".customAlert").hide();
+    }, msgTime);
+}
 
     // Start listeners for interactions
     $(function() {
