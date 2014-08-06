@@ -525,9 +525,7 @@ function displayAlert(container, message) {
     //Append only if it doesn't exist, else simply update message.
     if (!$('#' + container.attr('id') + ' .customAlert').length) {
         container.append(content);
-        alert("append");
     } else {
-        alert("elsing");
         $("#alertmsg").html(message);
     }
     
