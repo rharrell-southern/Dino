@@ -17,7 +17,7 @@ var lockImgPath;
 var slides;
 var zones;
 var videoPath = new Array();
-var exerInt = new Array();
+var exerInt = new Array(); //Order: [(string) exercise div, [(array) correct answer ids], (string or array of strings depending on situation) generic error message for incorrect dinos, [(array) full list of options for error lookup]] 
 
 var draggableOptions = {
                 revert: true,
@@ -153,22 +153,32 @@ switch(thisModule) {
 		zones = 1;
 		slides = 0;
         videoPath[1] = 'video/m2.1.mp4';
-        exerInt = ['exer1', ['dino3', 'dino4']];
+        exerInt = ['exer1', ['dino3', 'dino4'], ["Error message about dino1", "Error message about dino2", null, null], ['dino1', 'dino2', 'dino3', 'dino4']];
         droppableOptions = [["body.module2 #exer2 #dino1", {
-            accept: "#leaf-left, #leaf-right",
             drop: function (event, ui) {
-                $("body.module2 #exer2 #dino1").addClass("success");
-                m2exer2Correct[0] = 1;
-                console.log(m2exer2Correct);
-                checkCorrect();
+                var drop = $(ui.draggable[0]).attr('id');
+                if (drop == 'leaf-left' || drop == 'leaf-right') {
+                    $("body.module2 #exer2 #dino1").addClass("success");
+                    m2exer2Correct[0] = 1;
+                    checkCorrect();
+                } else {
+                    displayAlert($("#exer2"), "'" + drop + "' is incorrect, because reasons.");
+                    $("body.module2 #exer2 #dino1").removeClass("success");
+                    m2exer2Correct[0] = 0;
+                }
             }
         }], ["body.module2 #exer2 #dino2", {
-            accept: "#leaf-left, #leaf-right",
             drop: function (event, ui) {
-                $("body.module2 #exer2 #dino2").addClass("success");
-                m2exer2Correct[1] = 1;
-                console.log(m2exer2Correct);
-                checkCorrect();
+                var drop = $(ui.draggable[0]).attr('id');
+                if (drop == 'leaf-left' || drop == 'leaf-right') {
+                    $("body.module2 #exer2 #dino2").addClass("success");
+                    m2exer2Correct[1] = 1;
+                    checkCorrect();
+                } else {
+                    displayAlert($("#exer2"), "'" + drop + "' is incorrect, because reasons.");
+                    $("body.module2 #exer2 #dino2").removeClass("success");
+                    m2exer2Correct[1] = 0;
+                }
             }
         }]];
 
@@ -177,22 +187,32 @@ switch(thisModule) {
 		zones = 1;
 		slides = 0;
         videoPath[1] = 'video/m3.1.mp4';
-        exerInt = ['exer1', ['dino1', 'dino3']];
+        exerInt = ['exer1', ['dino1', 'dino3'], [null, "Error message about dino2", null, "Error message about dino4"], ['dino1', 'dino2', 'dino3', 'dino4']];
         droppableOptions = [["body.module3 #exer2 #dino1", {
-            accept: "#meat-left, #meat-right",
             drop: function (event, ui) {
-                $("body.module3 #exer2 #dino1").addClass("success");
-                m2exer2Correct[0] = 1;
-                console.log(m2exer2Correct);
-                checkCorrect();
+                var drop = $(ui.draggable[0]).attr('id');
+                if (drop == 'meat-left' || drop == 'meat-right') {
+                    $("body.module3 #exer2 #dino1").addClass("success");
+                    m2exer2Correct[0] = 1;
+                    checkCorrect();
+                } else {
+                    displayAlert($("#exer2"), "'" + drop + "' is incorrect, because reasons.");
+                    $("body.module3 #exer2 #dino1").removeClass("success");
+                    m2exer2Correct[0] = 0;
+                }
             }
         }], ["body.module3 #exer2 #dino2", {
-            accept: "#meat-left, #meat-right",
             drop: function (event, ui) {
-                $("body.module3 #exer2 #dino2").addClass("success");
-                m2exer2Correct[1] = 1;
-                console.log(m2exer2Correct);
-                checkCorrect();
+                var drop = $(ui.draggable[0]).attr('id');
+                if (drop == 'meat-left' || drop == 'meat-right') {
+                    $("body.module3 #exer2 #dino2").addClass("success");
+                    m2exer2Correct[1] = 1;
+                    checkCorrect();
+                } else {
+                    displayAlert($("#exer2"), "'" + drop + "' is incorrect, because reasons.");
+                    $("body.module3 #exer2 #dino2").removeClass("success");
+                    m2exer2Correct[1] = 0;
+                }
             }
         }]];
 
@@ -494,12 +514,15 @@ function checkCorrect() {
 //If passed non-null data, this function takes in exer name, and an array of correct answers. When a correct option is selected, the success class is applied.
 function clickInteraction(exerData){
     if(exerData){
-        $('#' + exerData[0] + ' div:nth-child(1) div div').each(function(){
+        $('#' + exerData[0] + ' div:nth-child(1) div div').each(function(i){
             $(this).on('click', function(event) {
                 var id = $(this).attr('id');
-                if(exerData[1].indexOf(id) != -1){
+                if(exerData[1].indexOf(id) != -1){//id exists in array of correct answers
                     $(this).addClass("success");
                     checkCorrect();
+                } else {//doesn't exist in array, so look up in full option array for specific error message. There is definitely a better way, namely using a for but I'm too lazy to rewrite it. Who cares~
+                    var index = exerData[3].indexOf(id);
+                    displayAlert($('#' + exerData[0]), exerData[2][exerData[3].indexOf(id)]); 
                 }
             });
         });
@@ -511,6 +534,7 @@ function clickInteraction(exerData){
 function displayAlert(container, message) {
     var backup = container.html();
     var content = "<div class='customAlert' style='color:#000000 !important;\
+                                                z-index: 450;\
                                                 width: 500px;\
                                                 display: none;\
                                                 position: relative;\
@@ -531,7 +555,7 @@ function displayAlert(container, message) {
     
     //display
     $(".customAlert").show();
-    
+
     //For every 20 characters, add 500ms
     var msgTime = 3000 + ((message.length / 20) * 500);
     setTimeout(function () {
