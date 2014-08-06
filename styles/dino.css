@@ -460,7 +460,7 @@ body.module1 #exer1 #options {
 	position:relative;
 	z-index:300;
 	width:700px;
-	margin:-30px auto 0px auto;
+	margin:0px auto;
 }
 body.module1 #exer1 #option1 { margin-right: 100px; }
 body.module1 #exer1 #option3 { margin-right: 100px; }
@@ -468,14 +468,14 @@ body.module1 #exer1 #option3 { margin-right: 100px; }
 body.module1 #exer1 #options #section1,
 body.module1 #exer1 #options #section2 {
 	clear:both;
-	font-size:55px;
+	font-size:45px;
 }
 
 /* --- Controls space around dashes for Module 1, Exercise 1 --- */
-body.module1 #exer1 #options #dash-saur-left { padding:0px 30px 0px 102px; }
-body.module1 #exer1 #options #dash-saur-right { padding:0px 30px 0px 102px; }
-body.module1 #exer1 #options #dash-ornith-left { padding:0px 30px 0px 66px; }
-body.module1 #exer1 #options #dash-ornith-right { padding:0px 30px 0px 102px; }
+body.module1 #exer1 #options #dash-saur-left { padding:0px 32px 0px 125px; }
+body.module1 #exer1 #options #dash-saur-right { padding:0px 32px 0px 125px; }
+body.module1 #exer1 #options #dash-ornith-left { padding:0px 32px 0px 95px; }
+body.module1 #exer1 #options #dash-ornith-right { padding:0px 32px 0px 125px; }
 /* -------------------------------------------------------------- */
 
 body.module1 #exer1 #options .box { 
