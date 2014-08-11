@@ -17,7 +17,7 @@ var lockImgPath;
 var slides;
 var zones;
 var videoPath = new Array();
-var exerInt = new Array(); //Order: [(string) exercise div, [(array) correct answer ids], (string or array of strings depending on situation) generic error message for incorrect dinos, [(array) full list of options for error lookup]] 
+var exerInt = new Array(); //Order: [(string) exercise name, [(array) list of options, correct answers dentoed by trailing '*'], (string/array) error messages] 
 
 var draggableOptions = {
                 revert: true,
@@ -29,9 +29,9 @@ var droppableOptions= new Array();
 
 
 switch(thisModule) {
-	case 1:
-		zones = 2;
-		slides = 10;
+    case 1:
+        zones = 2;
+        slides = 10;
         videoPath[1] = 'video/m1.1.mp4';
         videoPath[2] = 'video/m1.2.mp4';
         droppableOptions = [["#exer1 #option1", {
@@ -148,12 +148,12 @@ switch(thisModule) {
                 }
             }
         }]];
-		break;
-	case 2:
-		zones = 1;
-		slides = 0;
+        break;
+    case 2:
+        zones = 1;
+        slides = 0;
         videoPath[1] = 'video/m2.1.mp4';
-        exerInt = ['exer1', ['dino3', 'dino4'], ["Error message about dino1", "Error message about dino2", null, null], ['dino1', 'dino2', 'dino3', 'dino4']];
+        exerInt = ['exer1', ['dino1', 'dino2', 'dino3*', 'dino4*'], ["Error message about dino1", "Error message about dino2", null, null]];
         droppableOptions = [["body.module2 #exer2 #dino1", {
             drop: function (event, ui) {
                 var drop = $(ui.draggable[0]).attr('id');
@@ -182,12 +182,12 @@ switch(thisModule) {
             }
         }]];
 
-		break;
-	case 3:
-		zones = 1;
-		slides = 0;
+        break;
+    case 3:
+        zones = 1;
+        slides = 0;
         videoPath[1] = 'video/m3.1.mp4';
-        exerInt = ['exer1', ['dino1', 'dino3'], [null, "Error message about dino2", null, "Error message about dino4"], ['dino1', 'dino2', 'dino3', 'dino4']];
+        exerInt = ['exer1', ['dino1*', 'dino2', 'dino3*', 'dino4'], [null, "Error message about dino2", null, "Error message about dino4"]];
         droppableOptions = [["body.module3 #exer2 #dino1", {
             drop: function (event, ui) {
                 var drop = $(ui.draggable[0]).attr('id');
@@ -216,47 +216,47 @@ switch(thisModule) {
             }
         }]];
 
-		break;
-	case 4:
-		zones = 2;
-		slides = 0;
+        break;
+    case 4:
+        zones = 2;
+        slides = 0;
         videoPath[1] = 'video/m4.1.mp4';
         videoPath[2] = 'video/m4.2.mp4';
-		break;
-	
-	default:
-		break;
+        break;
+    
+    default:
+        break;
 }
 
 function imageResize() {
     var mediaWidth = document.body.clientWidth;
     var mediaHeight = document.body.clientHeight;
     if (mediaWidth <= 1200 || mediaHeight <= 850) {
-		for (i=0; i<=zones; i++) {
-			$('#zone' + i).html("<img src='images/mod" + thisModule + "/zone" + i + "-small.png'>");
-		}
-		for (i=0; i<=slides; i++) {
-			$('slide' + i).html("<img src='images/mod" + thisModule + "/slides/" + i + "-small.png'>");
-		}
-		$('#meat-left').html("<img src='images/meat-small.png'>");
-		$('#meat-right').html("<img src='images/meat-small.png'>");
-		$('#leaf-left').html("<img src='images/vegetation-small.png'>");
-		$('#leaf-right').html("<img src='images/vegetation-small.png'>");
+        for (i=0; i<=zones; i++) {
+            $('#zone' + i).html("<img src='images/mod" + thisModule + "/zone" + i + "-small.png'>");
+        }
+        for (i=0; i<=slides; i++) {
+            $('slide' + i).html("<img src='images/mod" + thisModule + "/slides/" + i + "-small.png'>");
+        }
+        $('#meat-left').html("<img src='images/meat-small.png'>");
+        $('#meat-right').html("<img src='images/meat-small.png'>");
+        $('#leaf-left').html("<img src='images/vegetation-small.png'>");
+        $('#leaf-right').html("<img src='images/vegetation-small.png'>");
         lockImgPath = 'url("images/unlocked-small.png")';
         setVideoWidth = 678;
         setVideoHeight = 379;
         consoleHeight = '650px';
     } else if (mediaWidth > 1200 || mediaHeight > 850) {
-		for (i=0; i<=zones; i++) {
-			$('#zone' + i).html("<img src='images/mod" + thisModule + "/zone" + i + ".png'>");
-		}
-		for (i=0; i<=slides; i++) {
-			$('slide' + i).html("<img src='images/mod" + thisModule + "/slides/" + i + ".png'>");
-		}
-		$('#meat-left').html("<img src='images/meat.png'>");
-		$('#meat-right').html("<img src='images/meat.png'>");
-		$('#leaf-left').html("<img src='images/vegetation.png'>");
-		$('#leaf-right').html("<img src='images/vegetation.png'>");
+        for (i=0; i<=zones; i++) {
+            $('#zone' + i).html("<img src='images/mod" + thisModule + "/zone" + i + ".png'>");
+        }
+        for (i=0; i<=slides; i++) {
+            $('slide' + i).html("<img src='images/mod" + thisModule + "/slides/" + i + ".png'>");
+        }
+        $('#meat-left').html("<img src='images/meat.png'>");
+        $('#meat-right').html("<img src='images/meat.png'>");
+        $('#leaf-left').html("<img src='images/vegetation.png'>");
+        $('#leaf-right').html("<img src='images/vegetation.png'>");
         lockImgPath = 'url("images/unlocked.png")';
         setVideoWidth = 918;
         setVideoHeight = 513;
@@ -266,9 +266,9 @@ function imageResize() {
         width: setVideoWidth,
         height: setVideoHeight
     });
-	if($('#video_console').height() > 0) {
-		$('#video_console').height(consoleHeight); 
-	}
+    if($('#video_console').height() > 0) {
+        $('#video_console').height(consoleHeight); 
+    }
     if($('#unlocked').is(':visible')){
         $('#unlocked #lock').css({
             backgroundImage: lockImgPath
@@ -284,29 +284,29 @@ $(window).resize(function() {
 
 // Control intervals of glow/fade animation
 function startHipFade() {
-	for(i=1; i<=zones; i++) {
-		$('#zone' + i).animate({
-			opacity: 1
-		}, thisDuration, function() {
-			$(this).animate({
-				opacity: 0
-			}, thisDuration);
-		});
-	}
+    for(i=1; i<=zones; i++) {
+        $('#zone' + i).animate({
+            opacity: 1
+        }, thisDuration, function() {
+            $(this).animate({
+                opacity: 0
+            }, thisDuration);
+        });
+    }
 
     // Fading hilights
     if (!hiIsRuning) {
         hiIsRuning = true;
         hipInterval = setInterval(function() {
-			for(i=1; i<=zones; i++) {
-				$('#zone' + i).delay((i - 1)*500).animate({
-					opacity: 1
-				}, thisDuration, function() {
-					$(this).animate({
-						opacity: 0
-					}, thisDuration);
-				});
-			}
+            for(i=1; i<=zones; i++) {
+                $('#zone' + i).delay((i - 1)*500).animate({
+                    opacity: 1
+                }, thisDuration, function() {
+                    $(this).animate({
+                        opacity: 0
+                    }, thisDuration);
+                });
+            }
         }, (i * 500) + 4000);
     }
 }
@@ -366,19 +366,19 @@ function toSection(goTo, videoStart) {
                 $('#exer1 #options').fadeIn('fast');
                 $('#exer1 .selectWords').fadeIn('fast');
             });
-		}else if(thisModule == 2 || thisModule == 3){
+        }else if(thisModule == 2 || thisModule == 3){
                 $('#exer1 #text').fadeIn('fast');
                 $('#exer1 #dinoImages').fadeIn('fast');
         }else if(thisModule == 4){
-			$('#exer1 #text').fadeIn('fast');
-			$('#exer1 #drawer').animate({
-				height: '150px',
-				marginTop: '-34px'
-			}, 400, function() {
-				$('#exer1 #dinoImages').fadeIn('fast');
-				$('#exer1 #selectWords').fadeIn('fast');
-			});
-		}
+            $('#exer1 #text').fadeIn('fast');
+            $('#exer1 #drawer').animate({
+                height: '150px',
+                marginTop: '-34px'
+            }, 400, function() {
+                $('#exer1 #dinoImages').fadeIn('fast');
+                $('#exer1 #selectWords').fadeIn('fast');
+            });
+        }
     }
     if (goTo == 'exer2') {
         if(thisModule == 1){
@@ -390,24 +390,24 @@ function toSection(goTo, videoStart) {
                 $('#exer2 .selectWords').fadeIn('fast');
             });
         }else if(thisModule == 2 || thisModule == 3){
-			$('#exer2 #text').fadeIn('fast');
-			$('#exer2 #table').fadeIn(500, function() {
-				$('#exer2 #dino1').fadeIn('fast');
-				$('#exer2 #dino2').fadeIn('fast');
-			});
+            $('#exer2 #text').fadeIn('fast');
+            $('#exer2 #table').fadeIn(500, function() {
+                $('#exer2 #dino1').fadeIn('fast');
+                $('#exer2 #dino2').fadeIn('fast');
+            });
         }else if(thisModule == 4) {
-			 $('#exer2 #text').fadeIn('fast');
-			 $('#exer2 #drawer').animate({
-				height: '150px',
-				marginTop: '-34px'
-			 }, 400, function() {
-				$('#exer2 #dinoImages').fadeIn('fast');
-				$('#exer2 #selectHips').fadeIn('fast');
-			 });
-		}
+             $('#exer2 #text').fadeIn('fast');
+             $('#exer2 #drawer').animate({
+                height: '150px',
+                marginTop: '-34px'
+             }, 400, function() {
+                $('#exer2 #dinoImages').fadeIn('fast');
+                $('#exer2 #selectHips').fadeIn('fast');
+             });
+        }
         
     }
-	if (goTo == 'exer3') {
+    if (goTo == 'exer3') {
         $('#exer3 #text').fadeIn('fast');
         $('#exer3 #drawer').animate({
             height: '150px',
@@ -517,12 +517,12 @@ function clickInteraction(exerData){
         $('#' + exerData[0] + ' div:nth-child(1) div div').each(function(i){
             $(this).on('click', function(event) {
                 var id = $(this).attr('id');
-                if(exerData[1].indexOf(id) != -1){//id exists in array of correct answers
+                if (exerData[1].indexOf(id + "*") != -1) {//id appeneded with star (* denoting correct answer) exists
                     $(this).addClass("success");
                     checkCorrect();
-                } else {//doesn't exist in array, so look up in full option array for specific error message. There is definitely a better way, namely using a for but I'm too lazy to rewrite it. Who cares~
-                    var index = exerData[3].indexOf(id);
-                    displayAlert($('#' + exerData[0]), exerData[2][exerData[3].indexOf(id)]); 
+                } else {//Isn't appened with star, so it is an incorrect id
+                    var index = exerData[1].indexOf(id);
+                    displayAlert($('#' + exerData[0]), exerData[2][index]);
                 }
             });
         });
@@ -533,13 +533,13 @@ function clickInteraction(exerData){
 //Displays a div to alert the user about whatever. Accepts a jquery object (pref div), and message to be displayed.
 function displayAlert(container, message) {
     var backup = container.html();
-    var content = "<div class='customAlert'><span id='alertmsg'>" + message + "</b></div>";
+    var content = "<div class='customAlert'><span class='alertmsg'>" + message + "</div>";
 
     //Append only if it doesn't exist, else simply update message.
     if (!$('#' + container.attr('id') + ' .customAlert').length) {
         container.append(content);
     } else {
-        $("#alertmsg").html(message);
+        $('#' + container.attr('id') + ' .alertmsg').html(message);
     }
     
     //display
@@ -634,11 +634,11 @@ function displayAlert(container, message) {
         $('#content').on('click', '#exer2 .rewatch', function() {
             toSection('exer1');
         });
-		$('#content').on('click', '#exer3 .rewatch', function() {
+        $('#content').on('click', '#exer3 .rewatch', function() {
             toSection('video', 1);
         });
         $('#content').on('click', '.skip', function() {
-			console.log($('#subnav a.active').attr('zone'));
+            console.log($('#subnav a.active').attr('zone'));
             if ($('#subnav a.active').attr('zone') == '1') {
                     toSection('exer1');
             } else if ($('#subnav a.active').attr('zone') == '2') {
@@ -675,7 +675,7 @@ function displayAlert(container, message) {
                     });
                 }
             }
-			if(thisModule == 2 || thisModule == 3){
+            if(thisModule == 2 || thisModule == 3){
                 if(thisExer == 1){
                     $('#exer1 #text').fadeOut('fast');
                     $('#exer1 #dinoImages').fadeOut(500, function() {
@@ -691,7 +691,7 @@ function displayAlert(container, message) {
                     });
                 }
             } 
-			if(thisModule == 4){
+            if(thisModule == 4){
                 if(thisExer == 1){
                     $('#exer1 #dinoImages').fadeOut('fast');
                     $('#exer1 #selectWords').fadeOut('fast');
@@ -701,10 +701,10 @@ function displayAlert(container, message) {
                             marginTop: '115px'
                         }, 300, function() {
                             toSection('exhibit'); 
-						});
-					});
-				}else if(thisExer == 2) {
-					$('#exer2 #dinoImages').fadeOut('fast');
+                        });
+                    });
+                }else if(thisExer == 2) {
+                    $('#exer2 #dinoImages').fadeOut('fast');
                     $('#exer2 #selectHips').fadeOut('fast');
                     $('#exer2 #text').fadeOut('fast', function() {
                         $('#drawer').animate({
@@ -713,10 +713,10 @@ function displayAlert(container, message) {
                         }, 300, function() {
                             toSection('exhibit');
                         });
-					});
-				}
-			}
-		});
+                    });
+                }
+            }
+        });
 
         // Unlock interactions
         $('#content').on('click', '#unlocked_close', function() {
@@ -808,12 +808,12 @@ function displayAlert(container, message) {
             $("#meat-left, #meat-right, #leaf-left, #leaf-right").draggable(draggableOptions);
         } else if(thisModule == 3) {
             $("#meat-left, #meat-right, #leaf-left, #leaf-right").draggable(draggableOptions);
-		}
+        }
 
         //Create and register droppable listeners.
         for (var i = 0; i < droppableOptions.length ; i++) {
             $(droppableOptions[i][0]).droppable(droppableOptions[i][1]);
         }
-		
-		
+        
+        
     });
