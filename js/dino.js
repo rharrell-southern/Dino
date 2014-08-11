@@ -533,18 +533,7 @@ function clickInteraction(exerData){
 //Displays a div to alert the user about whatever. Accepts a jquery object (pref div), and message to be displayed.
 function displayAlert(container, message) {
     var backup = container.html();
-    var content = "<div class='customAlert' style='color:#000000 !important;\
-                                                z-index: 450;\
-                                                width: 500px;\
-                                                display: none;\
-                                                position: relative;\
-                                                margin: 10% auto;\
-                                                padding: 5px 20px 13px 20px;\
-                                                border-radius: 10px;\
-                                                opacity:0.9;\
-                                                background: -moz-linear-gradient(#CC0000, #4C0000);\
-                                                background: -webkit-linear-gradient(#CC0000, #4C0000);\
-                                                background: -o-linear-gradient(#CC0000, #4C0000);'><span id='alertmsg' style='font-weight:bold; color: #191919;'>" + message + "</b></div>";
+    var content = "<div class='customAlert'><span id='alertmsg'>" + message + "</b></div>";
 
     //Append only if it doesn't exist, else simply update message.
     if (!$('#' + container.attr('id') + ' .customAlert').length) {
@@ -557,7 +546,7 @@ function displayAlert(container, message) {
     $(".customAlert").show();
 
     //For every 20 characters, add 500ms
-    var msgTime = 3000 + ((message.length / 20) * 500);
+    var msgTime = 4500 + ((message.length / 20) * 500);
     setTimeout(function () {
         $(".customAlert").hide();
     }, msgTime);
