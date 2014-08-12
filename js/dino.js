@@ -610,10 +610,11 @@ function clickInteraction(exerInputData){
     }
 }
 
-
+var timeout;
 //Displays a div to alert the user about whatever. Accepts a jquery object (pref div), and message to be displayed.
 function displayAlert(container, message) {
     var backup = container.html();
+
     var content = "<div class='customAlert'><span class='alertmsg'>" + message + "</div>";
 
     //Append only if it doesn't exist, else simply update message.
@@ -625,10 +626,11 @@ function displayAlert(container, message) {
     
     //display
     $(".customAlert").show();
+    clearTimeout(timeout);
 
     //For every 20 characters, add 500ms
     var msgTime = 4500 + ((message.length / 20) * 500);
-    setTimeout(function () {
+    timeout = setTimeout(function () {
         $(".customAlert").hide();
     }, msgTime);
 }
