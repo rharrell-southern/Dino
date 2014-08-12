@@ -1105,6 +1105,10 @@ body.module1 #exer3 #text {
 	font-size:18px !important;
 	margin:-20px auto 0px auto;
 }
+#foot{
+	width:100%;
+	height:100%;
+}
 
 /*
 
@@ -1154,612 +1158,613 @@ body.module1 #exer3 #text {
 */
 @media screen and (max-width:1200px), all and (max-height:850px) {
 /* Photoshop re-size number:65.32% */
-body.module1 {
-	background-image:url("../images/mod1/module1BG-small.jpg");
-	background-position:center 50px;
-}
-body.module2 {
-	background-image:url("../images/mod2/module2BG-small.jpg");
-	background-position:center 50px;
-}
-body.module3 {
-	background-image:url("../images/mod3/module3BG-small.jpg");
-	background-position:center 50px;
-}
-body.module4 {
-	background-image:url("../images/mod4/module4BG-small.jpg");
-	background-position:center 50px;
-}
-/*--------------------- Header Section ----------------------*/
-#header {
-	height:62px;
-}
-#header img {
-	height:180px;
-	width:175px;	
-}
-#header a {
-	position:relative;
-	top:-20px;
-}
+	body.module1 {
+		background-image:url("../images/mod1/module1BG-small.jpg");
+		background-position:center 50px;
+	}
+	body.module2 {
+		background-image:url("../images/mod2/module2BG-small.jpg");
+		background-position:center 50px;
+	}
+	body.module3 {
+		background-image:url("../images/mod3/module3BG-small.jpg");
+		background-position:center 50px;
+	}
+	body.module4 {
+		background-image:url("../images/mod4/module4BG-small.jpg");
+		background-position:center 50px;
+	}
+	/*--------------------- Header Section ----------------------*/
+	#header {
+		height:62px;
+	}
+	#header img {
+		height:180px;
+		width:175px;	
+	}
+	#header a {
+		position:relative;
+		top:-20px;
+	}
 
-/*--------------------- Subnav Section ---------------------*/
-#subnav {
-	height:165px;
-}
-#subnav a {
-	font-size:72%;
-	margin:0px 9px;
-}
-#subnav_content {
-	left:0px;
-}
-body.module1 #subnav_content {
-	width:726px; /* Ensures margin:0px auto works and links are centered to page */
-}
-body.module2 #subnav_content,
-body.module3 #subnav_content,
-body.module4 #subnav_content {
-	width:375px; /* Ensures margin:0px auto works and links are centered to page */
-	left:15px !important; /* Just my preference, it doesn't seem centered otherwise, though mathematically it is */
-}
-
-
-/*-------------------- Content Section ---------------------*/
-.box {
-	width:130px;
-	height:25px;
-	padding:9px 9px 18px 9px;
-	font-size:28px;
-}
-.close-exer {
-	margin-top:-50px;
-	margin-right:-60px;
-}
-#console {
-	height:310px !important;
-	background-image:url("../images/lowerBG-small.png");
-}
-#dinoImages {
-	width:772px;
-	height:228px;
-	top:-13px;
-}
-#drawer {
-	background-image:url("../images/drawer-small.png");
-	height: 132px !important;
-	width:772px;
-	margin:-20px auto 0px auto !important;
-}
-#forest {
-	background-image:url("../images/forest-small.png");
-	bottom:230px;
-}
-#pond {
-	background-image:url("../images/pond-small.png");
-	margin-top:-125px !important;
-	height:220px !important;
-}
-#table {
-	background-image:url("../images/mod2/dino-table-small.png");
-	width:400px;
-	height:156px;
-	bottom:-60px;
-}
-#forest-raised {
-	background-image:url("../images/forest-raised-small.png");
-	bottom:200px;
-}
-#text {
-	font-size:18px;
-	width:650px;
-}
+	/*--------------------- Subnav Section ---------------------*/
+	#subnav {
+		height:165px;
+	}
+	#subnav a {
+		font-size:72%;
+		margin:0px 9px;
+	}
+	#subnav_content {
+		left:0px;
+	}
+	body.module1 #subnav_content {
+		width:726px; /* Ensures margin:0px auto works and links are centered to page */
+	}
+	body.module2 #subnav_content,
+	body.module3 #subnav_content,
+	body.module4 #subnav_content {
+		width:375px; /* Ensures margin:0px auto works and links are centered to page */
+		left:15px !important; /* Just my preference, it doesn't seem centered otherwise, though mathematically it is */
+	}
 
 
-/*------------------ Exhibit Hall Section ------------------*/
-body.module1 #zone1 {
-	right:222px;
-	top:198px;
-}
-body.module1 #zone2 {
-	left:197px;
-	top:15px;
-}
-body.module2 #zone1 {
-	right:-8px;
-	top:214px;
-}
-body.module3 #zone1 {
-	right:-83px;
-	top:130px;
-}
-body.module4 #zone1 {
-	right:77px;
-	top:98px;
-}
-#zone1Hover,
-#zone2Hover {
-	width:400px;
-	top:0px;
-	right:0px;
-}
-#zone1Hover p,
-#zone2Hover p {
-	font-size:85%;
-}
-body.module1 #zone1Hover {
-	top:-20px;
-	left:-60px;
-}
-body.module1 #zone2Hover {
-	top:-250px;
-	right:100px;
-}
-body.module3 #zone1Hover {
-	top:-190px;
-}
-body.module4 #zone1Hover {
-	top:-190px;
-	right:220px;
-}
-
-/*-------------------- Video Section --------------------*/
-#video_console {
-	background-image:url("../images/lowerBG-small.png");
-	background-position:top center;
-	background-repeat:no-repeat;
-	height:0px;
-	position:absolute;
-	right:0px;
-	left:0px;
-	/*top:20px; Remove, makes console show up from the top, not the bottom */
-}
-#video_content {
-	display:none;
-	width:680px; /* Won't adjust video, since it's height is determined in projekktor, dino.js */
-	margin:110px auto 0px auto;
-	position:relative;
-	z-index:100 !important;
-}
-#video_close {
-	background:rgba(0,0,0,0.3);
-	color:#FFF;
-	border-radius:15px;
-	height:22px;
-	width:22px;
-	text-align:center;
-	float:right;
-	border:2px solid #FFF;
-	margin-right:-35px;
-	cursor:pointer;
-	position:relative;
-	padding:2px;
-}
-#video_player {
-	width:680px;
-	height:390px;
-	margin:0px auto;
-	position:relative;
-}
-#video_captions {
-	height:70px;
-	color:#fff;
-	text-shadow:0px 0px 4px #000;
-	position:relative;
-	padding:20px;
-}
-
-/*---------------- Exercise 1, Module 1 Section ---------------*/
-body.module1 #exer1 .selectWords {
-	font-size:40px;
-	padding-top:140px;
-	padding-left:80px;
-}
-body.module1 #exer1 #word1 {
-	padding-right:140px;
-}
-body.module1 #exer1 #word2 {
-	padding-right:140px;
-}
-body.module1 #exer1 #options {
-	width:643px;
-	left:50px;
-	top:-50px;
-}
-body.module1 #exer1 #options #section1,
-body.module1 #exer1 #options #section2 {
-	font-size:40px;
-}
-
-#dash-saur-left { padding:0px 35px 0px 107px; }
-#dash-saur-right { padding:0px 40px 0px 102px; }
-#dash-ornith-left { padding:0px 35px 0px 80px; }
-#dash-ornith-right { padding:0px 40px 0px 102px; }
-
-/*---------------- Exercise 1, Module 2 Section ---------------*/
-body.module2 #exer1 #dino1 {
-	background-image:url("../images/mod2/ovir-exer4-small.png");
-	width:114px;
-	height:85px; 
-	top:42px;
-}
-body.module2 #exer1 #dino2 {
-	background-image:url("../images/mod2/tric-exer4-small.png");
-	width:176px;
-	height:87px;
-	top:-95px;
-	left:105px;
-}
-body.module2 #exer1 #dino3 {
-	background-image:url("../images/mod2/ceti-exer4-small.png");
-	width:316px;
-	height:122px;
-	top:-260px;
-	left:170px;
-}
-body.module2 #exer1 #dino4 {
-	background-image:url("../images/mod2/plat-exer4-small.png");
-	width:228px;
-	height:118px;
-	top:-312px;
-	left:450px;
-}
-body.module2 #exer1 #dino3.success {
-	background-image:url("../images/mod2/ceti-correct-small.png") !important;
-}
-body.module2 #exer1 #dino4.success {
-	background-image:url("../images/mod2/plat-correct-small.png") !important;
-}
-body.module2 #exer1 #text {
-	margin:105px auto;
-}
-
-/*---------------- Exercise 1, Module 3 Section ---------------*/
-body.module3 #exer1 #dino1 {
-	background-image:url("../images/mod2/ovir-exer4-small.png");
-	width:114px;
-	height:85px; 
-	top:42px;
-}
-body.module3 #exer1 #dino2 {
-	background-image:url("../images/mod3/anky-small.png");
-	width:213px;
-	height:74px;
-	top:-82px;
-	left:49px;
-}
-body.module3 #exer1 #dino3 {
-	background-image:url("../images/mod3/trex-small.png");
-	width:199px;
-	height:124px;
-	top:-230px;
-	left:260px;
-}
-body.module3 #exer1 #dino4 {
-	background-image:url("../images/mod2/plat-exer4-small.png");
-	width:228px;
-	height:118px;
-	top:-300px;
-	left:450px;
-}
-body.module3 #exer1 #dino1.success {
-	background-image:url("../images/mod3/ovir-correct-small.png") !important;
-}
-body.module3 #exer1 #dino3.success {
-	background-image:url("../images/mod3/trex-correct-small.png") !important;
-}
-body.module3 #exer1 #text {
-	margin:105px auto;
-}
-
-/*---------------- Exercise 1 Module 4 Section ---------------*/
-body.module4 #exer1 #dino1 {
-	background-image:url("../images/mod4/dryo-small.png");
-	width:200px;
-	height:92px;
-	top:35px;
-}
-body.module4 #exer1 #dino2 {
-	background-image:url("../images/mod4/drac-small.png");
-	width:194px;
-	height:137px;
-	top:-110px;
-	left:225px;
-}
-body.module4 #exer1 #dino3 {
-	background-image:url("../images/mod4/tric-small.png");
-	width:195px;
-	height:83px;
-	top:-190px;
-	left:450px;
-}
-body.module4 #exer1 #dino1.success {
-	background-image:url("../images/mod4/dryo-correct-small.png") !important;
-}
-body.module4 #exer1 #dino2.success {
-	background-image:url("../images/mod4/drac-correct-small.png") !important;
-}
-body.module4 #exer1 #dino3.success {
-	background-image:url("../images/mod4/tric-correct-small.png") !important;
-}
-body.module4 #exer1 .selectWords {
-	font-size:25px;
-	padding:42px 105px;
-}
-body.module4 #exer1 #word1 { 
-	padding-left:0px;
-	padding-right:40px; 
-}
-body.module4 #exer1 #word2 {
-	padding-right:40px;
-}
-body.module4 #exer1 #text {
-	margin:-8px auto;
-}
-
-/*---------------- Exercise 2 Module 1 Section ---------------*/
-body.module1 #exer2 #options {
-	background-image:url("../images/mod1/exer2bones-small.png");
-	width:600px;
-	height:260px;
-}
-body.module1 #exer2 #options .box:nth-child(1) {
-	position:relative;
-	top:-20px;
-	left:30px;
-}
-body.module1 #exer2 #options .box:nth-child(2) {
-	position:relative;
-	top:110px;
-	left:270px;
-}
-body.module1 #exer2 #options .box:nth-child(3) {
-	position:relative;
-	top:170px;
-	right:240px;
-}
-body.module1 #exer2 .selectWords {
-	font-size:34px;
-	padding:35px 128px;
-}
-body.module1 #exer2 #word1 { 
-	padding-left:0px;
-	padding-right:110px; 
-}
-body.module1 #exer2 #word2 {
-	padding-right:110px;
-}
-
-/*---------------- Exercise 2 Module 2 Section ---------------*/
-body.module2 #exer2 #selectFood {
-	width:437px;
-}
-body.module2 #exer2 #selectFood #leaf-left img {
-	left:12px;
-	margin-right:165px;
-}
-body.module2 #exer2 #selectFood #meat-right img {
-	top:-23px;
-	left:-14px;
-}
-body.module2 #exer2 #selectFood #leaf-right img {
-	top:-22px;
-	left:-2px;
-}
-body.module2 #exer2 #dino1 {
-	background-image:url("../images/mod2/plat-eating-small.png");
-	width:279px;
-	height:139px;
-	top:-215px;
-	left:-150px;
-}
-body.module2 #exer2 #dino2 {
-	background-image:url("../images/mod2/ceti-eating-small.png");
-	width:361px;
-	height:141px;
-	top:-352px;
-	left:220px;
-}
-body.module2 #exer2 #dino1.success {
-	background-image:url("../images/mod2/plat-eating-correct-small.png") !important;
-}
-body.module2 #exer2 #dino2.success {
-	background-image:url("../images/mod2/ceti-eating-correct-small.png") !important;
-}
-body.module2 #exer2 #text {
-	margin:105px auto;
-}
-body.module2 #exer2 #console {
-	height:350px;
-}
+	/*-------------------- Content Section ---------------------*/
+	.box {
+		width:130px;
+		height:25px;
+		padding:9px 9px 18px 9px;
+		font-size:28px;
+	}
+	.close-exer {
+		margin-top:-50px;
+		margin-right:-60px;
+	}
+	#console {
+		height:310px !important;
+		background-image:url("../images/lowerBG-small.png");
+	}
+	#dinoImages {
+		width:772px;
+		height:228px;
+		top:-13px;
+	}
+	#drawer {
+		background-image:url("../images/drawer-small.png");
+		height: 132px !important;
+		width:772px;
+		margin:-20px auto 0px auto !important;
+	}
+	#forest {
+		background-image:url("../images/forest-small.png");
+		bottom:230px;
+	}
+	#pond {
+		background-image:url("../images/pond-small.png");
+		margin-top:-125px !important;
+		height:220px !important;
+	}
+	#table {
+		background-image:url("../images/mod2/dino-table-small.png");
+		width:400px;
+		height:156px;
+		bottom:-60px;
+	}
+	#forest-raised {
+		background-image:url("../images/forest-raised-small.png");
+		bottom:200px;
+	}
+	#text {
+		font-size:18px;
+		width:650px;
+	}
 
 
-/*---------------- Exercise 2 Module 3 Section ---------------*/
-body.module3 #table {
-	bottom:-111px;
-}
-body.module3 #exer2 #selectFood {
-	width:437px;
-}
-body.module3 #exer2 #selectFood #leaf-left img {
-	left:12px;
-	margin-right:165px;
-}
-body.module3 #exer2 #selectFood #meat-right img {
-	top:-23px;
-	left:-14px;
-}
-body.module3 #exer2 #selectFood #leaf-right img {
-	top:-22px;
-	left:-2px;
-}
-body.module3 #exer2 #dino1 {
-	background-image:url("../images/mod3/herr-eating-small.png");
-	width:274px;
-	height:166px;
-	top:-150px;
-	left:-140px;
-}
-body.module3 #exer2 #dino2 {
-	background-image:url("../images/mod3/trex-eating-small.png");
-	width:272px;
-	height:165px;
-	top:-320px;
-	left:190px;
-}
-body.module3 #exer2 #dino1.success {
-	background-image:url("../images/mod3/herr-eating-correct-small.png") !important;
-}
-body.module3 #exer2 #dino2.success {
-	background-image:url("../images/mod3/trex-eating-correct-small.png") !important;
-}
-body.module3 #exer2 #text {
-	margin:105px auto;
-}
-body.module3 #exer2 #console {
-	height:350px;
-}
+	/*------------------ Exhibit Hall Section ------------------*/
+	body.module1 #zone1 {
+		right:222px;
+		top:198px;
+	}
+	body.module1 #zone2 {
+		left:197px;
+		top:15px;
+	}
+	body.module2 #zone1 {
+		right:-8px;
+		top:214px;
+	}
+	body.module3 #zone1 {
+		right:-83px;
+		top:130px;
+	}
+	body.module4 #zone1 {
+		right:77px;
+		top:98px;
+	}
+	#zone1Hover,
+	#zone2Hover {
+		width:400px;
+		top:0px;
+		right:0px;
+	}
+	#zone1Hover p,
+	#zone2Hover p {
+		font-size:85%;
+	}
+	body.module1 #zone1Hover {
+		top:-20px;
+		left:-60px;
+	}
+	body.module1 #zone2Hover {
+		top:-250px;
+		right:100px;
+	}
+	body.module3 #zone1Hover {
+		top:-190px;
+	}
+	body.module4 #zone1Hover {
+		top:-190px;
+		right:220px;
+	}
 
-/*---------------- Exercise 2 Module 4 Section ---------------*/
-body.module4 #exer2 #dino1 {
-	background-image:url("../images/mod4/steg-small.png");
-	width:197px;
-	height:101px;
-	top:35px;
-	left:60px;
-}
-body.module4 #exer2 #dino2 {
-	background-image:url("../images/anky-small.png");
-	width:242px;
-	height:81px;
-	top:-60px;
-	left:370px;
-}
-body.module4 #exer2 #dino1.success {
-	background-image:url("../images/mod4/steg-correct-small.png") !important;
-}
-body.module4 #exer2 #dino2.success {
-	background-image:url("../images/mod4/anky-correct-small.png") !important;
-}
-body.module4 #exer2 .selectWords {
-	font-size:25px;
-	padding:42px 200px;
-}
-body.module4 #exer2 #word1 { 
-	padding-left:0px;
-	padding-right:120px; 
-}
-body.module4 #exer2 #text {
-	margin:-8px auto;
-}
+	/*-------------------- Video Section --------------------*/
+	#video_console {
+		background-image:url("../images/lowerBG-small.png");
+		background-position:top center;
+		background-repeat:no-repeat;
+		height:0px;
+		position:absolute;
+		right:0px;
+		left:0px;
+		/*top:20px; Remove, makes console show up from the top, not the bottom */
+	}
+	#video_content {
+		display:none;
+		width:680px; /* Won't adjust video, since it's height is determined in projekktor, dino.js */
+		margin:110px auto 0px auto;
+		position:relative;
+		z-index:100 !important;
+	}
+	#video_close {
+		background:rgba(0,0,0,0.3);
+		color:#FFF;
+		border-radius:15px;
+		height:22px;
+		width:22px;
+		text-align:center;
+		float:right;
+		border:2px solid #FFF;
+		margin-right:-35px;
+		cursor:pointer;
+		position:relative;
+		padding:2px;
+	}
+	#video_player {
+		width:680px;
+		height:390px;
+		margin:0px auto;
+		position:relative;
+	}
+	#video_captions {
+		height:70px;
+		color:#fff;
+		text-shadow:0px 0px 4px #000;
+		position:relative;
+		padding:20px;
+	}
 
-/*---------------- Exercise 3 Module 1 Section ---------------*/
-body.module1 #exer3 #dino1 {
-	background-image:url("../images/tric-small.png");
-	width:203px;
-	height:100px;
-	top:40px;
-}
-body.module1 #exer3 #dino2 {
-	background-image:url("../images/ovir-small.png");
-	width:217px;
-	height:162px;
-	top:-120px;
-	left:220px;
-}
-body.module1 #exer3 #dino3 {
-	background-image:url("../images/anky-small.png");
-	width:242px;
-	height:81px;
-	top:-205px;
-	left:450px;
-}
-body.module1 #exer3 #dino1.success {
-	background-image:url("../images/mod1/tric-correct-small.png") !important;
-}
-body.module1 #exer3 #dino2.success {
-	background-image:url("../images/mod1/ovir-correct-small.png") !important;
-}
-body.module1 #exer3 #dino3.success {
-	background-image:url("../images/mod1/anky-correct-small.png") !important;
-}
-body.module1 #exer3 #selectHips {
-	width:390px;
-	padding:25px;
-}
-body.module1 #exer3 #selectHips #hips1 img {
-	margin-right:200px;
-}
+	/*---------------- Exercise 1, Module 1 Section ---------------*/
+	body.module1 #exer1 .selectWords {
+		font-size:40px;
+		padding-top:140px;
+		padding-left:80px;
+	}
+	body.module1 #exer1 #word1 {
+		padding-right:140px;
+	}
+	body.module1 #exer1 #word2 {
+		padding-right:140px;
+	}
+	body.module1 #exer1 #options {
+		width:643px;
+		left:50px;
+		top:-50px;
+	}
+	body.module1 #exer1 #options #section1,
+	body.module1 #exer1 #options #section2 {
+		font-size:40px;
+	}
 
-/*------------------ Unlocked Section -----------------*/
-#unlocked #lock {
-	background-image:url("../images/locked-small.png");
-	height:380px;
-}
-#unlocked #console #unlocked_close {
-	margin-top:-50px;
-	margin-right:-60px;
-}
-#unlocked #console #text {
-	font-size:18px;
-	width:650px;
-	padding:0px;
-}
+	#dash-saur-left { padding:0px 35px 0px 107px; }
+	#dash-saur-right { padding:0px 40px 0px 102px; }
+	#dash-ornith-left { padding:0px 35px 0px 80px; }
+	#dash-ornith-right { padding:0px 40px 0px 102px; }
 
-/*------------------ Slides Section -----------------*/
-#identification {
-	display:none;
-}
-#identification #slider,
-#identification #slides {
-	width:680px !important;
-}
-#identification #console #identify_close {
-	margin-top:-50px;
-	margin-right:-60px;
-}
-#identification #console #text {
-	font-size:18px;
-	width:650px;
-	padding:0px;
-}
-span#arrowleft {
-	left:-82px !important;
-}
-span#arrowright{
-	right:128px !important;
-}
+	/*---------------- Exercise 1, Module 2 Section ---------------*/
+	body.module2 #exer1 #dino1 {
+		background-image:url("../images/mod2/ovir-exer4-small.png");
+		width:114px;
+		height:85px; 
+		top:42px;
+	}
+	body.module2 #exer1 #dino2 {
+		background-image:url("../images/mod2/tric-exer4-small.png");
+		width:176px;
+		height:87px;
+		top:-95px;
+		left:105px;
+	}
+	body.module2 #exer1 #dino3 {
+		background-image:url("../images/mod2/ceti-exer4-small.png");
+		width:316px;
+		height:122px;
+		top:-260px;
+		left:170px;
+	}
+	body.module2 #exer1 #dino4 {
+		background-image:url("../images/mod2/plat-exer4-small.png");
+		width:228px;
+		height:118px;
+		top:-312px;
+		left:450px;
+	}
+	body.module2 #exer1 #dino3.success {
+		background-image:url("../images/mod2/ceti-correct-small.png") !important;
+	}
+	body.module2 #exer1 #dino4.success {
+		background-image:url("../images/mod2/plat-correct-small.png") !important;
+	}
+	body.module2 #exer1 #text {
+		margin:105px auto;
+	}
 
-/*------------------ 3-D Section -----------------*/
-#threeDmodel {
-	display:none;
-}
-#threeDmodel #console {
-	height:670px !important;
-}
-#threeDmodel #threeDcontent {
-	width:738px;
-	height:390px;
-	padding:0px;
-	margin-top:87px;
-}
-#threeDclose {
-	margin-top:-15px;
-}
-#hips {
-	margin-left:80px;
-}
-#hips #hip1,
-#hips #hip2 {
-	float:left;
-	width:50%;
-	height:380px;
-}
-iframe#orni_hip, iframe#sauri_hip {
-	width:85% !important;
-	height:85% !important;
-}
-#threeDmodel #console #text {
-	width:650px;
-	padding:0px;
+	/*---------------- Exercise 1, Module 3 Section ---------------*/
+	body.module3 #exer1 #dino1 {
+		background-image:url("../images/mod2/ovir-exer4-small.png");
+		width:114px;
+		height:85px; 
+		top:42px;
+	}
+	body.module3 #exer1 #dino2 {
+		background-image:url("../images/mod3/anky-small.png");
+		width:213px;
+		height:74px;
+		top:-82px;
+		left:49px;
+	}
+	body.module3 #exer1 #dino3 {
+		background-image:url("../images/mod3/trex-small.png");
+		width:199px;
+		height:124px;
+		top:-230px;
+		left:260px;
+	}
+	body.module3 #exer1 #dino4 {
+		background-image:url("../images/mod2/plat-exer4-small.png");
+		width:228px;
+		height:118px;
+		top:-300px;
+		left:450px;
+	}
+	body.module3 #exer1 #dino1.success {
+		background-image:url("../images/mod3/ovir-correct-small.png") !important;
+	}
+	body.module3 #exer1 #dino3.success {
+		background-image:url("../images/mod3/trex-correct-small.png") !important;
+	}
+	body.module3 #exer1 #text {
+		margin:105px auto;
+	}
+
+	/*---------------- Exercise 1 Module 4 Section ---------------*/
+	body.module4 #exer1 #dino1 {
+		background-image:url("../images/mod4/dryo-small.png");
+		width:200px;
+		height:92px;
+		top:35px;
+	}
+	body.module4 #exer1 #dino2 {
+		background-image:url("../images/mod4/drac-small.png");
+		width:194px;
+		height:137px;
+		top:-110px;
+		left:225px;
+	}
+	body.module4 #exer1 #dino3 {
+		background-image:url("../images/mod4/tric-small.png");
+		width:195px;
+		height:83px;
+		top:-190px;
+		left:450px;
+	}
+	body.module4 #exer1 #dino1.success {
+		background-image:url("../images/mod4/dryo-correct-small.png") !important;
+	}
+	body.module4 #exer1 #dino2.success {
+		background-image:url("../images/mod4/drac-correct-small.png") !important;
+	}
+	body.module4 #exer1 #dino3.success {
+		background-image:url("../images/mod4/tric-correct-small.png") !important;
+	}
+	body.module4 #exer1 .selectWords {
+		font-size:25px;
+		padding:42px 105px;
+	}
+	body.module4 #exer1 #word1 { 
+		padding-left:0px;
+		padding-right:40px; 
+	}
+	body.module4 #exer1 #word2 {
+		padding-right:40px;
+	}
+	body.module4 #exer1 #text {
+		margin:-8px auto;
+	}
+
+	/*---------------- Exercise 2 Module 1 Section ---------------*/
+	body.module1 #exer2 #options {
+		background-image:url("../images/mod1/exer2bones-small.png");
+		width:600px;
+		height:260px;
+	}
+	body.module1 #exer2 #options .box:nth-child(1) {
+		position:relative;
+		top:-20px;
+		left:30px;
+	}
+	body.module1 #exer2 #options .box:nth-child(2) {
+		position:relative;
+		top:110px;
+		left:270px;
+	}
+	body.module1 #exer2 #options .box:nth-child(3) {
+		position:relative;
+		top:170px;
+		right:240px;
+	}
+	body.module1 #exer2 .selectWords {
+		font-size:34px;
+		padding:35px 128px;
+	}
+	body.module1 #exer2 #word1 { 
+		padding-left:0px;
+		padding-right:110px; 
+	}
+	body.module1 #exer2 #word2 {
+		padding-right:110px;
+	}
+
+	/*---------------- Exercise 2 Module 2 Section ---------------*/
+	body.module2 #exer2 #selectFood {
+		width:437px;
+	}
+	body.module2 #exer2 #selectFood #leaf-left img {
+		left:12px;
+		margin-right:165px;
+	}
+	body.module2 #exer2 #selectFood #meat-right img {
+		top:-23px;
+		left:-14px;
+	}
+	body.module2 #exer2 #selectFood #leaf-right img {
+		top:-22px;
+		left:-2px;
+	}
+	body.module2 #exer2 #dino1 {
+		background-image:url("../images/mod2/plat-eating-small.png");
+		width:279px;
+		height:139px;
+		top:-215px;
+		left:-150px;
+	}
+	body.module2 #exer2 #dino2 {
+		background-image:url("../images/mod2/ceti-eating-small.png");
+		width:361px;
+		height:141px;
+		top:-352px;
+		left:220px;
+	}
+	body.module2 #exer2 #dino1.success {
+		background-image:url("../images/mod2/plat-eating-correct-small.png") !important;
+	}
+	body.module2 #exer2 #dino2.success {
+		background-image:url("../images/mod2/ceti-eating-correct-small.png") !important;
+	}
+	body.module2 #exer2 #text {
+		margin:105px auto;
+	}
+	body.module2 #exer2 #console {
+		height:350px;
+	}
+
+
+	/*---------------- Exercise 2 Module 3 Section ---------------*/
+	body.module3 #table {
+		bottom:-111px;
+	}
+	body.module3 #exer2 #selectFood {
+		width:437px;
+	}
+	body.module3 #exer2 #selectFood #leaf-left img {
+		left:12px;
+		margin-right:165px;
+	}
+	body.module3 #exer2 #selectFood #meat-right img {
+		top:-23px;
+		left:-14px;
+	}
+	body.module3 #exer2 #selectFood #leaf-right img {
+		top:-22px;
+		left:-2px;
+	}
+	body.module3 #exer2 #dino1 {
+		background-image:url("../images/mod3/herr-eating-small.png");
+		width:274px;
+		height:166px;
+		top:-150px;
+		left:-140px;
+	}
+	body.module3 #exer2 #dino2 {
+		background-image:url("../images/mod3/trex-eating-small.png");
+		width:272px;
+		height:165px;
+		top:-320px;
+		left:190px;
+	}
+	body.module3 #exer2 #dino1.success {
+		background-image:url("../images/mod3/herr-eating-correct-small.png") !important;
+	}
+	body.module3 #exer2 #dino2.success {
+		background-image:url("../images/mod3/trex-eating-correct-small.png") !important;
+	}
+	body.module3 #exer2 #text {
+		margin:105px auto;
+	}
+	body.module3 #exer2 #console {
+		height:350px;
+	}
+
+	/*---------------- Exercise 2 Module 4 Section ---------------*/
+	body.module4 #exer2 #dino1 {
+		background-image:url("../images/mod4/steg-small.png");
+		width:197px;
+		height:101px;
+		top:35px;
+		left:60px;
+	}
+	body.module4 #exer2 #dino2 {
+		background-image:url("../images/anky-small.png");
+		width:242px;
+		height:81px;
+		top:-60px;
+		left:370px;
+	}
+	body.module4 #exer2 #dino1.success {
+		background-image:url("../images/mod4/steg-correct-small.png") !important;
+	}
+	body.module4 #exer2 #dino2.success {
+		background-image:url("../images/mod4/anky-correct-small.png") !important;
+	}
+	body.module4 #exer2 .selectWords {
+		font-size:25px;
+		padding:42px 200px;
+	}
+	body.module4 #exer2 #word1 { 
+		padding-left:0px;
+		padding-right:120px; 
+	}
+	body.module4 #exer2 #text {
+		margin:-8px auto;
+	}
+
+	/*---------------- Exercise 3 Module 1 Section ---------------*/
+	body.module1 #exer3 #dino1 {
+		background-image:url("../images/tric-small.png");
+		width:203px;
+		height:100px;
+		top:40px;
+	}
+	body.module1 #exer3 #dino2 {
+		background-image:url("../images/ovir-small.png");
+		width:217px;
+		height:162px;
+		top:-120px;
+		left:220px;
+	}
+	body.module1 #exer3 #dino3 {
+		background-image:url("../images/anky-small.png");
+		width:242px;
+		height:81px;
+		top:-205px;
+		left:450px;
+	}
+	body.module1 #exer3 #dino1.success {
+		background-image:url("../images/mod1/tric-correct-small.png") !important;
+	}
+	body.module1 #exer3 #dino2.success {
+		background-image:url("../images/mod1/ovir-correct-small.png") !important;
+	}
+	body.module1 #exer3 #dino3.success {
+		background-image:url("../images/mod1/anky-correct-small.png") !important;
+	}
+	body.module1 #exer3 #selectHips {
+		width:390px;
+		padding:25px;
+	}
+	body.module1 #exer3 #selectHips #hips1 img {
+		margin-right:200px;
+	}
+
+	/*------------------ Unlocked Section -----------------*/
+	#unlocked #lock {
+		background-image:url("../images/locked-small.png");
+		height:380px;
+	}
+	#unlocked #console #unlocked_close {
+		margin-top:-50px;
+		margin-right:-60px;
+	}
+	#unlocked #console #text {
+		font-size:18px;
+		width:650px;
+		padding:0px;
+	}
+
+	/*------------------ Slides Section -----------------*/
+	#identification {
+		display:none;
+	}
+	#identification #slider,
+	#identification #slides {
+		width:680px !important;
+	}
+	#identification #console #identify_close {
+		margin-top:-50px;
+		margin-right:-60px;
+	}
+	#identification #console #text {
+		font-size:18px;
+		width:650px;
+		padding:0px;
+	}
+	span#arrowleft {
+		left:-82px !important;
+	}
+	span#arrowright{
+		right:128px !important;
+	}
+
+	/*------------------ 3-D Section -----------------*/
+	#threeDmodel {
+		display:none;
+	}
+	#threeDmodel #console {
+		height:670px !important;
+	}
+	#threeDmodel #threeDcontent {
+		width:700px;
+		height:390px;
+		padding:0px;
+		margin-top:110px;
+	}
+	#hips #hip1,
+	#hips #hip2 {
+		float:left;
+		width:50%;
+		height:380px;
+	}
+	iframe#orni_hip, iframe#sauri_hip {
+		width:85% !important;
+		height:85% !important;
+	}
+	#threeDmodel #console #text {
+		width:650px;
+		padding:0px;
+		margin-top:10px;
+	}
+
+	#foot{
+		height: 100%;
+		width: 100%;
+	}
 }

@@ -6,8 +6,7 @@ var exer1Correct = false;
 var exer2Correct = false;
 var exer3Correct = [0, 0, 0, 0]; /* used to keep track of which dinos have changed in exercise, last digit represents overall completion */
 var m2exer1Correct = false;
-var m2exer2Correct = [0, 0]; /* used to keep track of which dinos have gotten the right type of food */
-var m3exer2Correct = [0, 0];
+var exerDragData = new Array(); /* used to keep track of which dinos have gotten the right type of food */
 var consoleHeight = '830px'; /* Controls video player container height; Come back and use this instead to adjust */
 var setVideoWidth;
 var setVideoHeight;
@@ -17,7 +16,7 @@ var lockImgPath;
 var slides;
 var zones;
 var videoPath = new Array();
-var exerInt = new Array(); //Order: [(string) exercise name, [(array) list of options, correct answers dentoed by trailing '*'], (string/array) error messages] 
+var exerInt = new Array(); //Order: [(string) exercise name, [(array) list of options, correct answers denoted by trailing '*'], (string/array) error messages] 
 
 var draggableOptions = {
                 revert: true,
@@ -153,18 +152,19 @@ switch(thisModule) {
         zones = 1;
         slides = 0;
         videoPath[1] = 'video/m2.1.mp4';
+        exerDragData = [0, 0];
         exerInt = ['exer1', ['dino1', 'dino2', 'dino3*', 'dino4*'], ["Error message about dino1", "Error message about dino2", null, null]];
         droppableOptions = [["body.module2 #exer2 #dino1", {
             drop: function (event, ui) {
                 var drop = $(ui.draggable[0]).attr('id');
                 if (drop == 'leaf-left' || drop == 'leaf-right') {
                     $("body.module2 #exer2 #dino1").addClass("success");
-                    m2exer2Correct[0] = 1;
+                    exerDragData[0] = 1;
                     checkCorrect();
                 } else {
                     displayAlert($("#exer2"), "'" + drop + "' is incorrect, because reasons.");
                     $("body.module2 #exer2 #dino1").removeClass("success");
-                    m2exer2Correct[0] = 0;
+                    exerDragData[0] = 0;
                 }
             }
         }], ["body.module2 #exer2 #dino2", {
@@ -172,12 +172,12 @@ switch(thisModule) {
                 var drop = $(ui.draggable[0]).attr('id');
                 if (drop == 'leaf-left' || drop == 'leaf-right') {
                     $("body.module2 #exer2 #dino2").addClass("success");
-                    m2exer2Correct[1] = 1;
+                    exerDragData[1] = 1;
                     checkCorrect();
                 } else {
                     displayAlert($("#exer2"), "'" + drop + "' is incorrect, because reasons.");
                     $("body.module2 #exer2 #dino2").removeClass("success");
-                    m2exer2Correct[1] = 0;
+                    exerDragData[1] = 0;
                 }
             }
         }]];
@@ -187,18 +187,19 @@ switch(thisModule) {
         zones = 1;
         slides = 0;
         videoPath[1] = 'video/m3.1.mp4';
+        exerDragData = [0, 0];
         exerInt = ['exer1', ['dino1*', 'dino2', 'dino3*', 'dino4'], [null, "Error message about dino2", null, "Error message about dino4"]];
         droppableOptions = [["body.module3 #exer2 #dino1", {
             drop: function (event, ui) {
                 var drop = $(ui.draggable[0]).attr('id');
                 if (drop == 'meat-left' || drop == 'meat-right') {
                     $("body.module3 #exer2 #dino1").addClass("success");
-                    m2exer2Correct[0] = 1;
+                    exerDragData[0] = 1;
                     checkCorrect();
                 } else {
                     displayAlert($("#exer2"), "'" + drop + "' is incorrect, because reasons.");
                     $("body.module3 #exer2 #dino1").removeClass("success");
-                    m2exer2Correct[0] = 0;
+                    exerDragData[0] = 0;
                 }
             }
         }], ["body.module3 #exer2 #dino2", {
@@ -206,12 +207,12 @@ switch(thisModule) {
                 var drop = $(ui.draggable[0]).attr('id');
                 if (drop == 'meat-left' || drop == 'meat-right') {
                     $("body.module3 #exer2 #dino2").addClass("success");
-                    m2exer2Correct[1] = 1;
+                    exerDragData[1] = 1;
                     checkCorrect();
                 } else {
                     displayAlert($("#exer2"), "'" + drop + "' is incorrect, because reasons.");
                     $("body.module3 #exer2 #dino2").removeClass("success");
-                    m2exer2Correct[1] = 0;
+                    exerDragData[1] = 0;
                 }
             }
         }]];
@@ -222,6 +223,73 @@ switch(thisModule) {
         slides = 0;
         videoPath[1] = 'video/m4.1.mp4';
         videoPath[2] = 'video/m4.2.mp4';
+        exerDragData = [0, 0, 0, 0, 0];
+        droppableOptions = [["#exer1 #dino1", {
+            hoverClass: "drop-hover",
+            drop: function (event, ui) {
+                var drop = ui.draggable[0].innerHTML;
+                if (drop == 'Ornithipod') {
+                    $("#exer1 #dino1").addClass("success");
+                    exerDragData[0] = 1;
+                    checkCorrect();
+                } else {
+                    displayAlert($("#exer1"), "'" + drop + "' is incorrect, because reasons.");
+                    exerDragData[0] = 0;
+                }
+            }
+        }], ["#exer1 #dino2", {
+            hoverClass: "drop-hover",
+            drop: function (event, ui) {
+                var drop = ui.draggable[0].innerHTML;
+                if (drop == 'Pachycephalosaur') {
+                    $("#exer1 #dino2").addClass("success");
+                    exerDragData[1] = 1;
+                    checkCorrect();
+                } else {
+                    displayAlert($("#exer1"), "'" + drop + "' is incorrect, because reasons.");
+                    exerDragData[1] = 0;
+                }
+            }
+        }], ["#exer1 #dino3", {
+            hoverClass: "drop-hover",
+            drop: function (event, ui) {
+                var drop = ui.draggable[0].innerHTML;
+                if (drop == 'Ceratopsian') {
+                    $("#exer1 #dino3").addClass("success");
+                    exerDragData[2] = 1;
+                    checkCorrect();
+                } else {
+                    displayAlert($("#exer1"), "'" + drop + "' is incorrect, because reasons.");
+                    exerDragData[2] = 0;
+                }
+            }
+        }], ["#exer2 #dino1", {
+            hoverClass: "drop-hover",
+            drop: function (event, ui) {
+                var drop = ui.draggable[0].innerHTML;
+                if (drop == 'Stegosaur') {
+                    $("#exer2 #dino1").addClass("success");
+                    exerDragData[3] = 1;
+                    checkCorrect();
+                } else {
+                    displayAlert($("#exer2"), "'" + drop + "' is incorrect, because reasons.");
+                    exerDragData[3] = 0;
+                }
+            }
+        }], ["#exer2 #dino2", {
+            hoverClass: "drop-hover",
+            drop: function (event, ui) {
+                var drop = ui.draggable[0].innerHTML;
+                if (drop == 'Ankylosaur') {
+                    $("#exer2 #dino2").addClass("success");
+                    exerDragData[4] = 1;
+                    checkCorrect();
+                } else {
+                    displayAlert($("#exer2"), "'" + drop + "' is incorrect, because reasons.");
+                    exerDragData[4] = 0;
+                }
+            }
+        }]];
         break;
     
     default:
@@ -501,9 +569,22 @@ function checkCorrect() {
             $("#exer1 #text p").html('Have you thought about being a paleontologist?');
         }
 
-        if (m2exer1Correct == true && m2exer2Correct[0] && m2exer2Correct[1]) {
+        if (m2exer1Correct == true && exerDragData[0] && exerDragData[1]) {
             $('.locked').removeClass('locked');
             setTimeout(function() {
+                toSection('unlocked');
+            }, 300); /* Stops the unlocked screen from transitioning to the exer2 again if at 4000...somehow */
+        }
+    } else {//if(thisModule == 4){ unecessary check since this is the only other module at this time.
+        if ($('#exer1 .success').length == 3) {
+            $("#exer1 #text h4").html('Good job!');
+            $("#exer1 #text p").html('Have you thought about being a paleontologist?');
+        }
+
+        //if array does not include a 0, all exers are correctly answered
+        if (exerDragData.indexOf(0) == -1) {
+            $('.locked').removeClass('locked');
+            setTimeout(function () {
                 toSection('unlocked');
             }, 300); /* Stops the unlocked screen from transitioning to the exer2 again if at 4000...somehow */
         }
@@ -512,17 +593,17 @@ function checkCorrect() {
 
 
 //If passed non-null data, this function takes in exer name, and an array of correct answers. When a correct option is selected, the success class is applied.
-function clickInteraction(exerData){
-    if(exerData){
-        $('#' + exerData[0] + ' div:nth-child(1) div div').each(function(i){
+function clickInteraction(exerInputData){
+    if(exerInputData){
+        $('#' + exerInputData[0] + ' div:nth-child(1) div div').each(function(i){
             $(this).on('click', function(event) {
                 var id = $(this).attr('id');
-                if (exerData[1].indexOf(id + "*") != -1) {//id appeneded with star (* denoting correct answer) exists
+                if (exerInputData[1].indexOf(id + "*") != -1) {//id appeneded with star (* denoting correct answer) exists
                     $(this).addClass("success");
                     checkCorrect();
                 } else {//Isn't appened with star, so it is an incorrect id
-                    var index = exerData[1].indexOf(id);
-                    displayAlert($('#' + exerData[0]), exerData[2][index]);
+                    var index = exerInputData[1].indexOf(id);
+                    displayAlert($('#' + exerInputData[0]), exerInputData[2][index]);
                 }
             });
         });
@@ -803,11 +884,13 @@ function displayAlert(container, message) {
 
         //Register draggable listeners.
         if(thisModule == 1){
-            $("#word1, #word2, #word3, #hips1, #hips2").draggable(draggableOptions);
+            $("#word1, #word2, #word3, #word4, #hips1, #hips2").draggable(draggableOptions);
         } else if(thisModule == 2){
             $("#meat-left, #meat-right, #leaf-left, #leaf-right").draggable(draggableOptions);
         } else if(thisModule == 3) {
             $("#meat-left, #meat-right, #leaf-left, #leaf-right").draggable(draggableOptions);
+        } else if(thisModule == 4) {
+            $("#exer1 #word1, #exer1 #word2, #exer1 #word3, #exer2 #word1, #exer2 #word2").draggable(draggableOptions);
         }
 
         //Create and register droppable listeners.
