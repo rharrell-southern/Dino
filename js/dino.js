@@ -625,13 +625,18 @@ function displayAlert(container, message) {
     }
     
     //display
-    $(".customAlert").show();
-    clearTimeout(timeout);
+    $(".customAlert").show('drop', { direction: "right" });
+
+    //if timeout, clear it before starting new timeout
+    if(timeout){
+        clearTimeout(timeout);
+    }
+    
 
     //For every 20 characters, add 500ms
-    var msgTime = 4500 + ((message.length / 20) * 500);
+    var msgTime = 4000 + ((message.length / 20) * 500);
     timeout = setTimeout(function () {
-        $(".customAlert").hide();
+        $(".customAlert").hide('drop', { direction: "right" });
     }, msgTime);
 }
 
