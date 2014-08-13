@@ -549,14 +549,16 @@ function checkCorrect() {
     if(thisModule == 1){
         if ($('#exer1 .drop-correct').length == 4) {
             exer1Correct = true;
-            $("#exer1 #text h4").html('Good job!');
-            $("#exer1 #text p").html('Have you thought about being a paleontologist?');
+           $("#exer1 #text h4").html('Correct!');
+			$("#exer1 #text h4").addClass("correct");
+			$("#exer1 #text p").html('');
         }
 
         if ($('#exer2 .drop-correct').length == 3) {
             exer2Correct = true;
-            $("#exer2 #text h4").html('Good job!');
-            $("#exer2 #text p").html('Have you thought about being a paleontologist?');
+            $("#exer2 #text h4").html('Correct!');
+			$("#exer2 #text h4").addClass("correct");
+			$("#exer2 #text p").html('');
         }
         if (exer3Correct[0] && exer3Correct[1] && exer3Correct[2]) {
             exer3Correct[3] = 1;
@@ -571,8 +573,9 @@ function checkCorrect() {
     }else if(thisModule == 2 || thisModule == 3){
         if ($('#exer1 .success').length == 2) {
             m2exer1Correct = true;
-            $("#exer1 #text h4").html('Good job!');
-            $("#exer1 #text p").html('Have you thought about being a paleontologist?');
+            $("#exer1 #text h4").html('Correct!');
+			$("#exer1 #text h4").addClass("correct");
+			$("#exer1 #text p").html('');
         }
 
         if (m2exer1Correct == true && exerDragData[0] && exerDragData[1]) {
@@ -583,8 +586,9 @@ function checkCorrect() {
         }
     } else {//if(thisModule == 4){ unecessary check since this is the only other module at this time.
         if ($('#exer1 .success').length == 3) {
-            $("#exer1 #text h4").html('Good job!');
-            $("#exer1 #text p").html('Have you thought about being a paleontologist?');
+            $("#exer1 #text h4").html('Correct!');
+			$("#exer1 #text h4").addClass("correct");
+			$("#exer1 #text p").html('');
         }
 
         //if array does not include a 0, all exers are correctly answered
@@ -721,6 +725,18 @@ function displayAlert(container, message) {
         $('#content').on('click', '#exer2 .next', function() {
             toSection('video', 1);
         });
+		$('#content').on('click', '#exer3 .next', function() {
+            toSection('identification');
+        });
+		$('#content').on('click', '#identification .next', function() {
+            toSection('threeDmodel');
+        });
+		$('#content').on('click', '#unlocked .next', function() {
+            toSection('identification');
+        });
+		$('#content').on('click', '#threeDmodel .next', function() {
+            toSection('buildDino');
+        });
         $('#content').on('click', '#exer1 .rewatch', function() {
             toSection('video', 0);
         });
@@ -729,6 +745,12 @@ function displayAlert(container, message) {
         });
         $('#content').on('click', '#exer3 .rewatch', function() {
             toSection('video', 1);
+        });
+		$('#content').on('click', '#identification .rewatch', function() {
+            toSection('exer3');
+        });
+		$('#content').on('click', '#threeDmodel .rewatch', function() {
+            toSection('identification');
         });
         $('#content').on('click', '.skip', function() {
             console.log($('#subnav a.active').attr('zone'));

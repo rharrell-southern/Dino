@@ -48,6 +48,10 @@ h1, h2, h3, h4, h5, h6 {
 	margin-bottom:5px;
 	color:#f1cb31;
 }
+h4.correct { /* once exercise is complete, change h4 to a large congratulatory message */
+	font-size:30px !important;
+	margin-bottom:22px;
+}
 
 
 /*
@@ -116,7 +120,7 @@ h1, h2, h3, h4, h5, h6 {
 	clear:none;
 }
 body.module1 #subnav_content {
-	width:970px; /* Ensures margin:0px auto works and links are centered to page */
+	width:1000px; /* Ensures margin:0px auto works and links are centered to page */
 }
 body.module2 #subnav_content, 
 body.module3 #subnav_content,
@@ -127,7 +131,7 @@ body.module4 #subnav_content {
 	color:#FFF;
 	display:block;
 	float:left;
-	margin:0px 10px 0px 26px;
+	margin:0px 10px 0px 10px;
 	text-shadow:0px 0px 6px #000;
 	padding:5px 0px;
 	clear:none;
@@ -376,11 +380,11 @@ body.module4 #zone1 {
 }
 body.module1 #zone1Hover {
 	top:-222px;
-	right:325px;
+	left:-240px;
 }
 body.module1 #zone2Hover {
-	top:-350px;
-	right:70px;
+	top:-330px;
+	right:0px;
 }
 body.module2 #zone1Hover {
 	top:-58px;
@@ -1053,7 +1057,6 @@ body.module1 #exer3 #text {
 
 
 #identification #console #text {
-	font-size:22px;
 	margin-top:125px;
 }
 
@@ -1070,7 +1073,7 @@ body.module1 #exer3 #text {
 	width:940px;
 	padding:20px;
 	margin:0px auto;
-	margin-top:115px;
+	margin-top:105px;
 	position:relative;
 	z-index:100 !important;
 	height:514px;
