@@ -539,7 +539,13 @@ function dropCorrect(thisItem, answer) {
     checkCorrect();
 }
 
+//Function that tracks correct answers mainly for checking if all exercises are complete
 function checkCorrect() {
+    //On correct answer clear timeout and hide any error alerts
+    clearTimeout(timeout);
+    $(".customAlert").hide('drop', { direction: "right" });
+    
+
     if(thisModule == 1){
         if ($('#exer1 .drop-correct').length == 4) {
             exer1Correct = true;
@@ -614,7 +620,6 @@ var timeout;
 //Displays a div to alert the user about whatever. Accepts a jquery object (pref div), and message to be displayed.
 function displayAlert(container, message) {
     var backup = container.html();
-
     var content = "<div class='customAlert'><span class='alertmsg'>" + message + "</div>";
 
     //Append only if it doesn't exist, else simply update message.
@@ -761,6 +766,14 @@ function displayAlert(container, message) {
                             toSection('exhibit');
                         });
                     });
+                } else if ($(this).parent().parent().parent().attr('id') == "identification") {
+                    $("#slider").fadeOut('fast');
+                    $("#identification #console #text").fadeOut('fast', function () {
+                        $("#identification #console").fadeOut('fast');
+                        $("#identification").fadeOut('fast');
+                        toSection('exhibit');
+                    });
+
                 }
             }
             if(thisModule == 2 || thisModule == 3){
