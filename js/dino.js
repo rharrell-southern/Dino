@@ -549,16 +549,14 @@ function checkCorrect() {
     if(thisModule == 1){
         if ($('#exer1 .drop-correct').length == 4) {
             exer1Correct = true;
-           $("#exer1 #text h4").html('Correct!');
-			$("#exer1 #text h4").addClass("correct");
-			$("#exer1 #text p").html('');
+            $("#exer1 #text h4").html('Correct!');
+			$("#exer1 #text p").html('Want to practice some more? Click here to reset this exercise.');
         }
 
         if ($('#exer2 .drop-correct').length == 3) {
             exer2Correct = true;
             $("#exer2 #text h4").html('Correct!');
-			$("#exer2 #text h4").addClass("correct");
-			$("#exer2 #text p").html('');
+			$("#exer2 #text p").html('Want to practice some more? Click here to reset this exercise.');
         }
         if (exer3Correct[0] && exer3Correct[1] && exer3Correct[2]) {
             exer3Correct[3] = 1;
@@ -574,8 +572,7 @@ function checkCorrect() {
         if ($('#exer1 .success').length == 2) {
             m2exer1Correct = true;
             $("#exer1 #text h4").html('Correct!');
-			$("#exer1 #text h4").addClass("correct");
-			$("#exer1 #text p").html('');
+			$("#exer1 #text p").html('Want to practice some more? Click here to reset this exercise.');
         }
 
         if (m2exer1Correct == true && exerDragData[0] && exerDragData[1]) {
@@ -587,8 +584,7 @@ function checkCorrect() {
     } else {//if(thisModule == 4){ unecessary check since this is the only other module at this time.
         if ($('#exer1 .success').length == 3) {
             $("#exer1 #text h4").html('Correct!');
-			$("#exer1 #text h4").addClass("correct");
-			$("#exer1 #text p").html('');
+			$("#exer1 #text p").html('Want to practice some more? Click here to reset this exercise.');
         }
 
         //if array does not include a 0, all exers are correctly answered

@@ -26,6 +26,13 @@ a {
 .highlight {
 	color:#f1cb31;
 }
+div.controls { /* houses the previous and continue buttons */
+	height:40px;
+	width:850px;
+	margin:0px auto;
+	position:absolute;
+	bottom:60px;
+}
 .button {
 	font-weight:bold;
 	color:#f1cb31;
@@ -48,10 +55,9 @@ h1, h2, h3, h4, h5, h6 {
 	margin-bottom:5px;
 	color:#f1cb31;
 }
-h4.correct { /* once exercise is complete, change h4 to a large congratulatory message */
+/*h4.correct { once exercise is complete, change h4 to a large congratulatory message
 	font-size:30px !important;
-	margin-bottom:22px;
-}
+} */
 
 
 /*
