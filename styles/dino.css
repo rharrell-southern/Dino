@@ -55,9 +55,6 @@ h1, h2, h3, h4, h5, h6 {
 	margin-bottom:5px;
 	color:#f1cb31;
 }
-/*h4.correct { once exercise is complete, change h4 to a large congratulatory message
-	font-size:30px !important;
-} */
 
 
 /*
@@ -180,6 +177,13 @@ body.module4 #subnav_content {
 	font-weight:normal;
 	font-size: 20px;
 }
+#leftnav a {
+	font-size:16px;
+}
+#leftnav a.active {
+	font-weight:bold;
+	color:#005599;
+}
 #leftnav ul li {
 	list-style:none;
 }
@@ -194,17 +198,11 @@ body.module4 #subnav_content {
 	padding-left:25px;
 }
 #leftnav span ul li a.correct {
-	background-image:url('../images/checkmark.png');
+	background-image:url("../images/checkmark.png");
 	background-repeat:no-repeat;
 	background-position:left center;	
 }
-#leftnav a {
-	font-size:16px;
-}
-#leftnav a.active {
-	font-weight:bold;
-	color:#005599;
-}
+
 /*
 
 ################### Content Section ####################
@@ -424,8 +422,9 @@ body.module1 #zone2Hover {
 	right:0px;
 }
 body.module2 #zone1Hover {
-	top:-58px;
+	top:0px;
 	left:-200px;
+	width:450px !important;
 }
 body.module3 #zone1Hover {
 	top:-230px;
@@ -1024,6 +1023,11 @@ body.module1 #exer3 #text {
 	background-image:url("../images/locked.png");
 	background-position:bottom center;
 	background-repeat:no-repeat;
+}
+#unlocked #download {
+	position:relative;
+	top:-500px;
+	left:360px;
 }
 #unlocked #console #unlocked_close {
 	background:rgba(0,0,0,0.3);

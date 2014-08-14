@@ -489,6 +489,7 @@ function toSection(goTo, videoStart) {
     }
     if (goTo == 'unlocked') {
         $('#unlocked #text').fadeIn('fast', function() {
+			$('#unlocked #download').fadeIn('fast');
             $('#unlocked #lock').fadeIn('fast', function() {
                 setTimeout(function() {
                     $('#unlocked #lock').css({
@@ -578,6 +579,12 @@ function checkCorrect() {
             m2exer1Correct = true;
             $("#exer1 #text h4").html('Correct!');
 			$("#exer1 #text p").html('Want to practice some more? Click here to reset this exercise.');
+			$("#leftnav a.exer1").addClass('correct');
+        }
+		if ($('#exer2 .success').length == 2) {
+            $("#exer2 #text h4").html('Correct!');
+			$("#exer2 #text p").html('Want to practice some more? Click here to reset this exercise.');
+			$("#leftnav a.exer2").addClass('correct');
         }
 
         if (m2exer1Correct == true && exerDragData[0] && exerDragData[1]) {
@@ -590,6 +597,12 @@ function checkCorrect() {
         if ($('#exer1 .success').length == 3) {
             $("#exer1 #text h4").html('Correct!');
 			$("#exer1 #text p").html('Want to practice some more? Click here to reset this exercise.');
+			$("#leftnav a.exer1").addClass('correct');
+        }
+		if ($('#exer2 .success').length == 2) {
+            $("#exer2 #text h4").html('Correct!');
+			$("#exer2 #text p").html('Want to practice some more? Click here to reset this exercise.');
+			$("#leftnav a.exer2").addClass('correct');
         }
 
         //if array does not include a 0, all exers are correctly answered
