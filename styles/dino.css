@@ -172,8 +172,39 @@ body.module4 #subnav_content {
 #subnav span.arrow.locked {
 	background-image:url("../images/arrow_locked.png");
 }
-
-
+#leftnav {
+	position:absolute;
+	left:0px;
+	top:170px;
+	z-index:9999;
+	font-weight:normal;
+	font-size: 20px;
+}
+#leftnav ul li {
+	list-style:none;
+}
+#leftnav span,
+#leftnav span a {
+	font-size:14px;
+}
+#leftnav span ul {
+	padding:0px;
+}
+#leftnav span ul li a {
+	padding-left:25px;
+}
+#leftnav span ul li a.correct {
+	background-image:url('../images/checkmark.png');
+	background-repeat:no-repeat;
+	background-position:left center;	
+}
+#leftnav a {
+	font-size:16px;
+}
+#leftnav a.active {
+	font-weight:bold;
+	color:#005599;
+}
 /*
 
 ################### Content Section ####################

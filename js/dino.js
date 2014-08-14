@@ -387,6 +387,8 @@ function clearHipIntervals() {
 
 // Jump to a section of the website
 function toSection(goTo, videoStart) {
+	$('#leftnav a').removeClass("active");
+	$('#leftnav a.'+goTo).addClass("active");
     projekktor('player_a').setStop();
     $('#video_captions').html('');
     $('#subnav a').removeClass('active');
@@ -551,16 +553,19 @@ function checkCorrect() {
             exer1Correct = true;
             $("#exer1 #text h4").html('Correct!');
 			$("#exer1 #text p").html('Want to practice some more? Click here to reset this exercise.');
+			$("#leftnav a.exer1").addClass('correct');
         }
 
         if ($('#exer2 .drop-correct').length == 3) {
             exer2Correct = true;
             $("#exer2 #text h4").html('Correct!');
 			$("#exer2 #text p").html('Want to practice some more? Click here to reset this exercise.');
+			$("#leftnav a.exer2").addClass('correct');
         }
         if (exer3Correct[0] && exer3Correct[1] && exer3Correct[2]) {
             exer3Correct[3] = 1;
             console.log(exer3Correct);
+			$("#leftnav a.exer3").addClass('correct');
         }
         if (exer1Correct && exer2Correct && exer3Correct[3]) {
             $('.locked').removeClass('locked');
