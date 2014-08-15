@@ -2,11 +2,7 @@
 var thisDuration = 1000;
 var hipInterval;
 var hiIsRuning = false;
-var exer1Correct;
-var exer2Correct;
-var exer3Correct;
-var m2exer1Correct = false;
-var exerDragData = new Array(); /* used to keep track of which dinos have gotten the right type of food */
+var exerCorrect
 var consoleHeight = '830px'; /* Controls video player container height; Come back and use this instead to adjust */
 var setVideoWidth;
 var setVideoHeight;
@@ -33,9 +29,7 @@ switch(thisModule) {
         slides = 10;
         videoPath[1] = 'video/m1.1.mp4';
         videoPath[2] = 'video/m1.2.mp4';
-        exer1Correct = false;
-        exer2Correct = false;
-        exer3Correct = [0, 0, 0];
+        exerCorrect = [false, false, [0, 0, 0]];
         droppableOptions = [["#exer1 #option1", {
             //accept: "#word2",
             hoverClass: "drop-hover",
@@ -115,12 +109,12 @@ switch(thisModule) {
                 console.log(drop);
                 if (drop == 'hips1') {
                     $("#dino1").addClass("success");
-                    exer3Correct[0] = 1;
+                   exerCorrect[2][0] = 1;
                     checkCorrect();
                 } else {
                     displayAlert("That hip doesn't match this dinosaur.  Try to remember the unique characterstics of each type of dinosaur.  If you need to review, go back and re-watch the video.");
                     $("#dino1").removeClass("success");
-                    exer3Correct[0] = 0;
+                    exerCorrect[2][0] = 0;
                 }
             }
         }], ["#exer3 #dino2", {
@@ -128,12 +122,12 @@ switch(thisModule) {
                 var drop = $(ui.draggable[0]).attr('id');
                 if (drop == 'hips2') {
                     $("#dino2").addClass("success");
-                    exer3Correct[1] = 1;
+                    exerCorrect[2][1] = 1;
                     checkCorrect();
                 } else {
                     displayAlert("That hip doesn't match this dinosaur.  Try to remember the unique characterstics of each type of dinosaur.  If you need to review, go back and re-watch the video.");
                     $("#dino2").removeClass("success");
-                    exer3Correct[1] = 0;
+                    exerCorrect[2][1] = 0;
                 }
             }
         }], ["#exer3 #dino3", {
@@ -141,12 +135,12 @@ switch(thisModule) {
                 var drop = $(ui.draggable[0]).attr('id');
                 if (drop == 'hips1') {
                     $("#dino3").addClass("success");
-                    exer3Correct[2] = 1;
+                    exerCorrect[2][2] = 1;
                     checkCorrect();
                 } else {
                     displayAlert("That hip doesn't match this dinosaur.  Try to remember the unique characterstics of each type of dinosaur.  If you need to review, go back and re-watch the video.");
                     $("#dino3").removeClass("success");
-                    exer3Correct[2] = 0;
+                    exerCorrect[2][2] = 0;
                 }
             }
         }]];
@@ -155,8 +149,7 @@ switch(thisModule) {
         zones = 1;
         slides = 0;
         videoPath[1] = 'video/m2.1.mp4';
-        exer1Correct = false;
-        exer2Correct = [0, 0];
+        exerCorrect = [false, [0, 0]];
         exerInt = ['exer1', ['dino1', 'dino2', 'dino3*', 'dino4*'], ["This dinosaur is not a Sauropod.  Try to remember the unique characterstics of Sauropods.  If you need to review, go back and re-watch the video.", 
                                                                      "This dinosaur is not a Sauropod.  Try to remember the unique characterstics of Sauropods.  If you need to review, go back and re-watch the video.", null, null]];
         droppableOptions = [["body.module2 #exer2 #dino1", {
@@ -164,12 +157,12 @@ switch(thisModule) {
                 var drop = $(ui.draggable[0]).attr('id');
                 if (drop == 'leaf-left' || drop == 'leaf-right') {
                     $("body.module2 #exer2 #dino1").addClass("success");
-                    exer2Correct[0] = 1;
+                    exerCorrect[1][0] = 1;
                     checkCorrect();
                 } else {
                     displayAlert("That is not the type of food this dinosaur eats! Go back and watch the video if you need to review.");
                     $("body.module2 #exer2 #dino1").removeClass("success");
-                    exer2Correct[0] = 0;
+                    exerCorrect[1][0] = 0;
                 }
             }
         }], ["body.module2 #exer2 #dino2", {
@@ -177,12 +170,12 @@ switch(thisModule) {
                 var drop = $(ui.draggable[0]).attr('id');
                 if (drop == 'leaf-left' || drop == 'leaf-right') {
                     $("body.module2 #exer2 #dino2").addClass("success");
-                    exer2Correct[1] = 1;
+                    exerCorrect[1][1] = 1;
                     checkCorrect();
                 } else {
                     displayAlert("That is not the type of food this dinosaur eats! Go back and watch the video if you need to review.");
                     $("body.module2 #exer2 #dino2").removeClass("success");
-                    exer2Correct[1] = 0;
+                    exerCorrect[1][1] = 0;
                 }
             }
         }]];
@@ -192,8 +185,7 @@ switch(thisModule) {
         zones = 1;
         slides = 0;
         videoPath[1] = 'video/m3.1.mp4';
-        exer1Correct = false;
-        exer2Correct = [0, 0];
+        exerCorrect = [false, [0, 0]];
         exerInt = ['exer1', ['dino1*', 'dino2', 'dino3*', 'dino4'], [null, "This dinosaur is not a Theropod.  Try to remember the unique characterstics of Theropods.  If you need to review, go back and re-watch the video.", 
                                                                      null, "This dinosaur is not a Theropod.  Try to remember the unique characterstics of Theropods.  If you need to review, go back and re-watch the video."]];
         droppableOptions = [["body.module3 #exer2 #dino1", {
@@ -201,12 +193,12 @@ switch(thisModule) {
                 var drop = $(ui.draggable[0]).attr('id');
                 if (drop == 'meat-left' || drop == 'meat-right') {
                     $("body.module3 #exer2 #dino1").addClass("success");
-                    exer2Correct[0] = 1;
+                    exerCorrect[1][0] = 1;
                     checkCorrect();
                 } else {
                     displayAlert("That is not the type of food this dinosaur eats! Go back and watch the video if you need to review.");
                     $("body.module3 #exer2 #dino1").removeClass("success");
-                    exer2Correct[0] = 0;
+                   exerCorrect[1][0] = 0;
                 }
             }
         }], ["body.module3 #exer2 #dino2", {
@@ -214,12 +206,12 @@ switch(thisModule) {
                 var drop = $(ui.draggable[0]).attr('id');
                 if (drop == 'meat-left' || drop == 'meat-right') {
                     $("body.module3 #exer2 #dino2").addClass("success");
-                    exer2Correct[1] = 1;
+                    exerCorrect[1][1] = 1;
                     checkCorrect();
                 } else {
                     displayAlert("That is not the type of food this dinosaur eats! Go back and watch the video if you need to review.");
                     $("body.module3 #exer2 #dino2").removeClass("success");
-                    exer2Correct[1] = 0;
+                    exerCorrect[1][1] = 0;
                 }
             }
         }]];
@@ -230,19 +222,18 @@ switch(thisModule) {
         slides = 0;
         videoPath[1] = 'video/m4.1.mp4';
         videoPath[2] = 'video/m4.2.mp4';
-        exer1Correct = [0, 0, 0];
-        exer2Correct = [0, 0];
+        exerCorrect = [[0, 0, 0], [0, 0]];
         droppableOptions = [["#exer1 #dino1", {
             hoverClass: "drop-hover",
             drop: function (event, ui) {
                 var drop = ui.draggable[0].innerHTML;
                 if (drop == 'Ornithipod') {
                     $("#exer1 #dino1").addClass("success");
-                    exer1Correct[0] = 1;
+                    exerCorrect[0][0] = 1;
                     checkCorrect();
                 } else {
                     displayAlert("'" + drop + "' is not the correct type of dinosaur. Go back and watch the video again if you need to review.");
-                    exer1Correct[0] = 0;
+                    exerCorrect[0][0] = 0;
                     $("#exer1 #dino1").removeClass("success");
                 }
             }
@@ -252,11 +243,11 @@ switch(thisModule) {
                 var drop = ui.draggable[0].innerHTML;
                 if (drop == 'Pachycephalosaur') {
                     $("#exer1 #dino2").addClass("success");
-                    exer1Correct[1] = 1;
+                    exerCorrect[0][1] = 1;
                     checkCorrect();
                 } else {
                     displayAlert("'" + drop + "' is not the correct type of dinosaur. Go back and watch the video again if you need to review.");
-                    exer1Correct[1] = 0;
+                    exerCorrect[0][1] = 0;
                     $("#exer1 #dino2").removeClass("success");
                 }
             }
@@ -266,11 +257,11 @@ switch(thisModule) {
                 var drop = ui.draggable[0].innerHTML;
                 if (drop == 'Ceratopsian') {
                     $("#exer1 #dino3").addClass("success");
-                    exer1Correct[2] = 1;
+                    exerCorrect[0][2] = 1;
                     checkCorrect();
                 } else {
                     displayAlert("'" + drop + "' is not the correct type of dinosaur. Go back and watch the video again if you need to review.");
-                    exer1Correct[2] = 0;
+                    exerCorrect[0][2] = 0;
                     $("#exer1 #dino3").removeClass("success");
                 }
             }
@@ -280,11 +271,11 @@ switch(thisModule) {
                 var drop = ui.draggable[0].innerHTML;
                 if (drop == 'Stegosaur') {
                     $("#exer2 #dino1").addClass("success");
-                    exer2Correct[0] = 1;
+                    exerCorrect[1][0] = 1;
                     checkCorrect();
                 } else {
                     displayAlert("'" + drop + "' is not the correct type of dinosaur. Go back and watch the video again if you need to review.");
-                    exer2Correct[0] = 0;
+                    exerCorrect[1][0] = 0;
                     $("#exer2 #dino1").removeClass("success");
                 }
             }
@@ -294,11 +285,11 @@ switch(thisModule) {
                 var drop = ui.draggable[0].innerHTML;
                 if (drop == 'Ankylosaur') {
                     $("#exer2 #dino2").addClass("success");
-                    exer2Correct[1] = 1;
+                    exerCorrect[1][1] = 1;
                     checkCorrect();
                 } else {
                     displayAlert("'" + drop + "' is not the correct type of dinosaur. Go back and watch the video again if you need to review.");
-                    exer2Correct[1] = 0;
+                    exerCorrect[1][1] = 0;
                     $("#exer2 #dino2").removeClass("success");
                 }
             }
@@ -569,25 +560,24 @@ function checkCorrect() {
 
     if(thisModule == 1){
         if ($('#exer1 .drop-correct').length == 4) {
-            exer1Correct = true;
+            exerCorrect[0] = true;
             $("#exer1 #text h4").html('Correct!');
 			$("#exer1 #text p").html('Want to practice some more? <span class="exerReset">Click here</span> to reset this exercise.');
 			$("#leftnav a.exer1").addClass('correct');
         }
 
         if ($('#exer2 .drop-correct').length == 3) {
-            exer2Correct = true;
+            exerCorrect[1] = true;
             $("#exer2 #text h4").html('Correct!');
 			$("#exer2 #text p").html('Want to practice some more? <span class="exerReset">Click here</span> to reset this exercise.');
 			$("#leftnav a.exer2").addClass('correct');
         }
-        if (exer3Correct[0] && exer3Correct[1] && exer3Correct[2]) {
-            console.log(exer3Correct);
+        if (exerCorrect[2][0] && exerCorrect[2][1] && exerCorrect[2][2]) {
             $("#exer3 #text h4").html('Correct!');
             $("#exer3 #text p").html('Want to practice some more? <span class="exerReset">Click here</span> to reset this exercise.');
 			$("#leftnav a.exer3").addClass('correct');
         }
-        if (exer1Correct && exer2Correct && exer3Correct.indexOf(0) == -1) {
+        if (exerCorrect[0] && exerCorrect[1] && exerCorrect[2].indexOf(0) == -1) {
             $('.locked').removeAttr('title');
             $('.locked').removeClass('locked');
             /*setTimeout(function() {
@@ -596,7 +586,7 @@ function checkCorrect() {
         }
     }else if(thisModule == 2 || thisModule == 3){
         if ($('#exer1 .success').length == 2) {
-            exer1Correct = true;
+            exerCorrect[0] = true;
             $("#exer1 #text h4").html('Correct!');
 			$("#exer1 #text p").html('Want to practice some more? <span class="exerReset">Click here</span> to reset this exercise.');
 			$("#leftnav a.exer1").addClass('correct');
@@ -607,7 +597,7 @@ function checkCorrect() {
 			$("#leftnav a.exer2").addClass('correct');
         }
 
-        if (exer1Correct == true && exer2Correct[0] && exer2Correct[1]) {
+        if (exerCorrect[0] == true && exerCorrect[1][0] && exerCorrect[1][1]) {
             $('.locked').removeAttr('title');
             $('.locked').removeClass('locked');
             /*setTimeout(function() {
@@ -615,7 +605,6 @@ function checkCorrect() {
             }, 300); /* Stops the unlocked screen from transitioning to the exer2 again if at 4000...somehow */
         }
     } else {//if(thisModule == 4){ unecessary check since this is the only other module at this time.
-        console.log(exer1Correct, exer2Correct);
         if ($('#exer1 .success').length == 3) {
             $("#exer1 #text h4").html('Correct!');
 			$("#exer1 #text p").html('Want to practice some more? <span class="exerReset">Click here</span> to reset this exercise.');
@@ -627,8 +616,9 @@ function checkCorrect() {
 			$("#leftnav a.exer2").addClass('correct');
         }
 
+
         //if array does not include a 0, all exers are correctly answered
-        if (exer1Correct.indexOf(0) == -1 && exer2Correct.indexOf(0) == -1) {
+        if (exerCorrect[0].indexOf(0) == -1 && exerCorrect[1].indexOf(0) == -1) {
             $('.locked').removeAttr('title');
             $('.locked').removeClass('locked');
             /*setTimeout(function () {
@@ -636,6 +626,7 @@ function checkCorrect() {
             }, 300); /* Stops the unlocked screen from transitioning to the exer2 again if at 4000...somehow */
         }
     }
+    console.log(exerCorrect);
 }
 
 
@@ -659,8 +650,21 @@ function clickInteraction(exerInputData){
 
 //Resets current exercise. Should reset 
 function exerReset(context){
-    var parent = context.parent().parent().parent().parent();
+    var parent = context.parent().parent().parent().parent().attr('id');
     console.log(parent);
+
+    //if forest, it's dragging an image, else it's options which is dragging words
+    if($('#' + parent + ' div:nth-child(1)').attr('id') == 'forest'){
+        $('#' + parent + ' div:nth-child(1) div div').each(function(){
+            $(this).removeClass("success");
+        });
+
+        //check to see if array or not. If array, get length and set eq to new array of that len. Else set false.
+        exerCorrect[parent.charAt(4)][0] = false;
+
+    }else{
+
+    }
 }
 
 var timeout;
