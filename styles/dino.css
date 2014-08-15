@@ -148,16 +148,18 @@ body.module4 #subnav_content {
 	width:650px; /* Ensures margin:0px auto works and links are centered to page */
 }
 #subnav a {
-	color:#FFF;
+	color:#CCC;
 	display:block;
 	float:left;
 	margin:0px 10px 0px 10px;
 	text-shadow:0px 0px 6px #000;
 	padding:5px 0px;
 	clear:none;
+	font-weight:normal;
 }
 #subnav a.visited {
-	color:#6da8df;
+	color:#fff;
+	font-weight:bold;
 }
 #subnav a:hover {
 	color:#f1cb31;
@@ -199,10 +201,11 @@ body.module4 #subnav_content {
 }
 #leftnav a {
 	font-size:16px;
+	color:#fff;
 }
 #leftnav a.active {
+	color:#fff;
 	font-weight:bold;
-	color:#005599;
 }
 #leftnav ul li {
 	list-style:none;
@@ -219,11 +222,13 @@ body.module4 #subnav_content {
 }
 #leftnav span ul li a {
 	padding-left:25px;
+	color:#CCC
 }
 #leftnav span ul li a.correct {
 	background-image:url("../images/checkmark.png");
 	background-repeat:no-repeat;
-	background-position:left center;	
+	background-position:left center;
+	color:#009847;	
 }
 
 /*
