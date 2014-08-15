@@ -153,8 +153,8 @@ switch(thisModule) {
         slides = 0;
         videoPath[1] = 'video/m2.1.mp4';
         exerDragData = [0, 0];
-        exerInt = ['exer1', ['dino1', 'dino2', 'dino3*', 'dino4*'], ["This dinosaur is not a Sauropod.  Try to remmeber the unique characterstics of Sauropods.  If you need to review, go back and re-watch the video.", 
-                                                                     "This dinosaur is not a Sauropod.  Try to remmeber the unique characterstics of Sauropods.  If you need to review, go back and re-watch the video.", null, null]];
+        exerInt = ['exer1', ['dino1', 'dino2', 'dino3*', 'dino4*'], ["This dinosaur is not a Sauropod.  Try to remember the unique characterstics of Sauropods.  If you need to review, go back and re-watch the video.", 
+                                                                     "This dinosaur is not a Sauropod.  Try to remember the unique characterstics of Sauropods.  If you need to review, go back and re-watch the video.", null, null]];
         droppableOptions = [["body.module2 #exer2 #dino1", {
             drop: function (event, ui) {
                 var drop = $(ui.draggable[0]).attr('id');
@@ -189,8 +189,8 @@ switch(thisModule) {
         slides = 0;
         videoPath[1] = 'video/m3.1.mp4';
         exerDragData = [0, 0];
-        exerInt = ['exer1', ['dino1*', 'dino2', 'dino3*', 'dino4'], [null, "This dinosaur is not a Theropod.  Try to remmeber the unique characterstics of Theropods.  If you need to review, go back and re-watch the video.", 
-                                                                     null, "This dinosaur is not a Theropod.  Try to remmeber the unique characterstics of Theropods.  If you need to review, go back and re-watch the video."]];
+        exerInt = ['exer1', ['dino1*', 'dino2', 'dino3*', 'dino4'], [null, "This dinosaur is not a Theropod.  Try to remember the unique characterstics of Theropods.  If you need to review, go back and re-watch the video.", 
+                                                                     null, "This dinosaur is not a Theropod.  Try to remember the unique characterstics of Theropods.  If you need to review, go back and re-watch the video."]];
         droppableOptions = [["body.module3 #exer2 #dino1", {
             drop: function (event, ui) {
                 var drop = $(ui.draggable[0]).attr('id');
@@ -560,21 +560,21 @@ function checkCorrect() {
         if ($('#exer1 .drop-correct').length == 4) {
             exer1Correct = true;
             $("#exer1 #text h4").html('Correct!');
-			$("#exer1 #text p").html('Want to practice some more? Click here to reset this exercise.');
+			$("#exer1 #text p").html('Want to practice some more? <span class="exerReset">Click here</span> to reset this exercise.');
 			$("#leftnav a.exer1").addClass('correct');
         }
 
         if ($('#exer2 .drop-correct').length == 3) {
             exer2Correct = true;
             $("#exer2 #text h4").html('Correct!');
-			$("#exer2 #text p").html('Want to practice some more? Click here to reset this exercise.');
+			$("#exer2 #text p").html('Want to practice some more? <span class="exerReset">Click here</span> to reset this exercise.');
 			$("#leftnav a.exer2").addClass('correct');
         }
         if (exer3Correct[0] && exer3Correct[1] && exer3Correct[2]) {
             exer3Correct[3] = 1;
             console.log(exer3Correct);
             $("#exer3 #text h4").html('Correct!');
-            $("#exer3 #text p").html('Want to practice some more? Click here to reset this exercise.');
+            $("#exer3 #text p").html('Want to practice some more? <span class="exerReset">Click here</span> to reset this exercise.');
 			$("#leftnav a.exer3").addClass('correct');
         }
         if (exer1Correct && exer2Correct && exer3Correct[3]) {
@@ -588,12 +588,12 @@ function checkCorrect() {
         if ($('#exer1 .success').length == 2) {
             m2exer1Correct = true;
             $("#exer1 #text h4").html('Correct!');
-			$("#exer1 #text p").html('Want to practice some more? Click here to reset this exercise.');
+			$("#exer1 #text p").html('Want to practice some more? <span class="exerReset">Click here</span> to reset this exercise.');
 			$("#leftnav a.exer1").addClass('correct');
         }
 		if ($('#exer2 .success').length == 2) {
             $("#exer2 #text h4").html('Correct!');
-			$("#exer2 #text p").html('Want to practice some more? Click here to reset this exercise.');
+			$("#exer2 #text p").html('Want to practice some more? <span class="exerReset">Click here</span> to reset this exercise.');
 			$("#leftnav a.exer2").addClass('correct');
         }
 
@@ -607,12 +607,12 @@ function checkCorrect() {
     } else {//if(thisModule == 4){ unecessary check since this is the only other module at this time.
         if ($('#exer1 .success').length == 3) {
             $("#exer1 #text h4").html('Correct!');
-			$("#exer1 #text p").html('Want to practice some more? Click here to reset this exercise.');
+			$("#exer1 #text p").html('Want to practice some more? <span class="exerReset">Click here</span> to reset this exercise.');
 			$("#leftnav a.exer1").addClass('correct');
         }
 		if ($('#exer2 .success').length == 2) {
             $("#exer2 #text h4").html('Correct!');
-			$("#exer2 #text p").html('Want to practice some more? Click here to reset this exercise.');
+			$("#exer2 #text p").html('Want to practice some more? <span class="exerReset">Click here</span> to reset this exercise.');
 			$("#leftnav a.exer2").addClass('correct');
         }
 
@@ -646,9 +646,15 @@ function clickInteraction(exerInputData){
     }
 }
 
+//Resets current exercise. Should reset 
+function exerReset(context){
+    var parent = context.parent().parent().parent();
+    console.log(parent);
+}
+
 var timeout;
 var isAlertOut = false;
-//Displays a div to alert the user about whatever. Accepts a jquery object (pref div), and message to be displayed.
+//Displays a div to alert the user about whatever. Accepts a message to be displayed.
 function displayAlert(message) {
     $('.customAlert').html(message);
     if(isAlertOut) {
@@ -786,6 +792,7 @@ function displayAlert(message) {
                 toSection('exer2');
             }
         });
+
         $('#content').on('click', '.skip', function() {
             console.log($('#subnav a.active').attr('zone'));
             if ($('#subnav a.active').attr('zone') == '1') {
@@ -793,6 +800,10 @@ function displayAlert(message) {
             } else if ($('#subnav a.active').attr('zone') == '2') {
                 toSection('exer3');
             }
+        });
+
+        $('#content').on('click', '.exerReset', function(){
+            exerReset($(this));
         });
 
        // Exercise interactions
