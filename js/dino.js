@@ -532,9 +532,6 @@ function toSection(goTo, videoStart) {
 function dropCorrect(thisItem, answer) {
     console.log('Item: ', thisItem);
     console.log('Answer: ' + answer);
-    if(timeout){
-        clearTimeout(timeout);
-    }
     $(".customAlert").hide('drop', { direction: "up" }, function(){ 
         isAlertOut = false; 
     });
@@ -639,6 +636,9 @@ function clickInteraction(exerInputData){
             $(this).on('click', function(event) {
                 var id = $(this).attr('id');
                 if (exerInputData[1].indexOf(id + "*") != -1) {//id appeneded with star (* denoting correct answer) exists
+                    $(".customAlert").hide('drop', { direction: "up" }, function(){ 
+                        isAlertOut = false; 
+                    });
                     $(this).addClass("success");
                     checkCorrect();
                 } else {//Isn't appened with star, so it is an incorrect id
