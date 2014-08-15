@@ -90,8 +90,8 @@ switch(thisModule) {
             hoverClass: "drop-hover",
             drop: function (event, ui) {
                 var drop = ui.draggable[0].innerHTML;
-                if (drop == 'Ishium') {
-                    dropCorrect($(this), 'Ishium');
+                if (drop == 'Ischium') {
+                    dropCorrect($(this), 'Ischium');
                 } else {
                     displayAlert("'" + drop + "' is incorrect. Try to remember which bones have unique characterstics that make them easy to identify.  If you need to review, go back and re-watch the video.");
                 }
@@ -339,6 +339,9 @@ function imageResize() {
     if($('#video_console').height() > 0) {
         $('#video_console').height(consoleHeight); 
     }
+    if($('#threeDmodel #console').height() > 0) {
+        $('#threeDmodel #console').height(consoleHeight); 
+    }
     if($('#unlocked').is(':visible')){
         $('#unlocked #lock').css({
             backgroundImage: lockImgPath
@@ -389,27 +392,14 @@ function clearHipIntervals() {
 
 // Jump to a section of the website
 function toSection(goTo, videoStart) {
+
 	$('#leftnav a').removeClass("active");
 	$('#leftnav a.'+goTo).addClass("active");
+
     projekktor('player_a').setStop();
     $('#video_captions').html('');
     $('#subnav a').removeClass('active');
-    console.log("Removed Active Class!");
-    if (goTo == 'exhibit') {
-        clearHipIntervals();
-        $('div.blackout').fadeOut();
-        $('div#subpages').fadeOut(function() {
-            $('div#' + goTo).fadeIn();
-            startHipFade();
-        });
-    } else {
-        clearHipIntervals();
-        $('#exhibit').fadeOut();
-        $('div.blackout').fadeIn();
-        $('div#subpages').fadeIn();
-        $('div#subpages > div').hide(0);
-        $('div#' + goTo).show(0);
-    }
+
     if (goTo == 'video') {
         $('#leftnav span').slideUp(0);
         setTimeout(function() {
@@ -430,6 +420,24 @@ function toSection(goTo, videoStart) {
         $('#subnav a[href="' + goTo + '"]').addClass("active visited");
         $('#leftnav span').slideDown(0);
     }
+
+    if (goTo == 'exhibit') {
+        clearHipIntervals();
+        $('#leftnav span').slideUp(0);
+        $('div.blackout').fadeOut();
+        $('div#subpages').fadeOut(function() {
+            $('div#' + goTo).fadeIn();
+            startHipFade();
+        });
+    } else {
+        clearHipIntervals();
+        $('#exhibit').fadeOut(0);
+        $('div.blackout').fadeIn();
+        $('div#subpages').fadeIn();
+        $('div#subpages > div').hide(0);
+        $('div#' + goTo).show(0);
+    }
+
     if (goTo == 'exer1') {
         if(thisModule == 1){
             $('#exer1 #text').fadeIn('fast');
@@ -453,8 +461,7 @@ function toSection(goTo, videoStart) {
                 $('#exer1 #selectWords').fadeIn('fast');
             });
         }
-    }
-    if (goTo == 'exer2') {
+    } else if (goTo == 'exer2') {
         if(thisModule == 1){
             $('#exer2 #text').fadeIn('fast');
             $('#exer2 #drawer').animate({
@@ -480,8 +487,7 @@ function toSection(goTo, videoStart) {
              });
         }
         
-    }
-    if (goTo == 'exer3') {
+    } else if (goTo == 'exer3') {
         $('#exer3 #text').fadeIn('fast');
         $('#exer3 #drawer').animate({
             height: '150px',
@@ -490,8 +496,7 @@ function toSection(goTo, videoStart) {
             $('#exer3 #dinoImages').fadeIn('fast');
             $('#exer3 #selectHips').fadeIn('fast');
         });
-    }
-    if (goTo == 'unlocked') {
+    } else if (goTo == 'unlocked') {
         $('#unlocked #text').fadeIn('fast', function() {
             $('#unlocked #lock').fadeIn('fast', function() {
                 setTimeout(function() {
@@ -504,17 +509,14 @@ function toSection(goTo, videoStart) {
                 }, 300);
             });
         });
-    }
-
-    if (goTo == 'identification') {
+    } else if (goTo == 'identification') {
         $('#identification #text').fadeIn('fast', function() {
             setTimeout(function() {
                 $('#identification #slider').fadeIn('fast');
             }, 500);
         });
 
-    }
-    if (goTo == 'threeDmodel') {
+    } else if (goTo == 'threeDmodel') {
         $('#threeDmodel #console').animate({
             height: consoleHeight
         }, 600, function() {
@@ -532,9 +534,6 @@ function toSection(goTo, videoStart) {
 function dropCorrect(thisItem, answer) {
     console.log('Item: ', thisItem);
     console.log('Answer: ' + answer);
-    $(".customAlert").hide('drop', { direction: "up" }, function(){ 
-        isAlertOut = false; 
-    });
     thisItem
         .addClass("drop-correct")
         .html(answer)
@@ -552,10 +551,10 @@ function dropCorrect(thisItem, answer) {
 
 //Function that tracks correct answers mainly for checking if all exercises are complete
 function checkCorrect() {
-    //On correct answer clear timeout and hide any error alerts
-    clearTimeout(timeout);
-    $(".customAlert").hide('drop', { direction: "right" });
-    
+
+    $(".customAlert").hide('drop', { direction: "up" }, function(){ 
+        isAlertOut = false; 
+    });
 
     if(thisModule == 1){
         if ($('#exer1 .drop-correct').length == 4) {
@@ -636,9 +635,6 @@ function clickInteraction(exerInputData){
             $(this).on('click', function(event) {
                 var id = $(this).attr('id');
                 if (exerInputData[1].indexOf(id + "*") != -1) {//id appeneded with star (* denoting correct answer) exists
-                    $(".customAlert").hide('drop', { direction: "up" }, function(){ 
-                        isAlertOut = false; 
-                    });
                     $(this).addClass("success");
                     checkCorrect();
                 } else {//Isn't appened with star, so it is an incorrect id
@@ -669,7 +665,7 @@ function displayAlert(message) {
 
     }
     //For every 20 characters, add 200ms
-    var msgTime = 2000 + ((message.length / 20) * 200);
+    var msgTime = 2000 + ((message.length / 20) * 500);
     timeout = setTimeout(function () {
         $(".customAlert").hide('drop', { direction: "up" }, function(){ 
             isAlertOut = false; 
@@ -829,7 +825,6 @@ function displayAlert(message) {
                 } else if ($(this).parent().parent().parent().attr('id') == "identification") {
                     $("#slider").fadeOut('fast');
                     $("#identification #console #text").fadeOut('fast', function () {
-                        $("#identification #console").fadeOut('fast');
                         $("#identification").fadeOut('fast');
                         toSection('exhibit');
                     });

@@ -555,14 +555,8 @@ body.module1 #exer1 .selectWords {
 	font-size:45px;
 	text-shadow:0px 0px 8px #000;
 }
-body.module1 #exer1 #word1 {
-	cursor:move;
-	padding-right:100px;
-}
-body.module1 #exer1 #word2 {
-	cursor:move;
-	padding-right:100px;
-}
+body.module1 #exer1 #word1,
+body.module1 #exer1 #word2,
 body.module1 #exer1 #word3 {
 	cursor:move;
 	padding-right:100px;
@@ -1425,14 +1419,13 @@ body.module1 #exer3 #text {
 	/*---------------- Exercise 1, Module 1 Section ---------------*/
 	body.module1 #exer1 .selectWords {
 		font-size:40px;
-		padding-top:140px;
-		padding-left:80px;
+		padding:30px 60px;
 	}
-	body.module1 #exer1 #word1 {
-		padding-right:140px;
+	body.module1 #exer1 .selectWords span {
+		padding-right:95px !important;
 	}
-	body.module1 #exer1 #word2 {
-		padding-right:140px;
+	body.module1 #exer1 .selectWords #word4 {
+		padding-right: 0px !important;
 	}
 	body.module1 #exer1 #options {
 		width:643px;
@@ -1816,7 +1809,7 @@ body.module1 #exer3 #text {
 	}
 	#threeDmodel #threeDcontent {
 		width:700px;
-		height:390px;
+		height:350px;
 		padding:0px;
 		margin-top:110px;
 	}
@@ -1824,11 +1817,11 @@ body.module1 #exer3 #text {
 	#hips #hip2 {
 		float:left;
 		width:50%;
-		height:380px;
+		height:350px;
 	}
 	iframe#orni_hip, iframe#sauri_hip {
-		width:85% !important;
-		height:85% !important;
+		width:100% !important;
+		height:100% !important;
 	}
 	#threeDmodel #console #text {
 		width:650px;
