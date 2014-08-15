@@ -235,7 +235,7 @@ switch(thisModule) {
                     exerDragData[0] = 1;
                     checkCorrect();
                 } else {
-                    displayAlert("'" + drop + "' is incorrect, because reasons.");
+                    displayAlert("'" + drop + "' is not the correct type of dinosaur. Go back and watch the video again if you need to review.");
                     exerDragData[0] = 0;
                 }
             }
@@ -248,7 +248,7 @@ switch(thisModule) {
                     exerDragData[1] = 1;
                     checkCorrect();
                 } else {
-                    displayAlert("'" + drop + "' is incorrect, because reasons.");
+                    displayAlert("'" + drop + "' is not the correct type of dinosaur. Go back and watch the video again if you need to review.");
                     exerDragData[1] = 0;
                 }
             }
@@ -261,7 +261,7 @@ switch(thisModule) {
                     exerDragData[2] = 1;
                     checkCorrect();
                 } else {
-                    displayAlert("'" + drop + "' is incorrect, because reasons.");
+                    displayAlert("'" + drop + "' is not the correct type of dinosaur. Go back and watch the video again if you need to review.");
                     exerDragData[2] = 0;
                 }
             }
@@ -274,7 +274,7 @@ switch(thisModule) {
                     exerDragData[3] = 1;
                     checkCorrect();
                 } else {
-                    displayAlert("'" + drop + "' is incorrect, because reasons.");
+                    displayAlert("'" + drop + "' is not the correct type of dinosaur. Go back and watch the video again if you need to review.");
                     exerDragData[3] = 0;
                 }
             }
@@ -287,7 +287,7 @@ switch(thisModule) {
                     exerDragData[4] = 1;
                     checkCorrect();
                 } else {
-                    displayAlert("'" + drop + "' is incorrect, because reasons.");
+                    displayAlert("'" + drop + "' is not the correct type of dinosaur. Go back and watch the video again if you need to review.");
                     exerDragData[4] = 0;
                 }
             }
