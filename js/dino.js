@@ -43,7 +43,7 @@ switch(thisModule) {
                     dropCorrect($(this), 'Lizard');
                 } else {
                     //alert user as to why answer is incorrect, then revert back to original content
-                    displayAlert($("#exer1"), "'" + drop + "' is incorrect, because reasons.");
+                    displayAlert("'" + drop + "' is incorrect. Think about what each word might mean.  If you need to review, go back and re-watch the video.");
                 }
             }
         }], ["#exer1 #option2", { 
@@ -53,7 +53,7 @@ switch(thisModule) {
                 if (drop == 'Hip') {
                     dropCorrect($(this), 'Hip');
                 } else {
-                    displayAlert($("#exer1"), "'" + drop + "' is incorrect, because reasons.");
+                    displayAlert("'" + drop + "' is incorrect. Think about what each word might mean.  If you need to review, go back and re-watch the video.");
                 }
             }
         }], ["#exer1 #option3", {
@@ -63,7 +63,7 @@ switch(thisModule) {
                 if (drop == 'Bird') {
                     dropCorrect($(this), 'Bird');
                 } else {
-                    displayAlert($("#exer1"), "'" + drop + "' is incorrect, because reasons.");
+                    displayAlert("'" + drop + "' is incorrect. Think about what each word might mean.  If you need to review, go back and re-watch the video.");
                 }
             }
         }], ["#exer1 #option4", {
@@ -73,7 +73,7 @@ switch(thisModule) {
                 if (drop == 'Hip') {
                     dropCorrect($(this), 'Hip');
                 } else {
-                    displayAlert($("#exer1"), "'" + drop + "' is incorrect, because reasons.");
+                    displayAlert("'" + drop + "' is incorrect.  Think about what each word might mean.  If you need to review, go back and re-watch the video.");
                 }
             }
         }], ["#exer2 #option1", {
@@ -83,7 +83,7 @@ switch(thisModule) {
                 if (drop == 'Illium') {
                     dropCorrect($(this), 'Illium');
                 } else {
-                    displayAlert($("#exer2"), "'" + drop + "' is incorrect, because reasons.");
+                    displayAlert("'" + drop + "' is incorrect. Try to remember which bones have unique characterstics that make them easy to identify.  If you need to review, go back and re-watch the video.");
                 }
             }
         }], ["#exer2 #option2", {
@@ -93,7 +93,7 @@ switch(thisModule) {
                 if (drop == 'Ishium') {
                     dropCorrect($(this), 'Ishium');
                 } else {
-                    displayAlert($("#exer2"), "'" + drop + "' is incorrect, because reasons.");
+                    displayAlert("'" + drop + "' is incorrect. Try to remember which bones have unique characterstics that make them easy to identify.  If you need to review, go back and re-watch the video.");
                 }
             }
         }], ["#exer2 #option3", {
@@ -103,7 +103,7 @@ switch(thisModule) {
                 if (drop == 'Pubis') {
                     dropCorrect($(this), 'Pubis');
                 } else {
-                    displayAlert($("#exer2"), "'" + drop + "' is incorrect, because reasons.");
+                    displayAlert("'" + drop + "' is incorrect. Try to remember which bones have unique characterstics that make them easy to identify.  If you need to review, go back and re-watch the video.");
                 }
             }
         }], ["#exer3 #dino1", {
@@ -115,7 +115,7 @@ switch(thisModule) {
                     exer3Correct[0] = 1;
                     checkCorrect();
                 } else {
-                    displayAlert($("#exer3"), "'" + drop + "' is incorrect, because reasons.");
+                    displayAlert("That hip doesn't match this dinosaur.  Try to remember the unique characterstics of each type of dinosaur.  If you need to review, go back and re-watch the video.");
                     $("#dino1").removeClass("success");
                     exer3Correct[0] = 0;
                 }
@@ -128,7 +128,7 @@ switch(thisModule) {
                     exer3Correct[1] = 1;
                     checkCorrect();
                 } else {
-                    displayAlert($("#exer3"), "'" + drop + "' is incorrect, because reasons.");
+                    displayAlert("That hip doesn't match this dinosaur.  Try to remember the unique characterstics of each type of dinosaur.  If you need to review, go back and re-watch the video.");
                     $("#dino2").removeClass("success");
                     exer3Correct[1] = 0;
                 }
@@ -141,7 +141,7 @@ switch(thisModule) {
                     exer3Correct[2] = 1;
                     checkCorrect();
                 } else {
-                    displayAlert($("#exer3"), "'" + drop + "' is incorrect, because reasons.");
+                    displayAlert("That hip doesn't match this dinosaur.  Try to remember the unique characterstics of each type of dinosaur.  If you need to review, go back and re-watch the video.");
                     $("#dino3").removeClass("success");
                     exer3Correct[2] = 0;
                 }
@@ -153,7 +153,8 @@ switch(thisModule) {
         slides = 0;
         videoPath[1] = 'video/m2.1.mp4';
         exerDragData = [0, 0];
-        exerInt = ['exer1', ['dino1', 'dino2', 'dino3*', 'dino4*'], ["Error message about dino1", "Error message about dino2", null, null]];
+        exerInt = ['exer1', ['dino1', 'dino2', 'dino3*', 'dino4*'], ["This dinosaur is not a Sauropod.  Try to remmeber the unique characterstics of Sauropods.  If you need to review, go back and re-watch the video.", 
+                                                                     "This dinosaur is not a Sauropod.  Try to remmeber the unique characterstics of Sauropods.  If you need to review, go back and re-watch the video.", null, null]];
         droppableOptions = [["body.module2 #exer2 #dino1", {
             drop: function (event, ui) {
                 var drop = $(ui.draggable[0]).attr('id');
@@ -162,7 +163,7 @@ switch(thisModule) {
                     exerDragData[0] = 1;
                     checkCorrect();
                 } else {
-                    displayAlert($("#exer2"), "'" + drop + "' is incorrect, because reasons.");
+                    displayAlert("That is not the type of food this dinosaur eats! Go back and watch the video if you need to review.");
                     $("body.module2 #exer2 #dino1").removeClass("success");
                     exerDragData[0] = 0;
                 }
@@ -175,7 +176,7 @@ switch(thisModule) {
                     exerDragData[1] = 1;
                     checkCorrect();
                 } else {
-                    displayAlert($("#exer2"), "'" + drop + "' is incorrect, because reasons.");
+                    displayAlert("That is not the type of food this dinosaur eats! Go back and watch the video if you need to review.");
                     $("body.module2 #exer2 #dino2").removeClass("success");
                     exerDragData[1] = 0;
                 }
@@ -188,7 +189,8 @@ switch(thisModule) {
         slides = 0;
         videoPath[1] = 'video/m3.1.mp4';
         exerDragData = [0, 0];
-        exerInt = ['exer1', ['dino1*', 'dino2', 'dino3*', 'dino4'], [null, "Error message about dino2", null, "Error message about dino4"]];
+        exerInt = ['exer1', ['dino1*', 'dino2', 'dino3*', 'dino4'], [null, "This dinosaur is not a Theropod.  Try to remmeber the unique characterstics of Theropods.  If you need to review, go back and re-watch the video.", 
+                                                                     null, "This dinosaur is not a Theropod.  Try to remmeber the unique characterstics of Theropods.  If you need to review, go back and re-watch the video."]];
         droppableOptions = [["body.module3 #exer2 #dino1", {
             drop: function (event, ui) {
                 var drop = $(ui.draggable[0]).attr('id');
@@ -197,7 +199,7 @@ switch(thisModule) {
                     exerDragData[0] = 1;
                     checkCorrect();
                 } else {
-                    displayAlert($("#exer2"), "'" + drop + "' is incorrect, because reasons.");
+                    displayAlert("That is not the type of food this dinosaur eats! Go back and watch the video if you need to review.");
                     $("body.module3 #exer2 #dino1").removeClass("success");
                     exerDragData[0] = 0;
                 }
@@ -210,7 +212,7 @@ switch(thisModule) {
                     exerDragData[1] = 1;
                     checkCorrect();
                 } else {
-                    displayAlert($("#exer2"), "'" + drop + "' is incorrect, because reasons.");
+                    displayAlert("That is not the type of food this dinosaur eats! Go back and watch the video if you need to review.");
                     $("body.module3 #exer2 #dino2").removeClass("success");
                     exerDragData[1] = 0;
                 }
@@ -233,7 +235,7 @@ switch(thisModule) {
                     exerDragData[0] = 1;
                     checkCorrect();
                 } else {
-                    displayAlert($("#exer1"), "'" + drop + "' is incorrect, because reasons.");
+                    displayAlert("'" + drop + "' is incorrect, because reasons.");
                     exerDragData[0] = 0;
                 }
             }
@@ -246,7 +248,7 @@ switch(thisModule) {
                     exerDragData[1] = 1;
                     checkCorrect();
                 } else {
-                    displayAlert($("#exer1"), "'" + drop + "' is incorrect, because reasons.");
+                    displayAlert("'" + drop + "' is incorrect, because reasons.");
                     exerDragData[1] = 0;
                 }
             }
@@ -259,7 +261,7 @@ switch(thisModule) {
                     exerDragData[2] = 1;
                     checkCorrect();
                 } else {
-                    displayAlert($("#exer1"), "'" + drop + "' is incorrect, because reasons.");
+                    displayAlert("'" + drop + "' is incorrect, because reasons.");
                     exerDragData[2] = 0;
                 }
             }
@@ -272,7 +274,7 @@ switch(thisModule) {
                     exerDragData[3] = 1;
                     checkCorrect();
                 } else {
-                    displayAlert($("#exer2"), "'" + drop + "' is incorrect, because reasons.");
+                    displayAlert("'" + drop + "' is incorrect, because reasons.");
                     exerDragData[3] = 0;
                 }
             }
@@ -285,7 +287,7 @@ switch(thisModule) {
                     exerDragData[4] = 1;
                     checkCorrect();
                 } else {
-                    displayAlert($("#exer2"), "'" + drop + "' is incorrect, because reasons.");
+                    displayAlert("'" + drop + "' is incorrect, because reasons.");
                     exerDragData[4] = 0;
                 }
             }
@@ -304,7 +306,7 @@ function imageResize() {
             $('#zone' + i).html("<img src='images/mod" + thisModule + "/zone" + i + "-small.png'>");
         }
         for (i=0; i<=slides; i++) {
-            $('slide' + i).html("<img src='images/mod" + thisModule + "/slides/" + i + "-small.png'>");
+            $('#slide' + i).html("<img src='images/mod" + thisModule + "/slides/" + i + "-small.png'>");
         }
         $('#meat-left').html("<img src='images/meat-small.png'>");
         $('#meat-right').html("<img src='images/meat-small.png'>");
@@ -319,7 +321,7 @@ function imageResize() {
             $('#zone' + i).html("<img src='images/mod" + thisModule + "/zone" + i + ".png'>");
         }
         for (i=0; i<=slides; i++) {
-            $('slide' + i).html("<img src='images/mod" + thisModule + "/slides/" + i + ".png'>");
+            $('#slide' + i).html("<img src='images/mod" + thisModule + "/slides/" + i + ".png'>");
         }
         $('#meat-left').html("<img src='images/meat.png'>");
         $('#meat-right').html("<img src='images/meat.png'>");
@@ -409,6 +411,7 @@ function toSection(goTo, videoStart) {
         $('div#' + goTo).show(0);
     }
     if (goTo == 'video') {
+        $('#leftnav span').slideUp(0);
         setTimeout(function() {
             if (!videoStart) {
                 videoStart = 0;
@@ -422,9 +425,10 @@ function toSection(goTo, videoStart) {
                 $('#video_content').fadeIn('fast');
             });
         }, 200);
-        $('#subnav a[zone="' + (videoStart+1) + '"]').addClass("active");
+        $('#subnav a[zone="' + (videoStart+1) + '"]').addClass("active visited");
     } else {
-        $('#subnav a[href="' + goTo + '"]').addClass("active");
+        $('#subnav a[href="' + goTo + '"]').addClass("active visited");
+        $('#leftnav span').slideDown(0);
     }
     if (goTo == 'exer1') {
         if(thisModule == 1){
@@ -489,12 +493,14 @@ function toSection(goTo, videoStart) {
     }
     if (goTo == 'unlocked') {
         $('#unlocked #text').fadeIn('fast', function() {
-			$('#unlocked #download').fadeIn('fast');
             $('#unlocked #lock').fadeIn('fast', function() {
                 setTimeout(function() {
                     $('#unlocked #lock').css({
                         backgroundImage: lockImgPath
                     });
+                    setTimeout(function() {
+                        $('#download').fadeIn(500);
+                    }, 500);
                 }, 300);
             });
         });
@@ -526,7 +532,12 @@ function toSection(goTo, videoStart) {
 function dropCorrect(thisItem, answer) {
     console.log('Item: ', thisItem);
     console.log('Answer: ' + answer);
-
+    if(timeout){
+        clearTimeout(timeout);
+    }
+    $(".customAlert").hide('drop', { direction: "up" }, function(){ 
+        isAlertOut = false; 
+    });
     thisItem
         .addClass("drop-correct")
         .html(answer)
@@ -566,11 +577,14 @@ function checkCorrect() {
         if (exer3Correct[0] && exer3Correct[1] && exer3Correct[2]) {
             exer3Correct[3] = 1;
             console.log(exer3Correct);
+            $("#exer3 #text h4").html('Correct!');
+            $("#exer3 #text p").html('Want to practice some more? Click here to reset this exercise.');
 			$("#leftnav a.exer3").addClass('correct');
         }
         if (exer1Correct && exer2Correct && exer3Correct[3]) {
+            $('.locked').removeAttr('title');
             $('.locked').removeClass('locked');
-            setTimeout(function() {
+            /*setTimeout(function() {
                 toSection('unlocked');
             }, 300); /* Stops the unlocked screen from transitioning to the exer2 again if at 4000...somehow */
         }
@@ -588,8 +602,9 @@ function checkCorrect() {
         }
 
         if (m2exer1Correct == true && exerDragData[0] && exerDragData[1]) {
+            $('.locked').removeAttr('title');
             $('.locked').removeClass('locked');
-            setTimeout(function() {
+            /*setTimeout(function() {
                 toSection('unlocked');
             }, 300); /* Stops the unlocked screen from transitioning to the exer2 again if at 4000...somehow */
         }
@@ -607,8 +622,9 @@ function checkCorrect() {
 
         //if array does not include a 0, all exers are correctly answered
         if (exerDragData.indexOf(0) == -1) {
+            $('.locked').removeAttr('title');
             $('.locked').removeClass('locked');
-            setTimeout(function () {
+            /*setTimeout(function () {
                 toSection('unlocked');
             }, 300); /* Stops the unlocked screen from transitioning to the exer2 again if at 4000...somehow */
         }
@@ -627,7 +643,7 @@ function clickInteraction(exerInputData){
                     checkCorrect();
                 } else {//Isn't appened with star, so it is an incorrect id
                     var index = exerInputData[1].indexOf(id);
-                    displayAlert($('#' + exerInputData[0]), exerInputData[2][index]);
+                    displayAlert(exerInputData[2][index]);
                 }
             });
         });
@@ -635,31 +651,29 @@ function clickInteraction(exerInputData){
 }
 
 var timeout;
+var isAlertOut = false;
 //Displays a div to alert the user about whatever. Accepts a jquery object (pref div), and message to be displayed.
-function displayAlert(container, message) {
-    var backup = container.html();
-    var content = "<div class='customAlert'><span class='alertmsg'>" + message + "</div>";
-
-    //Append only if it doesn't exist, else simply update message.
-    if (!$('#' + container.attr('id') + ' .customAlert').length) {
-        container.append(content);
+function displayAlert(message) {
+    $('.customAlert').html(message);
+    if(isAlertOut) {
+        //if timeout, clear it before starting new timeout
+        if(timeout){
+            clearTimeout(timeout);
+        }
     } else {
-        $('#' + container.attr('id') + ' .alertmsg').html(message);
-    }
-    
-    //display
-    $(".customAlert").show('drop', { direction: "right" });
 
-    //if timeout, clear it before starting new timeout
-    if(timeout){
-        clearTimeout(timeout);
-    }
-    
+        isAlertOut = true;
 
-    //For every 20 characters, add 500ms
-    var msgTime = 4000 + ((message.length / 20) * 500);
+        //display
+        $(".customAlert").show('drop', { direction: "up" });
+
+    }
+    //For every 20 characters, add 200ms
+    var msgTime = 2000 + ((message.length / 20) * 200);
     timeout = setTimeout(function () {
-        $(".customAlert").hide('drop', { direction: "right" });
+        $(".customAlert").hide('drop', { direction: "up" }, function(){ 
+            isAlertOut = false; 
+        });
     }, msgTime);
 }
 
@@ -737,7 +751,11 @@ function displayAlert(container, message) {
             toSection('exer2');
         });
         $('#content').on('click', '#exer2 .next', function() {
-            toSection('video', 1);
+            if(thisModule == 1) {
+                toSection('video', 1);
+            } else {
+                toSection('threeDmodel');
+            }
         });
 		$('#content').on('click', '#exer3 .next', function() {
             toSection('identification');
@@ -749,7 +767,9 @@ function displayAlert(container, message) {
             toSection('identification');
         });
 		$('#content').on('click', '#threeDmodel .next', function() {
-            toSection('buildDino');
+            if(!$(this).hasClass('locked')) {
+                toSection('unlocked');
+            }
         });
         $('#content').on('click', '#exer1 .rewatch', function() {
             toSection('video', 0);
@@ -764,7 +784,11 @@ function displayAlert(container, message) {
             toSection('exer3');
         });
 		$('#content').on('click', '#threeDmodel .rewatch', function() {
-            toSection('identification');
+            if(thisModule == 1) {
+                toSection('identification');
+            } else {
+                toSection('exer2');
+            }
         });
         $('#content').on('click', '.skip', function() {
             console.log($('#subnav a.active').attr('zone'));

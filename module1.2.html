@@ -27,14 +27,15 @@
     <div id="header">
         <img src="images/logos.png">
         <h1>Dino One</h1>
-        <h2>Module 1.2: Sauropods</h2><a href="../index.html" id="return">Back to Main Menu</a>
+        <h2>Module 1.2: Sauropods</h2><a href="index.html" id="return">Back to Main Museum</a>
     </div>
 
     <div id="subnav">
         <div id="subnav_content">
-            <a href="exhibit" class="active">Exhibit Hall</a><span class="arrow"></span>
+            <a href="exhibit" class="active visited">Exhibit Hall</a><span class="arrow"></span>
             <a href="video" class="zone1" zone="1">Classification</a><span class="arrow"></span>
-            <a href="threeDmodel" class="locked">3D Exploration</a><span class="locked"></span>
+            <a href="threeDmodel">3D Exploration</a><span class="arrow locked"></span>
+            <a href="unlocked" class="locked" title="Complete all the interactives to unlock this item!">Build a Dino</a>
         </div>
     </div>
     
@@ -77,7 +78,6 @@
                         </div>
 
                         <div id="video_captions"></div>
-                        <span class="skip button">Skip to Interactive</span>
                     </div>
                 </div>
             </div>
@@ -120,25 +120,13 @@
                         <div class="close-exer">x</div>
                         <h4>Match the Food</h4>
                         <p>Drag the appropriate food to each dinosaur according to their diet.</p>
-                        <div class="rewatch button">Previous</div>
+                        <div class="controls">
+                            <div class="next button">Continue</div>
+                            <div class="rewatch button">Previous</div>
+                        </div> 
                     </div>
                 </div>
             </div>
-            
-            <div id="unlocked">
-                <div id="lock"></div>
-                <div id="download"><img src="images/download-icon.png"/></div>
-                <div id="console">
-                    <div id="text">
-                        <div id="unlocked_close">x</div>
-                        <h4>You've Unlocked a 3-D T-Rex Item!</h4>
-                        Each section of the museum contains skeletal parts to a 3-D printable T-Rex model. Click the icon above to download the T-Rex body.<br />
-                        <div class="controls">
-                            <div class="next button">Continue</div>
-                        </div>
-					</div>
-                </div>
-			</div>
             
             <div id="threeDmodel">
                 <div id="console">
@@ -152,9 +140,28 @@
                         <h4>3D Exploration</h4>
                         Click on the photograph of the foot above to explore it in 3D.  Drag the mouse to rotate, 
                         use the scroll wheel to zoom in and out, and right click to move it around.<br />
+                        <div class="next button locked" title="Complete all the interactives to unlock this item!">Continue</div>
+                        <div class="rewatch button">Previous</div>
                     </div>
                 </div>
 			</div> 
+            
+            <div id="unlocked">
+                <div id="lock">
+                    <div id="download"><img src="images/download-icon.png"/></div>
+                </div>
+                
+                <div id="console">
+                    <div id="text">
+                        <div id="unlocked_close">x</div>
+                        <h4>You've Unlocked a 3-D T-Rex Item!</h4>
+                        Each section of the museum contains skeletal parts to a 3-D printable T-Rex model. Click the icon above to download the T-Rex torso.<br />
+                        <div class="controls">
+                            <div class="button"><a href="module1.3.html"> Go to Module 1.3</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
             
             </div><!-- sub pages -->
             </div><!-- content -->
@@ -178,5 +185,6 @@
                     </div>
                 </div>
             </div><!-- footer -->
+            <div class="customAlert"></div>
 </body>
 </html>
