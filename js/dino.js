@@ -653,13 +653,14 @@ function exerReset(context){
     var parent = context.parent().parent().parent().parent().attr('id');
     console.log(parent);
 
-    //if forest, it's dragging an image, else it's options which is dragging words
+    //if forest, it's dragging an image, else it's options which is dragging words. The last else case catches anything that doesn't fit into these two categories (e.g. Module 2.4, exer2 where the container is called 'exer2Container')
     if($('#' + parent + ' div:nth-child(1)').attr('id') == 'forest' || $('#' + parent + ' div:nth-child(1)').attr('id') == 'forest-raised'){
         $('#' + parent + ' div:nth-child(1) div div').each(function(){
             $(this).removeClass("success");
         });
 
     }else if($('#' + parent + ' div:nth-child(1)').attr('id') == 'options'){
+        //if exercise is split into sections
         if($('#' + parent + ' div:nth-child(1) div').attr('id') == 'section1'){
             $('#' + parent + ' div:nth-child(1) div div').each(function(){
                 if($(this).attr('id')){
@@ -675,8 +676,6 @@ function exerReset(context){
                 }
             });
         }
-        
-
     }else{
         $('#' + parent + ' div:nth-child(1) div').each(function(){
             $(this).removeClass("success");
