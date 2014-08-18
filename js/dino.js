@@ -654,33 +654,44 @@ function exerReset(context){
     console.log(parent);
 
     //if forest, it's dragging an image, else it's options which is dragging words
-    if($('#' + parent + ' div:nth-child(1)').attr('id') == 'forest'){
+    if($('#' + parent + ' div:nth-child(1)').attr('id') == 'forest' || $('#' + parent + ' div:nth-child(1)').attr('id') == 'forest-raised'){
         $('#' + parent + ' div:nth-child(1) div div').each(function(){
             $(this).removeClass("success");
         });
 
-        //check to see if array or not. If so, reset. Else set false.
-        if(exerCorrect[parent.charAt(4)] instanceof Array){
-            exerCorrect[parent.charAt(4)] = new Array();
-        }else{
-            exerCorrect[parent.charAt(4)] = false;
-        }
-
     }else if($('#' + parent + ' div:nth-child(1)').attr('id') == 'options'){
-        $('#' + parent + ' div:nth-child(1) div div').each(function(){
-            $(this).removeClass("drop-correct");
-            $(this).html("");
-        });
-
-        //check to see if array or not. If so, reset. Else set false.
-        if(exerCorrect[parent.charAt(4)] instanceof Array){
-            exerCorrect[parent.charAt(4)] = new Array();
+        if($('#' + parent + ' div:nth-child(1) div').attr('id') == 'section1'){
+            $('#' + parent + ' div:nth-child(1) div div').each(function(){
+                if($(this).attr('id')){
+                    $(this).removeClass("drop-correct");
+                    $(this).html("");
+                }
+            });
         }else{
-            exerCorrect[parent.charAt(4)] = false;
+            $('#' + parent + ' div:nth-child(1) div').each(function(){
+                if($(this).attr('id')){
+                    $(this).removeClass("drop-correct");
+                    $(this).html("");
+                }
+            });
         }
+        
+
+    }else{
+        $('#' + parent + ' div:nth-child(1) div').each(function(){
+            $(this).removeClass("success");
+        });
+    }
+
+    //check to see if array or not. If so, reset. Else set false.
+    if(exerCorrect[parent.charAt(4)] instanceof Array){
+        exerCorrect[parent.charAt(4)] = new Array();
+    }else{
+        exerCorrect[parent.charAt(4)] = false;
     }
 
     $("#leftnav a." + parent).removeClass('correct');
+    checkCorrect();
 }
 
 var timeout;
