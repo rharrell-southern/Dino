@@ -659,12 +659,28 @@ function exerReset(context){
             $(this).removeClass("success");
         });
 
-        //check to see if array or not. If array, get length and set eq to new array of that len. Else set false.
-        exerCorrect[parent.charAt(4)][0] = false;
+        //check to see if array or not. If so, reset. Else set false.
+        if(exerCorrect[parent.charAt(4)] instanceof Array){
+            exerCorrect[parent.charAt(4)] = new Array();
+        }else{
+            exerCorrect[parent.charAt(4)] = false;
+        }
 
-    }else{
+    }else if($('#' + parent + ' div:nth-child(1)').attr('id') == 'options'){
+        $('#' + parent + ' div:nth-child(1) div div').each(function(){
+            $(this).removeClass("drop-correct");
+            $(this).html("");
+        });
 
+        //check to see if array or not. If so, reset. Else set false.
+        if(exerCorrect[parent.charAt(4)] instanceof Array){
+            exerCorrect[parent.charAt(4)] = new Array();
+        }else{
+            exerCorrect[parent.charAt(4)] = false;
+        }
     }
+
+    $("#leftnav a." + parent).removeClass('correct');
 }
 
 var timeout;
