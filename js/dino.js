@@ -684,14 +684,13 @@ function exerReset(context){
     }
 
     //check to see if array or not. If so, reset. Else set false.
-    if(exerCorrect[parent.charAt(4)] instanceof Array){
-        exerCorrect[parent.charAt(4)] = new Array();
+    if(exerCorrect[parent.charAt(4) - 1] instanceof Array){
+        exerCorrect[parent.charAt(4) - 1] = new Array();
     }else{
-        exerCorrect[parent.charAt(4)] = false;
+        exerCorrect[parent.charAt(4) - 1] = false;
     }
 
     $("#leftnav a." + parent).removeClass('correct');
-    checkCorrect();
 }
 
 var timeout;
