@@ -1016,7 +1016,7 @@ function displayAlert(message) {
         } else if(thisModule == 3) {
             $("#meat-left, #meat-right, #leaf-left, #leaf-right").draggable(draggableOptions);
         } else if(thisModule == 4) {
-            $("#exer1 #word1, #exer1 #word2, #exer1 #word3, #exer2 #word1, #exer2 #word2").draggable(draggableOptions);
+            $("#exer1 #word1, #exer1 #word2, #exer1 #word3, #exer2 #word1, #exer2 #word2, #exer2 #word3").draggable(draggableOptions);
         }
 
         //Create and register droppable listeners.

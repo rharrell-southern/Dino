@@ -31,7 +31,7 @@ div.controls { /* houses the previous and continue buttons */
 	width:850px;
 	margin:0px auto;
 	position:absolute;
-	bottom:60px;
+	/*bottom:60px;*/
 }
 
 .exerReset{
@@ -307,10 +307,19 @@ body.module4 #subnav_content {
 #dinoImages {
 	position:relative;
 	width:1000px;
-	height:424px;
+	height:324px;
 	margin:0px auto;
 	padding-top:90px;
 	padding-left:130px;
+	z-index: 20;
+}
+body.module1 #dinoImages,
+body.module4 #dinoImages {
+	height:424px;
+}
+.selectWords {
+	position: relative;
+	z-index: 21;
 }
 #drawer {
 	background-image:url("../images/drawer.png");
@@ -359,6 +368,8 @@ body.module4 #subnav_content {
 	display: none;
 	clear:both;
 	text-shadow:0px 0px 6px #000;
+	position: relative;
+	z-index: 21;
 }
 #text p {
 	margin-top:0px;
@@ -629,6 +640,8 @@ body.module2 #exer1 #dino4.success {
 }
 body.module2 #exer1 #text {
 	margin:130px auto 0px auto;
+	position: relative;
+	z-index: 21;
 }
 
 /* ----------------- Exercise 1 for Module 3 ------------------- */
@@ -683,6 +696,8 @@ body.module3 #exer1 #dino3.success {
 }
 body.module3 #exer1 #text {
 	margin:130px auto 0px auto;
+	position: relative;
+	z-index: 21;
 }
 
 /* ----------------- Exercise 1 for Module 4 ------------------- */
@@ -856,6 +871,8 @@ body.module2 #exer2 #dino2.success {
 }
 body.module2 #exer2 #text {
 	margin:130px auto 0px auto;
+	position: relative;
+	z-index: 21;
 }
 body.module2 #exer2 #console {
 	z-index:3;
@@ -952,10 +969,14 @@ body.module4 #exer2 .selectWords {
 }
 body.module4 #exer2 #word1 {
 	cursor:move;
-	padding-left:210px;
-	padding-right:180px;
+	padding-left:80px;
+	padding-right:140px;
 }
 body.module4 #exer2 #word2 {
+	cursor:move;
+	padding-right:140px;
+}
+body.module4 #exer2 #word3 {
 	cursor:move;
 }
 body.module4 #exer2 #text {
@@ -1012,12 +1033,16 @@ body.module1 #exer3 #selectHips {
 	width:390px;
 	margin:0px auto;
 	padding:40px;
+	position:relative;
+	z-index: 21;
 }
 body.module1 #exer3 #selectHips #hips1 img {
 	margin-right:200px;
 }
 body.module1 #exer3 #text {
 	margin:10px auto 0px auto;
+	position: relative;
+	z-index: 21;
 }
 
 
@@ -1298,8 +1323,12 @@ body.module1 #exer3 #text {
 	}
 	#dinoImages {
 		width:772px;
-		height:228px;
+		height:158px;
 		top:-13px;
+	}
+	body.module1 #dinoImages,
+	body.module4 #dinoImages {
+		height:240px;
 	}
 	#drawer {
 		background-image:url("../images/drawer-small.png");
@@ -1597,12 +1626,10 @@ body.module1 #exer3 #text {
 		font-size:34px;
 		padding:35px 128px;
 	}
-	body.module1 #exer2 #word1 { 
+	body.module1 #exer2 #word1,
+	body.module1 #exer2 #word2 { 
 		padding-left:0px;
-		padding-right:110px; 
-	}
-	body.module1 #exer2 #word2 {
-		padding-right:110px;
+		padding-right:90px; 
 	}
 
 	/*---------------- Exercise 2 Module 2 Section ---------------*/
@@ -1718,11 +1745,12 @@ body.module1 #exer3 #text {
 	}
 	body.module4 #exer2 .selectWords {
 		font-size:25px;
-		padding:42px 200px;
+		padding:42px 92px;
 	}
-	body.module4 #exer2 #word1 { 
+	body.module4 #exer2 #word1,
+	body.module4 #exer2 #word2 { 
 		padding-left:0px;
-		padding-right:120px; 
+		padding-right:100px; 
 	}
 	body.module4 #exer2 #text {
 		margin:-8px auto;
